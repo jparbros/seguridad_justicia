@@ -1,0 +1,5 @@
+%h1
+  Editar Blacklist
+
+= form_for(@blacklist, url: admin_blacklist_path(@blacklist), class: 'form_element', method: :put) do |form|
+  = render partial: 'form', object: form

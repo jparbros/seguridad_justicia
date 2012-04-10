@@ -1,0 +1,48 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.jcarousel-clip-horizontal {
+  height: 155px;
+  margin: 0 0 0 97px;
+  overflow: hidden;
+  width: 605px;
+}
+
+.jcarousel-control {
+  margin: -25px 0 0;
+  position: relative;
+  text-align: center;
+  z-index: 1000;
+
+  a {
+    background: url('/assets/bullet-empty.png') no-repeat;
+    padding: 3px 10px;
+
+    &.bullet-filled {
+      background: url('/assets/bullet-filled.png') no-repeat;
+    }
+
+    &:hover { text-decoration: none;}
+  }
+
+}
+
+#phrases-container {
+  background-color: #F5F5F5;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 4px 4px 4px 4px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05) inset;
+  margin: 30px 0 0;
+  padding: 10px 0;
+  text-align: center;
+
+  #phrases-box {
+    background-color: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05) inset;
+    height: 250px;
+    margin: 0 0 0 8.2%;
+  }
+}

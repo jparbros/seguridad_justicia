@@ -1,0 +1,9 @@
+#carousel-container.span12
+  %ul#carousel
+    - @banners.each do |banner|
+      %li
+        = image_tag banner.image.url, width: 605, height: 155
+
+  .jcarousel-control
+    - @banners.each_with_index do |banner, index|
+      = link_to '&nbsp;'.html_safe, '#', data: {carousel: index}

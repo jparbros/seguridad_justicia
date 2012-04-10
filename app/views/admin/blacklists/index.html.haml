@@ -1,0 +1,14 @@
+= link_to 'Crear blacklist', new_admin_blacklist_path, class: 'big button'
+%h1
+  Blacklist
+
+%ul{class: :list}
+  - @blacklists.each do |blacklist|
+    %li{id: 'blacklist_#{blacklist.id}'}
+      .item
+        .icon
+        .action_links
+          = link_to 'Editar', edit_admin_blacklist_path(blacklist)
+          = link_to 'Eliminar', admin_blacklist_path(blacklist), method: :delete, confirm: '¿Esta seguro de eliminar la palabra bloqueada?'
+        .label
+          = blacklist.word

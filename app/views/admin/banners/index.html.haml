@@ -1,0 +1,16 @@
+= link_to 'Crear Banner', new_admin_banner_path, class: 'big button'
+%h1
+  Banners
+
+%ul{class: :list}
+  - @banners.each do |banner|
+    %li{id: 'banner_#{banner.id}'}
+      .item
+        .icon
+        .action_links
+          = link_to 'Editar', edit_admin_banner_path(banner)
+          = link_to 'Eliminar', admin_banner_path(banner), method: :delete, confirm: '¿Esta seguro de eliminar el banner?'
+        .label
+          = image_tag banner.image.thumb.url
+          .sublabel
+            = banner.active? ? 'Activado' : 'Desactivado'

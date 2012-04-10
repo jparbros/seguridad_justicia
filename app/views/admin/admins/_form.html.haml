@@ -1,0 +1,26 @@
+.form_element.text_field_element
+  .label
+    %label
+      Email
+  .value
+    = form.text_field :email
+
+.form_element.select_element
+  .label
+    %label
+      Sitio
+  .value
+    = form.select :site_id, @sites, include_blank: true
+
+.form_element.select_element
+  .label
+    %label
+      Super Administrador
+  .value
+    = form.check_box :super_admin
+
+
+.form_element.submit_element
+  .label
+  .value
+    = form.submit :crear

@@ -1,0 +1,5 @@
+%h1
+  Editar Banner
+
+= form_for(@banner, url: admin_banner_path(@banner), class: 'form_element', method: :put) do |form|
+  = render partial: 'form', object: form

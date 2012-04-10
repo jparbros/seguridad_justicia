@@ -1,0 +1,16 @@
+= link_to 'Crear Administrador', new_admin_admin_path, class: 'big button'
+%h1
+  Administradores
+
+%ul{class: :list}
+  - @admins.each do |admin|
+    %li{id: 'admin_#{admin.id}'}
+      .item
+        .icon
+        .action_links
+          = link_to 'Editar', edit_admin_admin_path(admin)
+          = link_to 'Eliminar', admin_admin_path(admin), method: :delete, confirm: '¿Esta seguro de eliminar el administrador?'
+        .label
+          = admin.email
+          .sublabel
+            = admin.site.try(:label)
