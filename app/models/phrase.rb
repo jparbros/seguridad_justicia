@@ -1,8 +1,8 @@
 class Phrase < ActiveRecord::Base
   attr_accessible :phrase, :site_id
 
-  validates :phrase, presence: true, uniqueness: true
-  validate :allowed_words
+  validates :phrase, presence: true
+  validate :allowed_words, :uniqueness_by_site
 
   belongs_to :site, class_name: 'Cms::Site'
 
@@ -11,6 +11,11 @@ class Phrase < ActiveRecord::Base
     phrase_in_words = (self.phrase.present?)? self.phrase.split(' ') : []
     not_allowed_words_in_phrase = not_allowed_words & phrase_in_words
     errors.add(:no_allowed_words, 'contiene palabras no permitidas') if not_allowed_words_in_phrase.size > 0
+  end
+
+  def uniqueness_by_site
+    phrase = Phrase.where(site_id: self.site_id, phrase: self.phrase)
+    errors.add(:uniqueness_by_site, 'frase ya existente') if phrase.present?
   end
 
   def self.by_site_to_cloud(site_id)
