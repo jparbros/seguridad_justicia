@@ -86,13 +86,16 @@ Admin.create(
 #
 
 banner_bc_001 = Banner.create!(active: true, site_id: baja_california_site.id)
-banner_bc_001.image.store!(File.open(File.join(Rails.root, '/db/images/bc001.gif')))
+banner_bc_001.image = File.read(File.join(Rails.root, '/db/images/bc001.gif'))
+banner_bc_001.save
 
 banner_bc_002 = Banner.create!(active: true, site_id: baja_california_site.id)
-banner_bc_002.image.store!(File.open(File.join(Rails.root, '/db/images/bc002.gif')))
+banner_bc_002.image = File.read(File.join(Rails.root, '/db/images/bc002.gif'))
+banner_bc_002.save
 
 banner_bc_003 = Banner.create!(active: true, site_id: baja_california_site.id)
-banner_bc_003.image.store!(File.open(File.join(Rails.root, '/db/images/bc003.gif')))
+banner_bc_003.image = File.read(File.join(Rails.root, '/db/images/bc003.gif'))
+banner_bc_003.save
 
 
 #
@@ -100,26 +103,32 @@ banner_bc_003.image.store!(File.open(File.join(Rails.root, '/db/images/bc003.gif
 #
 
 banner_ch_001 = Banner.create!(active: true, site_id: chihuahua_site.id)
-banner_ch_001.image.store!(File.open(File.join(Rails.root, '/db/images/ch001.gif')))
+banner_ch_001.image = File.read(File.join(Rails.root, '/db/images/ch001.gif'))
+banner_ch_001.save
 
 banner_ch_002 = Banner.create!(active: true, site_id: chihuahua_site.id)
-banner_ch_002.image.store!(File.open(File.join(Rails.root, '/db/images/ch002.gif')))
+banner_ch_002.image = File.read(File.join(Rails.root, '/db/images/ch002.gif'))
+banner_ch_002.save
 
 banner_ch_003 = Banner.create!(active: true, site_id: chihuahua_site.id)
-banner_ch_003.image.store!(File.open(File.join(Rails.root, '/db/images/ch003.gif')))
+banner_ch_003.image = File.read(File.join(Rails.root, '/db/images/ch003.gif'))
+banner_ch_003.save
 
 #
 # Banners Nuevo Leon
 #
 
 banner_nl_001 = Banner.create!(active: true, site_id: nuevo_leon_site.id)
-banner_nl_001.image.store!(File.open(File.join(Rails.root, '/db/images/nl001.gif')))
+banner_nl_001.image = File.read(File.join(Rails.root, '/db/images/nl001.gif'))
+banner_nl_001.save
 
 banner_nl_002 = Banner.create!(active: true, site_id: nuevo_leon_site.id)
-banner_nl_002.image.store!(File.open(File.join(Rails.root, '/db/images/nl002.gif')))
+banner_nl_002.image = File.read(File.join(Rails.root, '/db/images/nl002.gif'))
+banner_nl_002.save
 
 banner_nl_003 = Banner.create!(active: true, site_id: nuevo_leon_site.id)
-banner_nl_003.image.store!(File.open(File.join(Rails.root, '/db/images/nl003.gif')))
+banner_nl_003.image = File.read(File.join(Rails.root, '/db/images/nl003.gif'))
+banner_nl_003.save
 
 #
 # Phrases Baja California
