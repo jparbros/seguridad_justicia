@@ -10,6 +10,7 @@ gem 'haml-rails'
 gem 'carrierwave'
 gem 'fog'
 gem 'mini_magick'
+gem 'detect_browser_os'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

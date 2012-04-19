@@ -7,15 +7,30 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
     %meta{name: :viewport, content: "width=device-width, initial-scale=1.0"}
-  %body
-    .container-fluid
-      .navbar.navbar-fixed-top
-        .navbar-inner
-          .container
-            .nav-collapse
-              %ul.nav
-                %li
-                  link uno
-                %li
-                  link dos
-      = yield
+  %body{:class => detect_browser_os}
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container
+          = link_to 'Seguridad con Justicia', root_path, class: 'brand'
+          .nav-collapse
+            %ul.nav
+              %li
+                link uno
+              %li
+                link dos
+    .container
+      .subnav.subnav-fixed
+        %ul.nav.nav-pills
+          %li
+            %a
+              uno
+          %li
+            %a
+              dos
+      .row
+        #main-content.span8
+          #content
+            = yield
+
+        #side-bar.span4
+          lateral

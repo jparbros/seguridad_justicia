@@ -2,9 +2,57 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+.phase-header {
+  height: 57px;
+  margin: 20px 0;
+
+  &:before { float: left; margin: -11px 0 0 -16px; }
+
+  &:after { float: right; margin: -47px -16px 0 0; }
+}
+
+.sentir-ciudadano {
+  background: #ffc230;
+
+  &:before { content: url("/assets/sentir-before.png"); }
+
+  &:after { content: url("/assets/sentir-after.png"); }
+}
+
+.seleccion {
+  background: #fdac87;
+
+  &:before { content: url("/assets/seleccion-before.png"); }
+
+  &:after { content: url("/assets/seleccion-after.png"); }
+}
+
+.destacadas {
+  background: #f69abe;
+
+  &:before { content: url("/assets/destacada-before.png"); }
+
+  &:after { content: url("/assets/destacada-after.png"); }
+}
+
+.seguimiento {
+  background: #bf8dbb;
+
+  &:before { content: url("/assets/seguimiento-before.png"); }
+
+  &:after { content: url("/assets/seguimiento-after.png"); }
+}
+
+#carousel-container {
+  height: 155px;
+  margin: 10px 0 10px -16px;
+  width: 652px;
+}
+
 .jcarousel-clip-horizontal {
   height: 155px;
-  margin: 0 0 0 97px;
+  margin: 0 0 0 0;
   overflow: hidden;
   width: 605px;
 }

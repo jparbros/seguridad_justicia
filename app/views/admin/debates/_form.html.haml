@@ -1,0 +1,18 @@
+.form_element.text_field_element
+  .label
+    %label
+      Tema
+  .value
+    = form.text_field :topic
+
+.form_element.select_element
+  .label
+    %label
+      Activo
+  .value
+    = form.check_box :active
+
+.form_element.submit_element
+  .label
+  .value
+    = form.submit (@debate.new_record? ? 'Crear' : 'Editar')

@@ -1,0 +1,16 @@
+= link_to 'Crear Debate', new_admin_debate_path, class: 'big button'
+%h1
+  Debates
+
+%ul{class: :list}
+  - @debates.each do |debate|
+    %li{id: 'debate_#{debate.id}'}
+      .item
+        .icon
+        .action_links
+          = link_to 'Editar', edit_admin_debate_path(debate)
+          = link_to 'Eliminar', admin_debate_path(debate), method: :delete, confirm: '¿Esta seguro de eliminar el debate?'
+        .label
+          = debate.topic
+          .sublabel
+            = debate.active? ? 'Activado' : 'Desactivado'

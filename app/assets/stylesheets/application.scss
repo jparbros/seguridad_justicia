@@ -1,0 +1,89 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require 'bootstrap.min'
+ *= require 'jqcloud'
+ *= require_self
+ *= require_tree .
+*/
+
+body { background: url('/assets/background.png'), url('/assets/background-bottom.png') repeat-x 0 bottom;}
+
+.navbar .container {
+  padding-top: 0;
+}
+
+.container {
+  padding-top: 43px;
+}
+
+.navbar-inner {
+  background: url('/assets/menu-bg.png') repeat-x;
+  height: 43px;
+}
+
+#main-content {
+  background: url('/assets/main-content-background.png') repeat-x 0 bottom;
+
+  #content {
+    background: #363636;
+    margin-bottom: 19px;
+    padding: 55px 0 30px 0;
+
+  }
+}
+
+#side-bar { padding: 55px 0 0 0; }
+
+/* Subnav */
+.subnav {
+  background: #ffffff;
+  border: 0;
+  height: 39px;
+  width: 100%;
+  margin: 3px 0 0 0;
+
+  &:before {
+    content: url('/assets/menu-ribbon.png');
+    float: left;
+    margin: -10px 0 0 -47px;
+  }
+
+  &:after {
+    content: url('/assets/menu-tail.png');
+    float: right;
+    margin: -43px -18px 0 0;
+
+    body.chrome & { margin: -44px -18px 0 0;}
+  }
+}
+
+.subnav .nav {
+  margin-bottom: 0;
+}
+
+.subnav .nav > li > a {
+  margin: 0;
+  padding-top:    11px;
+  padding-bottom: 11px;
+}
+
+.subnav .nav > .active > a,
+.subnav .nav > .active > a:hover {
+  padding-left: 13px;
+  color: #777;
+}
+
+.subnav-fixed {
+  position: fixed;
+  top: 50px;
+  width: 940px;
+  z-index: 1020; /* 10 less than .navbar-fixed to prevent any overlap */
+}

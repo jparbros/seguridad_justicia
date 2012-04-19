@@ -47,6 +47,7 @@ GEM
       active_link_to (~> 1.0.0)
       paperclip (>= 2.3.0)
       rails (>= 3.0.0)
+    detect_browser_os (0.1.1)
     devise (2.0.4)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.0.3)
@@ -166,6 +167,7 @@ DEPENDENCIES
   carrierwave
   coffee-rails (~> 3.2.1)
   comfortable_mexican_sofa
+  detect_browser_os
   devise
   fog
   haml-rails
