@@ -1,20 +1,17 @@
-#phrases-container
-  %h2
-    Sentir Ciudadano
-  .row-fluid
-    #phrases-box.span10
+.row
+  .span8
+    #phrases-container
+      #phrases-box
+= form_for Phrase.new, url: frases_path do |form|
+  .row.seria-seguro
+    .span3
+      %span
+        #{@site.label} seria mas seguro si:
+    .span5.frases-input
+      = form.text_field :phrase, class: :span4
+      = form.submit 'Enviar >>', class: :span1
 
-  - if flash[:error]
-    .row-fluid
-      .alert.alert-error.span10
-        = flash[:error]
-
-  = form_for Phrase.new, url: frases_path do |form|
-    .row-fluid
-      .span5
-        %h3
-          Mi estado seria mas seguro si: #{@site.label}
-      .span4
-        = form.text_field :phrase
-      .span1
-        = form.submit :enviar
+- if flash[:error]
+  .row
+    .alert.alert-error.span10
+      = flash[:error]

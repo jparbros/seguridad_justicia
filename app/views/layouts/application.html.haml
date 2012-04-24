@@ -5,19 +5,20 @@
       Seguridad y Justicia | #{@site.label}
     = stylesheet_link_tag    "application", :media => "all"
     = javascript_include_tag "application"
+    %link{href: 'http://fonts.googleapis.com/css?family=Medula+One', rel: 'stylesheet', type: 'text/css'}
+    %link{href: 'http://fonts.googleapis.com/css?family=Oswald:400,700', rel: 'stylesheet', type: 'text/css'}
+    %link{href: 'http://fonts.googleapis.com/css?family=Anton', rel: 'stylesheet', type: 'text/css'}
+    %link{href: 'http://fonts.googleapis.com/css?family=Homenaje', rel: 'stylesheet', type: 'text/css'}
     = csrf_meta_tags
     %meta{name: :viewport, content: "width=device-width, initial-scale=1.0"}
   %body{:class => detect_browser_os}
     .navbar.navbar-fixed-top
       .navbar-inner
         .container
-          = link_to 'Seguridad con Justicia', root_path, class: 'brand'
-          .nav-collapse
-            %ul.nav
-              %li
-                link uno
-              %li
-                link dos
+          = link_to image_tag('logo.png'), root_path, class: 'brand'
+          %span
+            = @site.label
+
     .container
       .subnav.subnav-fixed
         %ul.nav.nav-pills

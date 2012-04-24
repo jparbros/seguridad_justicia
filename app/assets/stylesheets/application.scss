@@ -16,8 +16,18 @@
 
 body { background: url('/assets/background.png'), url('/assets/background-bottom.png') repeat-x 0 bottom;}
 
-.navbar .container {
-  padding-top: 0;
+.navbar {
+  .container {
+    padding-top: 0;
+  }
+
+  span {
+    color: #F59331;
+    display: block;
+    font-size: 21px;
+    font-family: Trebuchet MS;
+    margin: 15px 0 0;
+  }
 }
 
 .container {
