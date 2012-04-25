@@ -1,25 +1,43 @@
-= render partial: 'carousel'
-.sentir-ciudadano.phase-header
-  %h2
-    %span
-      1
-    Sentir Ciudadano
-= render partial: 'phrases'
+#main-content.span8
+  #content
+    = render partial: 'carousel'
+    .sentir-ciudadano.phase-header
+      %h2
+        %span
+          1
+        Sentir Ciudadano
+    = render partial: 'phrases'
 
-.seleccion.phase-header
-  %h2
-    %span
-      2
-    Selecci&oacute;n de Preguntas
+    .seleccion.phase-header
+      %h2
+        %span
+          2
+        Selecci&oacute;n de Preguntas
 
-.destacadas.phase-header
-  %h2
-    %span
-      3
-    Preguntas Destacadas
+    .destacadas.phase-header
+      %h2
+        %span
+          3
+        Preguntas Destacadas
 
-.seguimiento.phase-header
-  %h2
-    %span
-      4
-    Seguimiento del Resultado
+    .seguimiento.phase-header
+      %h2
+        %span
+          4
+        Seguimiento del Resultado
+
+
+#side-bar.span4
+  = render partial: 'mailing_list'
+  = render partial: 'twitter'
+
+<script>
+jQuery(function($){
+$(".tweet").tweet({
+username: "jparbros",
+count: 3,
+loading_text: "cargando tweets...",
+template: "{text}"
+});
+});
+</script>

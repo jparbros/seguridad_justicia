@@ -50,7 +50,18 @@ body { background: url('/assets/background.png'), url('/assets/background-bottom
   }
 }
 
-#side-bar { padding: 55px 0 0 0; }
+#side-bar {
+  margin: 0;
+  padding: 55px 0 0 0;
+
+  h2 {
+    color: #000000;
+    font-size: 40px;
+    font-family: 'Medula One', cursive;
+    font-weight: normal;
+    margin: 10px 0 5px 0;
+  }
+}
 
 /* Subnav */
 .subnav {
@@ -77,6 +88,15 @@ body { background: url('/assets/background.png'), url('/assets/background-bottom
 
 .subnav .nav {
   margin-bottom: 0;
+
+  a {
+    color: #363636;
+    font-family: Trebuchet MS, San Serif;
+    font-size: 12px;
+    text-transform: uppercase;
+
+    &:hover { background: none; text-decoration: underline;}
+  }
 }
 
 .subnav .nav > li > a {

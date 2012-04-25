@@ -23,15 +23,14 @@
       .subnav.subnav-fixed
         %ul.nav.nav-pills
           %li
-            %a
-              uno
+            = link_to 'El Proyecto',''
           %li
-            %a
-              dos
-      .row
-        #main-content.span8
-          #content
-            = yield
+            = link_to 'Posturas Partidistas',''
+          %li
+            = link_to 'Seguridad',''
+          %li
+            = link_to 'Justicia',''
 
-        #side-bar.span4
-          lateral
+
+      .row
+        = yield
