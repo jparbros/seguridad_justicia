@@ -59,10 +59,24 @@
 
 .mailing-list {
   background-color: #f8f8f8;
-  margin: 0;
+  margin: 10px 0 0 0;
   padding: 0 0 0 20px;
   position: relative;
   z-index: -1;
+
+  form {
+    input {
+      &[type=submit] {
+        background: none repeat scroll 0 0 #A00059;
+        border: 0 none;
+        color: #FFFFFF;
+        float: right;
+        margin: 0 80px 10px 0;
+        padding: 5px 0;
+        width: 120px;
+      }
+    }
+  }
 }
 
 .twitter-container {
@@ -166,7 +180,7 @@
     font-family: 'Homenaje', sans-serif;
     font-size: 18px;
     height: 50px;
-    margin: 2px -10px 2px 0;
+    margin: 2px -13px 2px 0;
     width: 90px;
   }
 }
