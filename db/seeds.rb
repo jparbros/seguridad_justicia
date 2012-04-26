@@ -161,7 +161,7 @@ Phrase.create(phrase: 'Duis aute irure dolor in', site_id: chihuahua_site.id)
 Phrase.create(phrase: 'reprehenderit in voluptate velit ', site_id: chihuahua_site.id)
 
 #
-# Phrases Chihuahua
+# Phrases Nuevo Leon
 #
 
 Phrase.create(phrase: 'Lorem ipsum dolor sit amet', site_id: nuevo_leon_site.id)
@@ -174,3 +174,28 @@ Phrase.create(phrase: 'ullamco laboris nisi ut aliquip', site_id: nuevo_leon_sit
 Phrase.create(phrase: 'ex ea commodo consequat', site_id: nuevo_leon_site.id)
 Phrase.create(phrase: 'Duis aute irure dolor in', site_id: nuevo_leon_site.id)
 Phrase.create(phrase: 'reprehenderit in voluptate velit ', site_id: nuevo_leon_site.id)
+
+#
+# Events Baja California
+#
+
+Event.create(title: 'Evento BJ 1', description: 'sed do eiusmod tempor incididunt', venue: 'Plaza Principal', site_id: baja_california_site.id, date: 1.day.from_now)
+Event.create(title: 'Evento BJ 3', description: 'sed do eiusmod tempor incididunt', venue: 'Plaza Principal', site_id: baja_california_site.id, date: 2.day.from_now)
+Event.create(title: 'Evento BJ 3', description: 'sed do eiusmod tempor incididunt', venue: 'Plaza Principal', site_id: baja_california_site.id, date: 3.day.from_now)
+
+
+#
+# Events Chihuahua
+#
+
+Event.create(title: 'Evento Chihuahua 1', description: 'sed do eiusmod tempor incididunt', venue: 'Plaza Principal', site_id: chihuahua_site.id, date: 1.day.from_now)
+Event.create(title: 'Evento Chihuahua 3', description: 'sed do eiusmod tempor incididunt', venue: 'Plaza Principal', site_id: chihuahua_site.id, date: 2.day.from_now)
+Event.create(title: 'Evento Chihuahua 3', description: 'sed do eiusmod tempor incididunt', venue: 'Plaza Principal', site_id: chihuahua_site.id, date: 3.day.from_now)
+
+#
+# Events Nuevo Leon
+#
+
+Event.create(title: 'Evento Nuevo Leon 1', description: 'sed do eiusmod tempor incididunt', venue: 'Plaza Principal', site_id: nuevo_leon_site.id, date: 1.day.from_now)
+Event.create(title: 'Evento Nuevo Leon 3', description: 'sed do eiusmod tempor incididunt', venue: 'Plaza Principal', site_id: nuevo_leon_site.id, date: 2.day.from_now)
+Event.create(title: 'Evento Nuevo Leon 3', description: 'sed do eiusmod tempor incididunt', venue: 'Plaza Principal', site_id: nuevo_leon_site.id, date: 3.day.from_now)

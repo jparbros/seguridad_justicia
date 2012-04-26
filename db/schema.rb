@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120411134753) do
+ActiveRecord::Schema.define(:version => 20120425224330) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -46,6 +46,16 @@ ActiveRecord::Schema.define(:version => 20120411134753) do
     t.string   "word"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "candidates", :force => true do |t|
+    t.string   "name"
+    t.string   "political_party"
+    t.string   "image"
+    t.string   "logo"
+    t.integer  "site_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
   create_table "cms_blocks", :force => true do |t|
@@ -171,6 +181,16 @@ ActiveRecord::Schema.define(:version => 20120411134753) do
     t.boolean  "active"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "events", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.string   "venue"
+    t.date     "date"
+    t.integer  "site_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "phrases", :force => true do |t|

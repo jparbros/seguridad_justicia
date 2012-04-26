@@ -15,4 +15,5 @@
 //= require jquery.jcarousel.min
 //= require jqcloud.min
 //= require jquery.tweet
+//= require jquery.ui.min
 //= require_tree .

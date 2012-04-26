@@ -1,0 +1,10 @@
+.row.span4.events-header
+  %h2
+    Pr&oacute;ximos Eventos
+.events-container.span4
+  %ul
+    - @events.each do |event|
+      %li
+        %span
+          = event.title
+        #{event.description} | #{event.venue} | #{event.date.to_s}

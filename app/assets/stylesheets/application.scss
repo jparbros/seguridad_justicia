@@ -10,11 +10,15 @@
  *
  *= require 'bootstrap.min'
  *= require 'jqcloud'
+ *= require 'jquery.ui'
  *= require_self
  *= require_tree .
 */
 
-body { background: url('/assets/background.png'), url('/assets/background-bottom.png') repeat-x 0 bottom;}
+body {
+  background: url('/assets/background-bottom.png') repeat-x 0 bottom, url('/assets/background.png');
+  margin: 0 0 200px;
+}
 
 .navbar {
   .container {

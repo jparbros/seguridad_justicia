@@ -11,7 +11,7 @@
     %link{href: 'http://fonts.googleapis.com/css?family=Homenaje', rel: 'stylesheet', type: 'text/css'}
     = csrf_meta_tags
     %meta{name: :viewport, content: "width=device-width, initial-scale=1.0"}
-  %body{:class => detect_browser_os}
+  %body{class: detect_browser_os, id: controller_name}
     .navbar.navbar-fixed-top
       .navbar-inner
         .container
@@ -23,7 +23,7 @@
       .subnav.subnav-fixed
         %ul.nav.nav-pills
           %li
-            = link_to 'El Proyecto',''
+            = link_to 'El Proyecto', proyectos_path
           %li
             = link_to 'Posturas Partidistas',''
           %li

@@ -1,0 +1,14 @@
+= link_to 'Crear Evento', new_admin_event_path, class: 'big button'
+%h1
+  Eventos
+
+%ul{class: :list}
+  - @events.each do |event|
+    %li{id: 'event_#{event.id}'}
+      .item
+        .icon
+        .action_links
+          = link_to 'Editar', edit_admin_event_path(event)
+          = link_to 'Eliminar', admin_event_path(event), method: :delete, confirm: '¿Esta seguro de eliminar el evento?'
+        .label
+          = event.title
