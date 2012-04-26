@@ -2,7 +2,7 @@ class Phrase < ActiveRecord::Base
   attr_accessible :phrase, :site_id
 
   validates :phrase, presence: true
-  validate :allowed_words, :uniqueness_by_site
+  validate :allowed_words
 
   belongs_to :site, class_name: 'Cms::Site'
 
