@@ -6,6 +6,8 @@
 .phase-header {
   height: 57px;
   margin: 20px 0;
+  position: relative;
+  z-index: 10;
 
   &:before { float: left; margin: -11px 0 0 -16px; }
 
@@ -61,8 +63,6 @@
   background-color: #f8f8f8;
   margin: 10px 0 0 0;
   padding: 0 0 0 20px;
-  position: relative;
-  z-index: -1;
 
   form {
     input {
@@ -84,14 +84,10 @@
   background-color: #f8f8f8;
   margin: 30px 0 0 0;
   padding: 0 0 0 20px;
-  position: relative;
-  z-index: -1;
 }
 
 .events-container {
   margin: 0 0 0 20px;
-  position: relative;
-  z-index: -1;
 
   ul {
     list-style: none;
@@ -218,7 +214,9 @@
     font-size: 18px;
     height: 50px;
     margin: 2px -12px 2px 0;
+    position: relative;
     width: 90px;
+    z-index: 10;
   }
 }
 
