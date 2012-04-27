@@ -7,7 +7,6 @@ class Admin::BaseController < CmsAdmin::BaseController
   end
 
   def admin_domain
-    puts request.subdomain
-    redirect_to root_path unless request.subdomain == 'admin'
+    #redirect_to root_path unless request.subdomain == 'admin'
   end
 end
