@@ -12,6 +12,6 @@ class ApplicationController < ActionController::Base
   end
 
   def redirect_admin_domain
-    redirect_to admin_root_path if request.subdomain == 'admin' and !params[:controller].match(/admin/)
+    #redirect_to admin_root_path if request.subdomain == 'admin' and !params[:controller].match(/admin/)
   end
 end
