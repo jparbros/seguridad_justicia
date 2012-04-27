@@ -1,8 +1,10 @@
 %li
   %span
     Menu Administracion
-%li
-  = link_to 'Administradores', admin_admins_path
+- if current_admin.super_admin?
+  %li
+    = link_to 'Administradores', admin_admins_path
+
 %li
   = link_to 'Banners', admin_banners_path
 %li
