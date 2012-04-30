@@ -19,7 +19,7 @@ class Phrase < ActiveRecord::Base
   end
 
   def self.by_site_to_cloud(site_id)
-    phrases = where(site_id: site_id).order('created_at DESC').limit(50)
-    phrases.collect {|phrase| {text: phrase.phrase, weight:  phrase.id}}.to_json
+    phrases = where(site_id: site_id).group(:phrase).select('SUM(1) as weight, phrase').order('weight DESC').limit(50)
+    phrases.collect {|phrase| {text: phrase.phrase, weight:  phrase.weight}}.to_json
   end
 end
