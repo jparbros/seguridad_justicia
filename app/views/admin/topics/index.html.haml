@@ -1,0 +1,14 @@
+= link_to 'Crear Tema', new_admin_topic_path, class: 'big button'
+%h1
+  Temas
+
+%ul{class: :list}
+  - @topics.each do |topic|
+    %li{id: 'topic_#{topic.id}'}
+      .item
+        .icon
+        .action_links
+          = link_to 'Editar', edit_admin_topic_path(topic)
+          = link_to 'Eliminar', edit_admin_topic_path(topic), method: :delete, confirm: '¿Esta seguro de eliminar el Tema?'
+        .label
+          = topic.name

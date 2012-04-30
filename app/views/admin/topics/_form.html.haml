@@ -1,0 +1,11 @@
+.form_element.text_field_element
+  .label
+    %label
+      Tema
+  .value
+    = form.text_field :name
+
+.form_element.submit_element
+  .label
+  .value
+    = form.submit (@topic.new_record? ? 'Crear' : 'Editar')

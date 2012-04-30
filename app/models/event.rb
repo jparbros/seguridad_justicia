@@ -6,6 +6,6 @@ class Event < ActiveRecord::Base
   end
 
   def self.to_home(site_id)
-    where(site_id: site_id).order('date DESC').limit(3)
+    where(site_id: site_id).order('date DESC').limit(2)
   end
 end

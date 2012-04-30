@@ -1,0 +1,25 @@
+.form_element.text_field_element
+  .label
+    %label
+      Partido Politico y/o Alianza
+  .value
+    = form.text_field :name
+
+.form_element.select_element
+  .label
+    %label
+      Iniciales
+  .value
+    = form.text_field :initials
+
+.form_element.select_element
+  .label
+    %label
+      Lugar
+  .value
+    = form.file_field :logo
+
+.form_element.submit_element
+  .label
+  .value
+    = form.submit (@political_party.new_record? ? 'Crear' : 'Editar')

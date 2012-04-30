@@ -1,5 +1,11 @@
 SeguridadJusticia::Application.routes.draw do
 
+  get "topics/index"
+
+  get "topics/new"
+
+  get "topics/edit"
+
   get "events/index"
 
   get "events/show"
@@ -12,6 +18,8 @@ SeguridadJusticia::Application.routes.draw do
     resources :admins
     resources :debates
     resources :events
+    resources :political_parties
+    resources :topics
 
     root :to => "dashboard#show"
   end

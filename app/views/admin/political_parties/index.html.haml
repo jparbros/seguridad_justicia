@@ -1,0 +1,14 @@
+= link_to 'Crear Partido Politico', new_admin_political_party_path, class: 'big button'
+%h1
+  Partidos Politicos y/o Alianzas
+
+%ul{class: :list}
+  - @political_parties.each do |political_party|
+    %li{id: 'political_party_#{political_party.id}'}
+      .item
+        .icon
+        .action_links
+          = link_to 'Editar', edit_admin_political_party_path(political_party)
+          = link_to 'Eliminar', admin_political_party_path(political_party), method: :delete, confirm: '¿Esta seguro de eliminar el Partido Politico?'
+        .label
+          = political_party.name

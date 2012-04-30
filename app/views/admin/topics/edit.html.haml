@@ -1,0 +1,5 @@
+%h1
+  Editar Tema
+
+= form_for(@topic, url: admin_topics_path(@topic), class: 'form_element', method: :put) do |form|
+  = render partial: 'form', object: form
