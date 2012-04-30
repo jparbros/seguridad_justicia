@@ -155,17 +155,21 @@
 }
 
 .jcarousel-control {
-  margin: -25px 0 0;
+  margin: -25px 21px 0 0;
   position: relative;
-  text-align: center;
+  text-align: right;
   z-index: 1000;
 
   a {
-    background: url('/assets/bullet-empty.png') no-repeat;
-    padding: 3px 10px;
+    background-color: #FFFFFF;
+    border: 0;
+    font-size: 1px;
+    opacity: 0.5;
+    padding: 0 5px;
 
     &.bullet-filled {
-      background: url('/assets/bullet-filled.png') no-repeat;
+      border: 0;
+      opacity: 1;
     }
 
     &:hover { text-decoration: none;}

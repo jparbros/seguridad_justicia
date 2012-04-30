@@ -14,12 +14,24 @@ $ ->
       carousel.scroll($.jcarousel.intval(index))
     );
 
+  itemLoadCallback = (carousel, state) ->
+    if state == 'next'
+      bullet_filled = $('a.bullet-filled')
+      bullet_filled.removeClass('bullet-filled')
+      bullet_filled.next().addClass('bullet-filled')
+    if state == 'prev'
+      $('a.bullet-filled').removeClass('bullet-filled')
+      $('.jcarousel-control').children().first().addClass('bullet-filled')
+
   $('#carousel').jcarousel({
+    auto: 5,
+    wrap: 'last',
     scroll: 1,
     visible: 1,
     initCallback: initCallback,
     buttonNextHTML: null,
-    buttonPrevHTML: null
+    buttonPrevHTML: null,
+    itemLoadCallback: {onBeforeAnimation: itemLoadCallback}
   })
 
   $.get('/frases.json', (data) ->
