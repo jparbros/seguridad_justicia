@@ -1,0 +1,117 @@
+// Place all the styles related to the posturas controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.modal {
+  display: none;
+  left: 32%;
+  width: 1020px;
+
+  ul {
+    list-style: none;
+    border-right: 1px solid #ccc;
+  }
+}
+
+#posturas {
+  #content {
+    background: #cccccc;
+    padding: 43px 40px 0;
+
+
+    ul {
+      list-style: none;
+      margin: 0;
+
+      li.topics {
+        height: 57px;
+        margin: 20px 0 0 -40px;
+        width: 940px;
+
+        &:before { float: left; margin: -11px 0 0 -16px; }
+
+        &:after { float: right; margin: -60px -16px 0 0; }
+
+        &.uno {
+          background: #ffc230;
+
+          &:before { content: url("/assets/sentir-before.png"); }
+          &:after { content: url("/assets/sentir-after.png"); }
+        }
+
+        &.dos {
+          background: #fdac87;
+
+          &:before { content: url("/assets/seleccion-before.png"); }
+          &:after { content: url("/assets/seleccion-after.png"); }
+        }
+
+        &.tres {
+          background: #f69abe;
+
+          &:before { content: url("/assets/destacada-before.png"); }
+          &:after { content: url("/assets/destacada-after.png"); }
+        }
+
+        &.cuatro {
+          background: #bf8dbb;
+
+          &:before { content: url("/assets/seguimiento-before.png"); }
+          &:after { content: url("/assets/seguimiento-after.png"); }
+        }
+
+        h2 {
+          color: #ffffff;
+          font-size: 40px;
+          font-family: 'Medula One', cursive;
+          font-weight: 200;
+          padding: 8px 0 0 0;
+
+          span {
+            font-size: 40px;
+            font-family: 'Anton', sans-serif;
+          }
+        }
+      }
+    }
+
+    h2 {
+        color: #000000;
+        font-family: 'Medula One',cursive;
+        font-size: 40px;
+        font-weight: normal;
+        margin: 10px 0 5px;
+    }
+
+    h3 {
+      color: #000000;
+      font-family: 'Medula One',cursive;
+      font-size: 28px;
+      font-weight: normal;
+      margin: 10px 0 5px;
+    }
+
+    p {
+      font-family: Trebuchet MS,san serif;
+      font-size: 12px;
+
+      span {
+        font-size: 14px;
+        font-weight: bold;
+      }
+    }
+
+    &.quienes-somos {
+      margin: 30px 0 0 20px;
+      padding: 20px 40px 10px;
+
+      img {margin: 0 20px 0 0; opacity: 0.5;}
+      p {opacity: 0.5;}
+
+      &:hover {
+        img {opacity:1;}
+        p {opacity: 1;}
+      }
+    }
+  }
+}

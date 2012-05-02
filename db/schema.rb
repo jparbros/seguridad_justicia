@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120430140056) do
+ActiveRecord::Schema.define(:version => 20120501121011) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -209,9 +209,23 @@ ActiveRecord::Schema.define(:version => 20120430140056) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "positions", :force => true do |t|
+    t.integer  "site_id"
+    t.integer  "topic_id"
+    t.integer  "political_party_id"
+    t.text     "content"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+  end
+
+  add_index "positions", ["political_party_id"], :name => "index_positions_on_political_party_id"
+  add_index "positions", ["site_id"], :name => "index_positions_on_site_id"
+  add_index "positions", ["topic_id"], :name => "index_positions_on_topic_id"
+
   create_table "topics", :force => true do |t|
     t.string   "name"
     t.integer  "site_id"
+    t.string   "kind"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

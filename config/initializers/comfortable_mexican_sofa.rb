@@ -2,7 +2,7 @@
 
 ComfortableMexicanSofa.configure do |config|
   # Title of the admin area
-  config.cms_title = 'Seguridad y Justicia | Admin'
+  config.cms_title = 'Seguridad con Justicia | Admin'
 
   # Module responsible for authentication. You can replace it with your own.
   # It simply needs to have #authenticate method. See http_auth.rb for reference.
@@ -32,7 +32,15 @@ ComfortableMexicanSofa.configure do |config|
   # the upload method and appropriate settings based on Paperclip.  For S3 see:
   # http://rdoc.info/gems/paperclip/2.3.8/Paperclip/Storage/S3, and for
   # filesystem see: http://rdoc.info/gems/paperclip/2.3.8/Paperclip/Storage/S3
-  #   config.upload_file_options = {:storage => :filesystem}
+  config.upload_file_options = {
+        path: "files/:class/:id/:attachment/:style/:filename",
+        storage: :fog,
+        fog_credentials: {
+          provider: 'Google',
+          google_storage_access_key_id: 'GOOGVZIMJX5HY5U52MDH',
+          google_storage_secret_access_key: 'vntfgFHrds1XeXXXmFPCJYsqw2er7HEtfHtDRi3C' },
+        fog_directory: 'seguridadjusticia'
+  }
 
   # Sofa allows you to setup entire site from files. Database is updated with each
   # request (if necessary). Please note that database entries are destroyed if there's

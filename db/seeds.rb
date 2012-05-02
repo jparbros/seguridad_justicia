@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 #
@@ -199,3 +200,84 @@ Event.create(title: 'Evento Chihuahua 3', description: 'sed do eiusmod tempor in
 Event.create(title: 'Evento Nuevo Leon 1', description: 'sed do eiusmod tempor incididunt', venue: 'Plaza Principal', site_id: nuevo_leon_site.id, date: 1.day.from_now)
 Event.create(title: 'Evento Nuevo Leon 3', description: 'sed do eiusmod tempor incididunt', venue: 'Plaza Principal', site_id: nuevo_leon_site.id, date: 2.day.from_now)
 Event.create(title: 'Evento Nuevo Leon 3', description: 'sed do eiusmod tempor incididunt', venue: 'Plaza Principal', site_id: nuevo_leon_site.id, date: 3.day.from_now)
+
+#
+# Political Parties Baja California
+#
+
+pp_bj_001 = PoliticalParty.create!(name: 'Partido Acción Nacional', initials: 'PAN', site_id: baja_california_site.id)
+pp_bj_001.logo = File.open(File.join(Rails.root, '/db/images/logo_pan.gif'))
+pp_bj_001.save
+
+pp_bj_002 = PoliticalParty.create!(name: 'Nueva Alianza', initials: 'AN', site_id: baja_california_site.id)
+pp_bj_002.logo = File.open(File.join(Rails.root, '/db/images/logo_nueva_alianza.jpg'))
+pp_bj_002.save
+
+pp_bj_003 = PoliticalParty.create!(name: 'Movimiento Progresista', initials: 'PRD/MC/PT', site_id: baja_california_site.id)
+pp_bj_003.logo = File.open(File.join(Rails.root, '/db/images/logo_movimiento_progresista.png'))
+pp_bj_003.save
+
+pp_bj_004 = PoliticalParty.create!(name: 'Compromiso por México', initials: 'PRI/PVM', site_id: baja_california_site.id)
+pp_bj_004.logo = File.open(File.join(Rails.root, '/db/images/logo_compromiso_por_mexico.jpg'))
+pp_bj_004.save
+
+#
+# Political Parties Chihuahua
+#
+
+pp_bj_001 = PoliticalParty.create!(name: 'Partido Acción Nacional', initials: 'PAN', site_id: chihuahua_site.id)
+pp_bj_001.logo = File.open(File.join(Rails.root, '/db/images/logo_pan.gif'))
+pp_bj_001.save
+
+pp_bj_002 = PoliticalParty.create!(name: 'Nueva Alianza', initials: 'AN', site_id: chihuahua_site.id)
+pp_bj_002.logo = File.open(File.join(Rails.root, '/db/images/logo_nueva_alianza.jpg'))
+pp_bj_002.save
+
+pp_bj_003 = PoliticalParty.create!(name: 'Movimiento Progresista', initials: 'PRD/MC/PT', site_id: chihuahua_site.id)
+pp_bj_003.logo = File.open(File.join(Rails.root, '/db/images/logo_movimiento_progresista.png'))
+pp_bj_003.save
+
+pp_bj_004 = PoliticalParty.create!(name: 'Compromiso por México', initials: 'PRI/PVM', site_id: chihuahua_site.id)
+pp_bj_004.logo = File.open(File.join(Rails.root, '/db/images/logo_compromiso_por_mexico.jpg'))
+pp_bj_004.save
+
+#
+# Political Parties Nuevo Leon
+#
+
+pp_bj_001 = PoliticalParty.create!(name: 'Partido Acción Nacional', initials: 'PAN', site_id: nuevo_leon_site.id)
+pp_bj_001.logo = File.open(File.join(Rails.root, '/db/images/logo_pan.gif'))
+pp_bj_001.save
+
+pp_bj_002 = PoliticalParty.create!(name: 'Nueva Alianza', initials: 'AN', site_id: nuevo_leon_site.id)
+pp_bj_002.logo = File.open(File.join(Rails.root, '/db/images/logo_nueva_alianza.jpg'))
+pp_bj_002.save
+
+pp_bj_003 = PoliticalParty.create!(name: 'Movimiento Progresista', initials: 'PRD/MC/PT', site_id: nuevo_leon_site.id)
+pp_bj_003.logo = File.open(File.join(Rails.root, '/db/images/logo_movimiento_progresista.png'))
+pp_bj_003.save
+
+pp_bj_004 = PoliticalParty.create!(name: 'Compromiso por México', initials: 'PRI/PVM', site_id: nuevo_leon_site.id)
+pp_bj_004.logo = File.open(File.join(Rails.root, '/db/images/logo_compromiso_por_mexico.jpg'))
+pp_bj_004.save
+
+#
+# Load Positions
+#
+
+posturas = File.read('doc/seguridad.csv').force_encoding('MacRoman').encode('UTF-8')
+posturas_seguridad = CSV.parse(posturas, :headers => true)
+
+[baja_california_site, chihuahua_site, nuevo_leon_site].each do |site|
+  posturas_seguridad.each do |posturas|
+    tema = Topic.find_or_create_by_name_and_site_id_and_kind posturas['tema'], site.id ,'seguridad'
+    PoliticalParty.by_site(site.id).each do |political_party|
+      Position.create(
+        content: posturas[political_party.name.to_s],
+        political_party_id: political_party.id,
+        topic_id: tema.id,
+        site_id: site.id
+      )
+    end
+  end
+end

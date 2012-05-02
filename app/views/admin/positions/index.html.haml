@@ -1,0 +1,20 @@
+= link_to 'Crear Postura Partidista', new_admin_position_path, class: 'big button'
+%h1
+  Posturas Partidistas
+
+%ul{class: :list}
+  - @positions.each do |position|
+    %li{id: 'political_party_#{position.id}'}
+      .item
+        .icon
+        .action_links
+          = link_to 'Editar', edit_admin_position_path(position)
+          = link_to 'Eliminar', admin_position_path(position), method: :delete, confirm: '¿Esta seguro de eliminar la Postura pastidista?'
+        .label
+          = position.political_party_name
+          |
+          = position.topic_name
+          .sublabel
+            = position.content[0,100]
+
+= render partial: '/admin/common/position_right_column'

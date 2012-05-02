@@ -12,3 +12,5 @@
           = link_to 'Eliminar', admin_political_party_path(political_party), method: :delete, confirm: '¿Esta seguro de eliminar el Partido Politico?'
         .label
           = political_party.name
+
+= render partial: '/admin/common/position_right_column'

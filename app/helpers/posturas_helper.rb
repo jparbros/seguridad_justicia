@@ -1,0 +1,2 @@
+module PosturasHelper
+end

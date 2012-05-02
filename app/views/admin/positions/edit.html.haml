@@ -1,0 +1,7 @@
+%h1
+  Editar Postura Partidista
+
+= form_for(@position, url: admin_positions_path(@position), class: 'form_element', method: :put) do |form|
+  = render partial: 'form', object: form
+
+= render partial: '/admin/common/position_right_column'

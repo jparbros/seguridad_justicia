@@ -1,0 +1,25 @@
+.form_element.text_field_element
+  .label
+    %label
+      Partido Politico y/o Alianza
+  .value
+    = form.select :political_party_id, PoliticalParty.by_site(@site.id).collect {|p| [ p.name, p.id ]}, include_blank: true
+
+.form_element.select_element
+  .label
+    %label
+      Tema
+  .value
+    = form.select :topic_id, Topic.by_site(@site.id).collect {|p| [ p.name, p.id ]}, include_blank: true
+
+.form_element.select_element
+  .label
+    %label
+      Postura
+  .value
+    = form.text_area :content
+
+.form_element.submit_element
+  .label
+  .value
+    = form.submit (@position.new_record? ? 'Crear' : 'Editar')

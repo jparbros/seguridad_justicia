@@ -16,4 +16,5 @@
 //= require jqcloud.min
 //= require jquery.tweet
 //= require jquery.ui.min
+//= require bootstrap.min
 //= require_tree .

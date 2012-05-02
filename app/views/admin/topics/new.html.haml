@@ -3,3 +3,5 @@
 
 = form_for(@topic, url: admin_topics_path, class: 'form_element', multipart: true) do |form|
   = render partial: 'form', object: form
+
+= render partial: '/admin/common/position_right_column'
