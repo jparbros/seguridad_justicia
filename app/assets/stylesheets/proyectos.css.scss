@@ -3,47 +3,13 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #proyectos{
-  #content {
-    background: #cccccc;
-    padding: 43px 40px 0;
-
-    h2 {
-        color: #000000;
-        font-family: 'Medula One',cursive;
-        font-size: 40px;
-        font-weight: normal;
-        margin: 10px 0 5px;
+  #main-content {
+    #content {
+      padding: 55px 0 50px;
     }
+  }
 
-    h3 {
-      color: #000000;
-      font-family: 'Medula One',cursive;
-      font-size: 28px;
-      font-weight: normal;
-      margin: 10px 0 5px;
-    }
-
-    p {
-      font-family: Trebuchet MS,san serif;
-      font-size: 12px;
-
-      span {
-        font-size: 14px;
-        font-weight: bold;
-      }
-    }
-
-    &.quienes-somos {
-      margin: 30px 0 0 20px;
-      padding: 20px 40px 10px;
-
-      img {margin: 0 20px 0 0; opacity: 0.5;}
-      p {opacity: 0.5;}
-
-      &:hover {
-        img {opacity:1;}
-        p {opacity: 1;}
-      }
-    }
+  .phase-header {
+    &:after { float: right; margin: -55px -16px 0 0; }
   }
 }

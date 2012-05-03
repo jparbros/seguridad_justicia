@@ -4,6 +4,6 @@ class ProyectosController < ApplicationController
   end
 
   def index
-
+    @events = Event.to_home(@site.id)
   end
 end
