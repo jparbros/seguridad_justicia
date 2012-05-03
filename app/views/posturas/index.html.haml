@@ -1,13 +1,32 @@
-#content.span11
-  %h2
-    Posturas Partidistas
+#main-content.span8
+  #content
+    %p
+      En esta sección, promoviendo el voto informado, podras encontrar las propuestas de los diferentes partidos politicos y alianzas en temas de seguridad y justicias.
 
-  %ul
-    - @topics.each do |topic|
-      %a{'data-toggle' => "modal", href: "##{topic.name.parameterize}"}
-        %li{class: [['uno','dos','tres','cuatro'].sample, :topics]}
-          %h2
-            = topic.name
+    .sentir-ciudadano.phase-header
+      %h2
+        %span
+          1)
+        Seguridad
+
+    %ul.row
+      - @topics_seguridad.each do |topic|
+        %li.topics.span3
+          = link_to topic.name, "##{topic.name.parameterize}", 'data-toggle' => :modal
+
+    .seleccion.phase-header
+      %h2
+        %span
+          2)
+        Justicia
+
+    %ul.row
+      - @topics_justicia.each do |topic|
+        %li.topics.span3
+          = link_to topic.name, "##{topic.name.parameterize}", 'data-toggle' => :modal
+
+
+= render partial: 'common/right_column'
 
 - @topics.each do |topic|
   .modal{id: "#{topic.name.parameterize}"}

@@ -27,18 +27,4 @@
         Seguimiento del Resultado
 
 
-#side-bar.span4
-  = render partial: 'mailing_list'
-  = render partial: 'twitter'
-  = render partial: 'events'
-
-<script>
-jQuery(function($){
-$(".tweet").tweet({
-username: "jparbros",
-count: 3,
-loading_text: "cargando tweets...",
-template: "{text}"
-});
-});
-</script>
+= render partial: 'common/right_column'

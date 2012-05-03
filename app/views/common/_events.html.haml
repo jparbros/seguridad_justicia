@@ -3,6 +3,11 @@
     Pr&oacute;ximos Eventos
 .events-container.span4
   %ul
+    - if @events.blank?
+      %li
+        %span
+          No hay eventos disponibles
+
     - @events.each do |event|
       %li
         %span

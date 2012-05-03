@@ -7,4 +7,12 @@ class Topic < ActiveRecord::Base
   def self.by_site(site_id)
     where(site_id: site_id)
   end
+
+  def self.seguridad_by_site(site_id)
+    where(site_id: site_id, kind: :seguridad)
+  end
+
+  def self.justicia_by_site(site_id)
+    where(site_id: site_id, kind: :justicia)
+  end
 end

@@ -32,3 +32,16 @@
 
       .row
         = yield
+
+<script>
+jQuery(function($){
+if($(".tweet")) {
+$(".tweet").tweet({
+username: "#{twitter_account}",
+count: 3,
+loading_text: "cargando tweets...",
+template: "{text}"
+});
+}
+});
+</script>
