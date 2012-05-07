@@ -39,7 +39,8 @@ ComfortableMexicanSofa.configure do |config|
           provider: 'Google',
           google_storage_access_key_id: 'GOOGVZIMJX5HY5U52MDH',
           google_storage_secret_access_key: 'vntfgFHrds1XeXXXmFPCJYsqw2er7HEtfHtDRi3C' },
-        fog_directory: 'seguridadjusticia'
+        fog_directory: 'seguridadjusticia',
+        :fog_public => true
   }
 
   # Sofa allows you to setup entire site from files. Database is updated with each
