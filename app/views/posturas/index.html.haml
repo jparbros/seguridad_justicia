@@ -37,6 +37,7 @@
           %h3
             = political_party.name
           %ul
+            = image_tag political_party.logo.url
             - Position.by_topic_and_political_party(topic.id, political_party.id).each do |position|
               %li
                 %p
@@ -44,3 +45,6 @@
 
     .modal-footer
       = link_to 'Cerrar','#', class: :btn
+
+%script
+  $('.modal-footer a').click(function() { $('.modal').modal('hide') })
