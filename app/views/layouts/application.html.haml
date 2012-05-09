@@ -23,10 +23,8 @@
       .subnav.subnav-fixed
         %ul.nav.nav-pills
           %li
-            = link_to 'El Proyecto', proyectos_path
-          %li
             = link_to 'Posturas Partidistas', posturas_path
-          - @site.pages.each do |page|
+          - @site.pages.where(:is_published => true).each do |page|
             %li
               = link_to page.label, page.full_path
 
