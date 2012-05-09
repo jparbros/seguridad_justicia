@@ -8,7 +8,7 @@ gem 'comfortable_mexican_sofa','1.6.18'
 gem 'devise'
 gem 'haml-rails'
 gem 'carrierwave'
-gem 'fog'
+gem 'fog','1.3.1'
 gem 'mini_magick'
 gem 'detect_browser_os'
 
