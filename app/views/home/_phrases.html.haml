@@ -1,7 +1,3 @@
-.row
-  .span8
-    #phrases-container
-      #phrases-box
 = form_for Phrase.new, url: frases_path do |form|
   .row.seria-seguro
     .span3
@@ -15,3 +11,8 @@
   .row
     .alert.alert-error.span10
       = flash[:error]
+      
+.row
+  .span8
+    #phrases-container
+      #phrases-box

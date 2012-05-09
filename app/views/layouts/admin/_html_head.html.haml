@@ -1,1 +1,4 @@
-= javascript_include_tag "admin/events.js"
+%script
+  $(document).ready(function() {
+  $('#event_date').datepicker({dateFormat:'dd-mm-yy'});
+  });

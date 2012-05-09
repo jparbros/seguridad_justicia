@@ -19,6 +19,5 @@ SeguridadJusticia::Application.routes.draw do
   resources :frases
   root :to => "home#show"
 
-  match '/proyecto' => 'proyectos#index', as: :proyectos
   match '/posturas_partidistas' => 'posturas#index', as: :posturas
 end
