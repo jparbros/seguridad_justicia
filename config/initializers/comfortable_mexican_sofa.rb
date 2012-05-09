@@ -36,9 +36,9 @@ ComfortableMexicanSofa.configure do |config|
         path: "files/:class/:id/:attachment/:style/:filename",
         storage: :fog,
         fog_credentials: {
-          provider: 'Google',
-          google_storage_access_key_id: 'GOOGVZIMJX5HY5U52MDH',
-          google_storage_secret_access_key: 'vntfgFHrds1XeXXXmFPCJYsqw2er7HEtfHtDRi3C' },
+          provider: 'AWS',
+          aws_secret_access_key: 'AKIAIMYIAP4I5LHK7TWQ',
+          aws_access_key_id: 'N0SVd2HD2XzBHvfUSmDu5i8SS9fb3EdGYKKk/B/g' },
         fog_directory: 'seguridadjusticia',
         fog_public: true
   }
