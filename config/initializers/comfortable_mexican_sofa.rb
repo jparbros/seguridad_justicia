@@ -37,9 +37,9 @@ ComfortableMexicanSofa.configure do |config|
         storage: :fog,
         fog_credentials: {
           provider: 'AWS',
-          aws_secret_access_key: 'AKIAIMYIAP4I5LHK7TWQ',
-          aws_access_key_id: 'N0SVd2HD2XzBHvfUSmDu5i8SS9fb3EdGYKKk/B/g' },
-        fog_directory: 'seguridadjusticia',
+          aws_secret_access_key: 'AKIAJHR7V4YLDVFZCKRQ',
+          aws_access_key_id: 'eLtQ9szTYpBQ37mg7xrt8SWhcvH0eEHtZxzd3Iuc' },
+        fog_directory: 'seguridadconjusticia',
         fog_public: true
   }
 
