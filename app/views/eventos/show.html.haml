@@ -15,7 +15,7 @@
       = @evento.date
 
     %p
-      = @evento.description
+      = @evento.description.html_safe
 
 
 = render partial: 'common/right_column'
