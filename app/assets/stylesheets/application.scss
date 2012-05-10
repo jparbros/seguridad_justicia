@@ -140,11 +140,15 @@ body {
   z-index: 1020; /* 10 less than .navbar-fixed to prevent any overlap */
 }
 
-#cms_content {
+#cms_content, #eventos {
   #content {
     color: #ffffff;
     font-family: Trebuchet MS,san serif;
     font-size: 16px;
+
+    .event_description {
+      margin: 0 0 0 20px;
+    }
   }
 }
 
