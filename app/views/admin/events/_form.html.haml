@@ -8,13 +8,6 @@
 .form_element.select_element
   .label
     %label
-      Descripci&oacute;n
-  .value
-    = form.text_field :description
-
-.form_element.select_element
-  .label
-    %label
       Lugar
   .value
     = form.text_field :venue
@@ -26,6 +19,12 @@
   .value
     = form.text_field :date
 
+.form_element.select_element
+  .label
+    %label
+      Descripci&oacute;n
+  .value
+    = form.text_area :description, class: :rich_text
 
 .form_element.submit_element
   .label

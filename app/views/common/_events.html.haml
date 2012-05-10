@@ -11,5 +11,5 @@
     - @events.each do |event|
       %li
         %span
-          = event.title
-        #{event.description} | #{event.venue} | #{event.date.to_s}
+          = link_to event.title, evento_path(event)
+        #{event.venue} | #{event.date.to_s}
