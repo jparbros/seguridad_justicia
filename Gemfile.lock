@@ -1,5 +1,6 @@
-PATH
-  remote: ../comfortable-mexican-sofa
+GIT
+  remote: git@github.com:jparbros/comfortable-mexican-sofa.git
+  revision: e0b8e9d0519a4f805527e4b28e46fef009ca71a6
   specs:
     comfortable_mexican_sofa (1.6.18)
       active_link_to (~> 1.0.0)
