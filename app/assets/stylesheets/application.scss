@@ -137,7 +137,7 @@ body {
   position: fixed;
   top: 50px;
   width: 940px;
-  z-index: 1020; /* 10 less than .navbar-fixed to prevent any overlap */
+  z-index: 100000000; /* 10 less than .navbar-fixed to prevent any overlap */
 }
 
 #cms_content, #eventos {
