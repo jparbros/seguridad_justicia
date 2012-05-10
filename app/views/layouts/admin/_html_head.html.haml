@@ -1,4 +1,8 @@
+= javascript_include_tag "jquery-calendar.js"
+= stylesheet_link_tag 'jquery-calendar.css'
+
 %script
   $(document).ready(function() {
-  $('#event_date').datepicker({dateFormat:'dd-mm-yy'});
+  $('#event_date').calendar();
   });
+
