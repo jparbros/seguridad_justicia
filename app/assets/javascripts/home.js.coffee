@@ -23,16 +23,17 @@ $ ->
       $('a.bullet-filled').removeClass('bullet-filled')
       $('.jcarousel-control').children().first().addClass('bullet-filled')
 
-  $('#carousel').jcarousel({
-    auto: 5,
-    wrap: 'last',
-    scroll: 1,
-    visible: 1,
-    initCallback: initCallback,
-    buttonNextHTML: null,
-    buttonPrevHTML: null,
-    itemLoadCallback: {onBeforeAnimation: itemLoadCallback}
-  })
+  if($('#carousel img').size() > 0)
+    $('#carousel').jcarousel({
+      auto: 5,
+      wrap: 'last',
+      scroll: 1,
+      visible: 1,
+      initCallback: initCallback,
+      buttonNextHTML: null,
+      buttonPrevHTML: null,
+      itemLoadCallback: {onBeforeAnimation: itemLoadCallback}
+    })
 
   $.get('/frases.json', (data) ->
     $("#phrases-box").jQCloud(data);
