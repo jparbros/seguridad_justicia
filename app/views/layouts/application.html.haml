@@ -24,7 +24,7 @@
         %ul.nav.nav-pills
           %li
             = link_to 'Posturas Partidistas', posturas_path
-          - @site.pages.where(:is_published => true).each do |page|
+          - @site.pages.where(:is_published => true).for_category('Menu').each do |page|
             %li
               = link_to page.label, page.full_path
 
