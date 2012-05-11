@@ -156,15 +156,19 @@ body {
   }
 }
 
+#cms_content {
+  #content {
+    div {
+      margin-left: 20px;
+    }
+  }
+}
+
 #main-content {
   #content {
     color: #FFFFFF;
     font-family: Trebuchet MS,san serif;
     font-size: 16px;
-
-    div {
-      margin-left: 20px;
-    }
 
     h2 {
       color: #FFFFFF;
