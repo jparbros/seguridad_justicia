@@ -17,3 +17,5 @@
   = link_to 'Eventos', admin_events_path
 %li
   = link_to 'Posturas Partidistas', admin_positions_path
+%li
+  = link_to("Logout", destroy_admin_session_path, :method => :delete)
