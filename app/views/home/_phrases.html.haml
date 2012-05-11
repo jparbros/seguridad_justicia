@@ -2,7 +2,7 @@
   .row.seria-seguro
     .span3
       %span
-        #{@site.label} ser&iacute;a m&aacute;s justa y segura si:
+        = question_phrase.html_safe
     .span5.frases-input
       = form.text_field :phrase, class: :span4
       = form.submit 'Enviar >>', class: :span1
@@ -11,7 +11,7 @@
   .row
     .alert.alert-error.span10
       = flash[:error]
-      
+
 .row
   .span8
     #phrases-container
