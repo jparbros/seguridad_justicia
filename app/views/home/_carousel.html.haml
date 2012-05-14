@@ -3,7 +3,7 @@
     - @banners.each do |banner|
       %li
         - if banner.link.present?
-          = link_to image_tag(banner.image.url, width: 652, height: 155), banner.link
+          = link_to image_tag(banner.image.url, width: 652, height: 155), banner.link_to_banner
         - else
           = image_tag(banner.image.url, width: 652, height: 155)
 

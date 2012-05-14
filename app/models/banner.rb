@@ -11,9 +11,9 @@ class Banner < ActiveRecord::Base
     where(site_id: site_id)
   end
 
-  def link
-    if super.present?
-      super.match('http://') ? super : 'http://' + super
+  def link_to_banner
+    if link.present?
+      link.match('http://') ? link : 'http://' + link
     end
   end
 end
