@@ -1,5 +1,5 @@
 class Banner < ActiveRecord::Base
-  attr_accessible :active, :position, :image, :site_id
+  attr_accessible :active, :position, :image, :site_id, :link
 
   mount_uploader :image, ImageUploader
 
@@ -9,5 +9,11 @@ class Banner < ActiveRecord::Base
 
   def self.by_site(site_id)
     where(site_id: site_id)
+  end
+
+  def link
+    if super.present?
+      super.match('http://') ? super : 'http://' + super
+    end
   end
 end

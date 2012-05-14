@@ -11,9 +11,17 @@
 .form_element.select_element
   .label
     %label
+      Link
+  .value
+    = form.text_field :link
+
+.form_element.select_element
+  .label
+    %label
       Activo
   .value
     = form.check_box :active
+
 
 .form_element.submit_element
   .label

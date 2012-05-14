@@ -221,6 +221,10 @@
     position: relative;
     width: 90px;
     z-index: 10;
+
+    .chrome & {
+      margin: -62px -12px 2px 0;
+    }
   }
 }
 

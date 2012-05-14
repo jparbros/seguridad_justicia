@@ -2,7 +2,10 @@
   %ul#carousel
     - @banners.each do |banner|
       %li
-        = image_tag banner.image.url, width: 652, height: 155
+        - if banner.link.present?
+          = link_to image_tag(banner.image.url, width: 652, height: 155), banner.link
+        - else
+          = image_tag(banner.image.url, width: 652, height: 155)
 
   .jcarousel-control
     - @banners.each_with_index do |banner, index|

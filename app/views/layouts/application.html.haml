@@ -18,6 +18,11 @@
           = link_to image_tag('logo.png'), root_path, class: 'brand'
           %span
             = @site.label
+          .social-networs
+            Siguenos en:
+            = image_tag('/assets/facebook.png')
+            = link_to image_tag('/assets/twitter-logo.png'), "http://www.twitter.com/#{twitter_account}", target: '_blank'
+            = image_tag('/assets/youtube.png')
 
     .container
       .subnav.subnav-fixed
