@@ -7,6 +7,10 @@ class Banner < ActiveRecord::Base
 
   validates :site_id, presence: true
 
+  def self.active
+    where(active: true)
+  end
+
   def self.by_site(site_id)
     where(site_id: site_id)
   end
