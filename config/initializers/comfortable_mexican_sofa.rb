@@ -81,6 +81,12 @@ ComfortableMexicanSofa.configure do |config|
   # definition in your database.yml file
   #   config.database_config = nil
 
+  # Site aliases, if you want to have aliases for your site. Good for harmonizing
+  # production env with dev/testing envs.
+  # e.g. config.site_aliases = {'host.com' => 'host.inv', 'host_a.com' => ['host.lvh.me', 'host.dev']}
+  # Default is nil (not used)
+  config.hostname_aliases = {'seguridadconjusticiabc.org' => 'www.seguridadconjusticiabc.org', 'seguridadconjusticiach.org' => 'www.seguridadconjusticiach.org', 'seguridadconjusticianl.org' => 'www.seguridadconjusticianl.org'}
+
 end
 
 # If you need to inject some html in cms admin views you can define what partial
