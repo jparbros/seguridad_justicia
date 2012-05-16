@@ -10,6 +10,26 @@ module ApplicationHelper
    end
   end
 
+  def facebook_link
+    if @site.hostname.match /bc/
+      'https://www.facebook.com/groups/seguridadconjusticiabc/'
+    elsif @site.hostname.match /nl/
+      'https://www.facebook.com/pages/Seguridad-con-Justicia-NL/419191424768202'
+    elsif @site.hostname.match /ch/
+      'https://www.facebook.com/groups/seguridadconjusticiach/'
+   end
+  end
+
+  def youtube_account
+    if @site.hostname.match /bc/
+      'BCSegurayJusta'
+    elsif @site.hostname.match /nl/
+      'NLSegurayJusta'
+    elsif @site.hostname.match /ch/
+      'CHSeguroyJusta'
+   end
+  end
+
   def ga_code
     if @site.hostname.match /bc/
       'UA-31401146-1'
