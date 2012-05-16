@@ -7,4 +7,8 @@ module HomeHelper
       "#{@site.label} ser&iacute;a m&aacute;s justa y segura si:"
     end
   end
+
+  def parent_ids
+    @site.pages.where(parent_id: nil).map &:id
+  end
 end
