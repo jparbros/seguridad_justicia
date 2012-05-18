@@ -1,0 +1,34 @@
+.row
+  .span8
+    %p
+      En esta Sección tu puedes votar por aquellas preguntas que serán contestadas
+      por tus candidatos y podras conocer la ...
+
+.row
+  .span3
+    = image_tag '/assets/questions-banner.png'
+  .span5
+    %h3
+      Vota por tu pregunta favorita
+
+    %ul
+      - @recent_questions.each do |question|
+        %li
+          = question.question
+
+= form_for Question.new, url: frases_path do |form|
+  .row.questions
+    .span3
+      %span
+        Realiza una pregunta
+    .span5.input-container
+      = form.text_field :question, class: :span4
+      = form.submit 'Enviar >>', class: :span1
+
+%hr
+
+.row
+  .span3
+    %span
+      Preguntas mas votadas
+  .span5

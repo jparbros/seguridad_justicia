@@ -186,28 +186,7 @@
 }
 
 
-.seria-seguro {
-  span {
-    color: #fff;
-    float: left;
-    font-family: 'Oswald', sans-serif;
-    font-size: 48px;
-    line-height: 90%;
-    margin: 0 0 0 10px;
-  }
-
-  .frases-input {
-    background-color: #ffd7e9;
-    height: 56px;
-    margin: 50px 0px 0 20px;
-
-    &:before {
-      content:url('/assets/input-tail.png');
-      float: left;
-      margin: 0 0 0 -22px;
-    }
-  }
-
+.seria-seguro, .questions {
   input[type=text] {
     color: #494949;
     border: 0;
@@ -233,6 +212,39 @@
     .chrome & {
       margin: -62px -12px 2px 0;
     }
+  }
+
+  .input-container {
+    background-color: #ffd7e9;
+    height: 56px;
+    margin: 50px 0px 0 20px;
+
+    &:before {
+      content:url('/assets/input-tail.png');
+      float: left;
+      margin: 0 0 0 -22px;
+    }
+  }
+}
+
+.seria-seguro {
+  span {
+    color: #fff;
+    float: left;
+    font-family: 'Oswald', sans-serif;
+    font-size: 48px;
+    line-height: 90%;
+    margin: 0 0 0 10px;
+  }
+}
+
+.questions {
+  span {
+    float: left;
+    font-family: 'Oswald',sans-serif;
+    font-size: 20px;
+    line-height: 90%;
+    margin: 67px 0 0 20px;
   }
 }
 

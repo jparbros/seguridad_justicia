@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120514131559) do
+ActiveRecord::Schema.define(:version => 20120517131751) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -223,12 +223,26 @@ ActiveRecord::Schema.define(:version => 20120514131559) do
   add_index "positions", ["site_id"], :name => "index_positions_on_site_id"
   add_index "positions", ["topic_id"], :name => "index_positions_on_topic_id"
 
+  create_table "questions", :force => true do |t|
+    t.string   "question"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "topics", :force => true do |t|
     t.string   "name"
     t.integer  "site_id"
     t.string   "kind"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "votes", :force => true do |t|
+    t.integer  "tendency"
+    t.string   "votable_type"
+    t.integer  "votable_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
 end
