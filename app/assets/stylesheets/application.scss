@@ -37,17 +37,17 @@ hr {
     float: left;
     font-size: 21px;
     font-family: Trebuchet MS;
-    margin: 15px 0 0;
+    margin: 35px 0 0;
   }
 
   .brand {
-    padding: 1px 20px 12px 20px;
+    padding: 25px 20px 12px 20px;
   }
 
   .social-networs {
     color: #ffffff;
     float: right;
-    margin: 10px 0 0;
+    margin: 30px 0 0;
     font-family: Trebuchet MS;
   }
 }
@@ -57,8 +57,8 @@ hr {
 }
 
 .navbar-inner {
-  background: url('/assets/menu-bg.png') repeat-x;
-  height: 43px;
+  background: url('/assets/menu-pattern.png') repeat;
+  height: 85px;
 }
 
 #main-content {
@@ -67,7 +67,7 @@ hr {
   #content {
     background: #363636;
     margin-bottom: 19px;
-    padding: 55px 0 30px 0;
+    padding: 95px 0 30px 0;
 
     p {
       color: #ffffff;
@@ -92,7 +92,7 @@ hr {
 
 #side-bar {
   margin: 0;
-  padding: 55px 0 0 0;
+  padding: 95px 0 0 0;
 
   h2 {
     color: #000000;
@@ -153,7 +153,7 @@ hr {
 
 .subnav-fixed {
   position: fixed;
-  top: 50px;
+  top: 92px;
   width: 940px;
   z-index: 100000000; /* 10 less than .navbar-fixed to prevent any overlap */
 }
@@ -167,6 +167,12 @@ hr {
     .event_description {
       margin: 0 0 0 20px;
     }
+
+    .thumbnail {
+      border: 0;
+      margin: 0;
+      padding: 0 10px 10px 0;
+    }
   }
 }
 
@@ -174,6 +180,10 @@ hr {
   #content {
     div {
       margin-left: 20px;
+    }
+    
+    .phase-header:after {
+      margin: -60px -16px 0 0;
     }
   }
 }
