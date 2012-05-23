@@ -2,7 +2,7 @@ class VotesController < ApplicationController
 
   def create
     cookie_votes_count = cookies['scj_votes'].to_i + 1
-    unless cookies["scg_pregunta_#{question.id}"] and !(cookie_votes_count < 3)
+    if cookies["scg_pregunta_#{question.id}"].blank? and (cookie_votes_count < 3)
       question.vote_up
       cookies["scg_pregunta_#{question.id}"] = true
       cookies['scj_votes'] = cookie_votes_count
