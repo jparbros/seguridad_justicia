@@ -11,4 +11,20 @@ module HomeHelper
   def parent_ids
     @site.pages.where(parent_id: nil).map &:id
   end
+
+  def phase_one_available?
+    if Rails.env.production?
+      ENV['phase_one'] == 'true'
+    else
+      true
+    end
+  end
+
+  def phase_two_available?
+    if Rails.env.production?
+      ENV['phase_two'] == 'true'
+    else
+      true
+    end
+  end
 end

@@ -5,16 +5,16 @@
       por tus candidatos y podras conocer la ...
 
 .row
-  .span3
-    = image_tag '/assets/questions-banner.png'
-  .span5
-    %h3
+  .span8
+    %h4
       Vota por tu pregunta favorita
 
-    %ul
+    %ul.questions-list
       - @recent_questions.each do |question|
-        %li
+        %li.span3
           = question.question
+          |
+          = link_to "#{question.votes_count || 0} votos", pregunta_votes_path(pregunta_id: question.id), method: :post
 
 = form_for Question.new, url: preguntas_path do |form|
   .row.questions
@@ -22,13 +22,10 @@
       %span
         Realiza una pregunta
     .span5.input-container
-      = form.text_field :question, class: :span4
+      = form.text_field :question, class: :span4, placeholder: 'Escribe tu pregunta'
       = form.submit 'Enviar >>', class: :span1
 
-%hr
-
-.row
-  .span3
-    %span
-      Preguntas mas votadas
-  .span5
+- if flash[:error]
+  .row
+    .alert.alert-error.span7
+      = flash[:error]

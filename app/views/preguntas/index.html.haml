@@ -1,0 +1,12 @@
+#main-content.span8
+  #content
+    .sentir-ciudadano.phase-header
+      %h2
+        Vota las preguntas
+
+    %ul
+      - @questions.each do |question|
+        %li
+          = link_to question.question
+
+= render partial: 'common/right_column'

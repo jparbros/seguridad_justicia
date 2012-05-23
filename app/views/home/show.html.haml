@@ -6,7 +6,7 @@
         %span
           1
         Opina
-    = render partial: 'phrases'
+    = render partial: 'phrases' if phase_one_available?
 
     .seleccion.phase-header
       %h2
@@ -14,7 +14,7 @@
           2
         Preg&uacute;ntales
 
-    = render partial: 'questions'
+    = render partial: 'questions' if phase_two_available?
 
     .destacadas.phase-header
       %h2

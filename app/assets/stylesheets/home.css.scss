@@ -120,6 +120,40 @@
   }
 }
 
+.questions-banner {
+  margin: 0 0 0 -20px;
+
+   &:before { content: url("/assets/image-bg-left.png"); }
+}
+
+ul {
+  &.questions-list {
+    list-style: none;
+    margin-top: 15px;
+
+    li {
+      background: url('/assets/bullet.png') no-repeat 0 3px;
+      color: #ffffff;
+      font-family: Trebuchet MS, serif;
+      font-size: 14px;
+      padding: 0 0 0 20px;
+
+      &:hover {
+        background: url('/assets/bullet-hover.png') no-repeat 0 3px;
+      }
+    }
+
+    a {
+      color: #F869A6;
+    }
+  }
+}
+
+
+.alert {
+  margin-left: 35px;
+}
+
 .twitter-container {
   background-color: #f8f8f8;
   margin: 30px 0 0 0;
@@ -185,6 +219,9 @@
 
 }
 
+.most-voted {
+  margin: 0;
+}
 
 .seria-seguro, .questions {
   input[type=text] {

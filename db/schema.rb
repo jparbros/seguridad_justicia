@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120517131751) do
+ActiveRecord::Schema.define(:version => 20120523142357) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -225,8 +225,10 @@ ActiveRecord::Schema.define(:version => 20120517131751) do
 
   create_table "questions", :force => true do |t|
     t.string   "question"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "site_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.integer  "votes_count"
   end
 
   create_table "topics", :force => true do |t|
@@ -239,10 +241,10 @@ ActiveRecord::Schema.define(:version => 20120517131751) do
 
   create_table "votes", :force => true do |t|
     t.integer  "tendency"
-    t.string   "votable_type"
-    t.integer  "votable_id"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.string   "voteable_type"
+    t.integer  "voteable_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
 end
