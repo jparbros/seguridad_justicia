@@ -1,0 +1,14 @@
+= link_to 'Crear Pregunta', new_admin_question_path, class: 'big button'
+%h1
+  Preguntas
+
+%ul{class: :list}
+  - @questions.each do |question|
+    %li{id: 'question_#{question.id}'}
+      .item
+        .icon
+        .action_links
+          = link_to 'Editar', edit_admin_question_path(question)
+          = link_to 'Eliminar', admin_question_path(question), method: :delete, confirm: '¿Esta seguro de eliminar la pregunta?'
+        .label
+          = question.question

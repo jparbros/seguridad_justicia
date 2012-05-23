@@ -1,0 +1,11 @@
+.form_element.text_field_element
+  .label
+    %label
+      Pregunta
+  .value
+    = form.text_field :question
+
+.form_element.submit_element
+  .label
+  .value
+    = form.submit (@question.new_record? ? 'Crear' : 'Editar')
