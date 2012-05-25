@@ -65,7 +65,7 @@ template: "{text}"
 
 var _gaq = _gaq || [];
 _gaq.push(['_setAccount', '#{ga_code}']);
-_gaq.push(['_setDomainName', 'seguridadconjusticiabc.org']);
+_gaq.push(['_setDomainName', '#{@site.hostname}']);
 _gaq.push(['_trackPageview']);
 
 (function() {
