@@ -9,6 +9,8 @@ class Question < ActiveRecord::Base
 
   validate :allowed_words, :uniqueness_by_site
 
+  validates :question, length: { maximum: 250 , :too_long => " solo se permiten %{count} caracteres." }
+
   def allowed_words
     not_allowed_words = Blacklist.all.collect {|word| word.word}
     question_in_words = (self.question.present?)? self.question.split(' ') : []
@@ -26,6 +28,10 @@ class Question < ActiveRecord::Base
   end
 
   def self.to_home(site_id)
-    where(site_id: site_id).order('id desc').limit(5)
+    where(site_id: site_id).order('id desc').limit(6)
+  end
+
+  def self.most_voted(site_id)
+    where(site_id: site_id).order('votes_count desc')
   end
 end

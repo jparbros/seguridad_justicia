@@ -26,6 +26,14 @@ hr {
   margin: 20px;
 }
 
+a {
+  color: #f869a6;
+
+  &:hover {
+    color: #f869a6;
+  }
+}
+
 .navbar {
   .container {
     padding-top: 0;

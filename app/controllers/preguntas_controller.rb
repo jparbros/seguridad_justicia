@@ -9,4 +9,9 @@ class PreguntasController < ApplicationController
     redirect_to root_url
   end
 
+  def index
+    @events = Event.to_home(@site.id)
+    @questions = Question.most_voted(@site.id)
+  end
+
 end

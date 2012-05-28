@@ -108,8 +108,6 @@
       margin: 5px 0;
       padding: 5px 0 5px 20px;
 
-      a { color: #f869a6; }
-
       span {
         color: #A00059;
         display: block;
@@ -136,7 +134,7 @@ ul {
       color: #ffffff;
       font-family: Trebuchet MS, serif;
       font-size: 14px;
-      padding: 0 0 0 20px;
+      padding: 0 0 10px 20px;
 
       &:hover {
         background: url('/assets/bullet-hover.png') no-repeat 0 3px;
