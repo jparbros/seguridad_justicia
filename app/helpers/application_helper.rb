@@ -26,7 +26,7 @@ module ApplicationHelper
     elsif @site.hostname.match /nl/
       'NLSegurayJusta'
     elsif @site.hostname.match /ch/
-      'CHSeguroyJusta'
+      'CHSegurayJusta'
    end
   end
 
