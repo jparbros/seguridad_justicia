@@ -35,8 +35,14 @@
   }
 }
 
+.disclaimer {
+  font-size: 12px;
+  text-align: center;
+}
+
 .sentir-ciudadano {
   background: #ffc230;
+  cursor: pointer;
 
   &:before { content: url("/assets/sentir-before.png"); }
 

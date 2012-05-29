@@ -39,4 +39,6 @@ $ ->
     $("#phrases-box").jQCloud(data);
   )
 
-
+  $('.sentir-ciudadano').click( ->
+    $('#phase_one').toggle();
+  )

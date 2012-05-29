@@ -28,7 +28,7 @@ class Question < ActiveRecord::Base
   end
 
   def self.to_home(site_id)
-    where(site_id: site_id).order('id desc').limit(6)
+    where(site_id: site_id).order('votes_count desc').limit(5)
   end
 
   def self.most_voted(site_id)

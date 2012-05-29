@@ -10,7 +10,7 @@
 
     %ul.questions-list
       - @recent_questions.each do |question|
-        %li.span3
+        %li.span7
           = question.question
           |
           = "#{question.votes_count || 0} votos"
@@ -32,7 +32,7 @@
       = form.submit 'Enviar >>', class: :span1
 
 .row
-  .alert.span7
+  .alert.span7.disclaimer
     %strong
       Atenci&oacute;n
     Las preguntas deben de tener un m&aacute;ximo de 250 caracteres
