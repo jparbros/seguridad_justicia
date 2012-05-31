@@ -35,10 +35,10 @@ $ ->
       itemLoadCallback: {onBeforeAnimation: itemLoadCallback}
     })
 
-  $.get('/frases.json', (data) ->
-    $("#phrases-box").jQCloud(data);
-  )
-
   $('.sentir-ciudadano').click( ->
-    $('#phase_one').toggle();
+    $('#phase_one').toggle()
+    if $(this).is(":visible") == true
+      $.get('/frases.json', (data) ->
+        $("#phrases-box").jQCloud(data)
+      )
   )
