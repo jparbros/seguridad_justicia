@@ -35,9 +35,12 @@ $ ->
       itemLoadCallback: {onBeforeAnimation: itemLoadCallback}
     })
 
+  initializeCloude = true
+
   $('.sentir-ciudadano').click( ->
     $('#phase_one').toggle()
-    if $(this).is(":visible") == true
+    if $(this).is(":visible") == true and initializeCloude == true
+      initializeCloude = false
       $.get('/frases.json', (data) ->
         $("#phrases-box").jQCloud(data)
       )
