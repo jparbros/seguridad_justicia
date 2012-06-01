@@ -17,7 +17,7 @@ SeguridadJusticia::Application.routes.draw do
   end
 
   resources :frases
-  resources :eventos, only: [:show]
+  resources :eventos, only: [:show, :index]
   resources :preguntas, only: [:create, :index] do
     resource :votes, only: [:create]
   end

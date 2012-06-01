@@ -12,6 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require underscore-min
+//= require backbone-min
 //= require jquery.jcarousel.min
 //= require jqcloud.min
 //= require jquery.tweet

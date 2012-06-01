@@ -2,14 +2,3 @@
   %h2
     Pr&oacute;ximos Eventos
 .events-container.span4
-  %ul
-    - if @events.blank?
-      %li
-        %span
-          No hay eventos disponibles
-
-    - @events.each do |event|
-      %li
-        %span
-          = link_to event.title, evento_path(event)
-        #{event.venue} | #{event.date.to_s}
