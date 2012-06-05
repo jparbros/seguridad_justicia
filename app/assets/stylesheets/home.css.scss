@@ -33,6 +33,10 @@
       font-family: 'Anton', sans-serif;
     }
   }
+
+  &.old {
+    height: 48px;
+  }
 }
 
 .disclaimer {
@@ -47,6 +51,14 @@
   &:before { content: url("/assets/sentir-before.png"); }
 
   &:after { content: url("/assets/sentir-after.png"); }
+
+  &.old {
+    background: #e9c5b4;
+
+    &:before { content: url("/assets/sentir-before-old.png"); }
+
+    &:after { content: url("/assets/sentir-after-old.png"); }
+  }
 }
 
 .seleccion {
@@ -55,6 +67,14 @@
   &:before { content: url("/assets/seleccion-before.png"); }
 
   &:after { content: url("/assets/seleccion-after.png"); }
+
+  &.old {
+    background: #d9baa9;
+
+    &:before { content: url("/assets/seleccion-before-old.png"); }
+
+    &:after { content: url("/assets/seleccion-after-old.png"); }
+  }
 }
 
 .destacadas {
