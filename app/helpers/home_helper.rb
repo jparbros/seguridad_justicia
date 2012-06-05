@@ -27,4 +27,12 @@ module HomeHelper
       true
     end
   end
+
+  def phase_three_available?
+    if Rails.env.production?
+      ENV['phase_three'] == 'true'
+    else
+      true
+    end
+  end
 end
