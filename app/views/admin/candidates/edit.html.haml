@@ -1,0 +1,5 @@
+%h1
+  Editar Candidato
+
+= form_for(@candidate, url: admin_candidate_path(@banner), class: 'form_element', method: :put) do |form|
+  = render partial: 'form', object: form

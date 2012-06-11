@@ -1,0 +1,26 @@
+.row
+  .span8
+    %p
+      En esta sección tu puedes votar por la mejor respuesta a la preguntas previamente realizadas
+      con anterioridad
+
+%hr
+
+.row
+  .span8
+    .row
+      .span4.awnsers
+        - @best_questions.each do |question|
+          - if question.candidates.count > 0
+            .row.hide{id: "question-#{question.id}"}
+              - question.candidates.each_with_index do |candidate, index|
+
+                <iframe class="span2" src="#{candidate.candidates_questions.where(question_id: question.id).first.url_for_youtube}" frameborder="0" allowfullscreen></iframe>
+
+      .span3
+        %ul#question_list
+          - @best_questions.each do |question|
+            - if question.candidates.count > 0
+              %li
+                = question.question
+                = link_to 'Ver Respuesta', '', 'data-question-id' => question.id, class: 'question_link'

@@ -1,0 +1,5 @@
+%h1
+  Nuevo Candidato
+
+= form_for(@candidate, url: admin_candidates_path, class: 'form_element', multipart: true) do |form|
+  = render partial: 'form', object: form

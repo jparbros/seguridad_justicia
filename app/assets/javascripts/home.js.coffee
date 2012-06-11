@@ -44,4 +44,13 @@ $ ->
       $.get('/frases.json', (data) ->
         $("#phrases-box").jQCloud(data)
       )
+  );
+
+  $('.awnsers div').first().show()
+
+  $('a.question_link').click( (event) ->
+    event.preventDefault()
+    question_link = $(@).data('question-id')
+    $('.awnsers div').hide()
+    $('#question-' + question_link).show()
   )

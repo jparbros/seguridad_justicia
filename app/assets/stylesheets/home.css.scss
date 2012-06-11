@@ -10,6 +10,20 @@
   color: #000000;
 }
 
+.awnsers {
+  margin-left: 40px;
+}
+
+ul#question_list {
+  list-style: none;
+  font-size: 12px;
+
+  li {
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #999;
+    margin: 5px 0;
+  }
+}
 
 .phase-header {
   height: 57px;

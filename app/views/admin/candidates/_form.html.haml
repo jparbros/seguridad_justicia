@@ -1,0 +1,32 @@
+.form_element.select_element
+  .label
+    %label
+      Nombre
+  .value
+    = form.text_field :name
+
+.form_element.select_element
+  .label
+    %label
+      Partido Politico/Alianza
+  .value
+    = form.text_field :political_party
+
+.form_element.select_element
+  .label
+    %label
+      Imagen:
+  .value
+    = form.file_field :image
+
+.form_element.select_element
+  .label
+    %label
+      Logo PP/Alianza:
+  .value
+    = form.file_field :logo
+
+.form_element.submit_element
+  .label
+  .value
+    = form.submit (@candidate.new_record? ? 'Crear' : 'Editar')

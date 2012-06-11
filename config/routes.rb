@@ -12,6 +12,9 @@ SeguridadJusticia::Application.routes.draw do
     resources :topics
     resources :positions
     resources :questions
+    resources :candidates do
+      resources :anwsers
+    end
 
     root :to => "dashboard#show"
   end
