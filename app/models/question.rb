@@ -10,7 +10,8 @@ class Question < ActiveRecord::Base
   # Relations
   #
   belongs_to :site, class_name: 'Cms::Site'
-  has_and_belongs_to_many :candidates
+  has_many :answers
+  has_many :candidates, through: :answers
 
   #
   # Validates

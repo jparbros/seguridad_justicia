@@ -51,6 +51,7 @@ $ ->
   $('a.question_link').click( (event) ->
     event.preventDefault()
     question_link = $(@).data('question-id')
-    $('.awnsers div').hide()
+    $('.awnsers > div').hide()
+    console.log($('#question-' + question_link))
     $('#question-' + question_link).show()
   )

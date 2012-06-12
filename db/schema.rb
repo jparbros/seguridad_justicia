@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120605140120) do
+ActiveRecord::Schema.define(:version => 20120612150828) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -32,6 +32,15 @@ ActiveRecord::Schema.define(:version => 20120605140120) do
 
   add_index "admins", ["email"], :name => "index_admins_on_email", :unique => true
   add_index "admins", ["reset_password_token"], :name => "index_admins_on_reset_password_token", :unique => true
+
+  create_table "answers", :force => true do |t|
+    t.string   "url"
+    t.integer  "candidate_id"
+    t.integer  "question_id"
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
+    t.integer  "votes_count",  :default => 0
+  end
 
   create_table "banners", :force => true do |t|
     t.boolean  "active"
@@ -62,8 +71,6 @@ ActiveRecord::Schema.define(:version => 20120605140120) do
   create_table "candidates_questions", :force => true do |t|
     t.integer  "candidate_id"
     t.integer  "question_id"
-    t.string   "answer_url"
-    t.string   "answer_type"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
   end
