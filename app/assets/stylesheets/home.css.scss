@@ -22,16 +22,12 @@
   .video-container {
     margin-bottom: 20px;
     width: 280px;
+  }
 
-    a {
-      background: url('/assets/bullet.png') no-repeat 0 2px;
-      color: #ffffff;
-      padding: 0 0 0 20px;
-
-      &:hover {
-        background: url('/assets/bullet-hover.png') no-repeat 0 2px;
-      }
-    }
+  h4 {
+    color: #F869A6 !important;
+    margin-left: 0 !important;
+    margin-bottom: 20px !important;
   }
 }
 
