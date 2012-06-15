@@ -21,7 +21,9 @@
           - question.candidates.each do |candidate|
             - answer = candidate.answers.where(question_id: question.id).first
             .video-container.span4
-              = candidate.name
+              %span
+                = image_tag candidate.political_party.logo.url(:thumb) if candidate.political_party
+                = candidate.name
               <iframe src="#{answer.url_for_youtube}" frameborder="0" allowfullscreen></iframe>
               - unless cookies["scg_respuesta_pregunta_#{answer.question.id}"]
                 = link_to image_tag('/assets/vote.png', class: 'label label-success'), respuesta_votes_path(answer), method: :post
