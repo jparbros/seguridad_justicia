@@ -11,7 +11,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< Updated upstream
 ActiveRecord::Schema.define(:version => 20120615145753) do
+=======
+ActiveRecord::Schema.define(:version => 20120623141226) do
+>>>>>>> Stashed changes
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -224,6 +228,7 @@ ActiveRecord::Schema.define(:version => 20120615145753) do
     t.integer  "site_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.boolean  "visible"
   end
 
   create_table "positions", :force => true do |t|

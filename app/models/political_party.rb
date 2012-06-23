@@ -1,5 +1,5 @@
 class PoliticalParty < ActiveRecord::Base
-  attr_accessible :initials, :logo, :name, :site_id
+  attr_accessible :initials, :logo, :name, :site_id, :visible
 
   belongs_to :site, class_name: 'Cms::Site'
 
@@ -7,5 +7,9 @@ class PoliticalParty < ActiveRecord::Base
 
   def self.by_site(site_id)
     where(site_id: site_id)
+  end
+
+  def self.visible_by_site(site_id)
+    where(site_id: site_id, visible: true)
   end
 end

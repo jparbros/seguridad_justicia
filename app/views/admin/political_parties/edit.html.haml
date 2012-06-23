@@ -1,7 +1,7 @@
 %h1
   Editar Partido Politico y/o Alianza
 
-= form_for(@political_party, url: admin_political_parties_path(@political_party), class: 'form_element', method: :put) do |form|
+= form_for(@political_party, url: admin_political_party_path(@political_party), class: 'form_element', method: :put) do |form|
   = render partial: 'form', object: form
 
 = render partial: '/admin/common/position_right_column'
