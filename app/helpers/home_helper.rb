@@ -30,7 +30,7 @@ module HomeHelper
 
   def phase_three_available?
     if Rails.env.production?
-      if @site.hostname.match(/bc/) && ENV['phase_three'] == 'true'
+      if !@site.hostname.match(/nl/) && ENV['phase_three'] == 'true'
         true
       else
         false
