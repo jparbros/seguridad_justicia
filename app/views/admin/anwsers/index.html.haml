@@ -11,4 +11,4 @@
           = link_to 'Editar', edit_admin_candidate_anwser_path(@candidate, anwser)
           = link_to 'Eliminar', admin_candidate_anwser_path(@candidate, anwser), method: :delete, confirm: '¿Esta seguro de eliminar la respuesta?'
         .label
-          = anwser.question.question
+          = anwser.question.question if anwser.question
