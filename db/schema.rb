@@ -11,7 +11,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120523142357) do
+<<<<<<< Updated upstream
+ActiveRecord::Schema.define(:version => 20120615145753) do
+=======
+ActiveRecord::Schema.define(:version => 20120623141226) do
+>>>>>>> Stashed changes
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -33,6 +37,15 @@ ActiveRecord::Schema.define(:version => 20120523142357) do
   add_index "admins", ["email"], :name => "index_admins_on_email", :unique => true
   add_index "admins", ["reset_password_token"], :name => "index_admins_on_reset_password_token", :unique => true
 
+  create_table "answers", :force => true do |t|
+    t.string   "url"
+    t.integer  "candidate_id"
+    t.integer  "question_id"
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
+    t.integer  "votes_count",  :default => 0
+  end
+
   create_table "banners", :force => true do |t|
     t.boolean  "active"
     t.integer  "position"
@@ -51,12 +64,19 @@ ActiveRecord::Schema.define(:version => 20120523142357) do
 
   create_table "candidates", :force => true do |t|
     t.string   "name"
-    t.string   "political_party"
     t.string   "image"
     t.string   "logo"
     t.integer  "site_id"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.integer  "political_party_id"
+  end
+
+  create_table "candidates_questions", :force => true do |t|
+    t.integer  "candidate_id"
+    t.integer  "question_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
   create_table "cms_blocks", :force => true do |t|
@@ -208,6 +228,7 @@ ActiveRecord::Schema.define(:version => 20120523142357) do
     t.integer  "site_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.boolean  "visible"
   end
 
   create_table "positions", :force => true do |t|

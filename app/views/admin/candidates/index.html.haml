@@ -1,0 +1,15 @@
+= link_to 'Crear Candidato', new_admin_candidate_path, class: 'big button'
+%h1
+  Candidatos
+
+%ul{class: :list}
+  - @candidates.each do |candidate|
+    %li{id: 'candidate_#{candidate.id}'}
+      .item
+        .icon
+        .action_links
+          = link_to 'Respuestas', admin_candidate_anwsers_path(candidate)
+          = link_to 'Editar', edit_admin_candidate_path(candidate)
+          = link_to 'Eliminar', admin_candidate_path(candidate), method: :delete, confirm: '¿Esta seguro de eliminar el candidato?'
+        .label
+          = candidate.name

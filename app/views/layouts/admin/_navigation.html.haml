@@ -10,8 +10,6 @@
 %li
   = link_to 'Blacklist', admin_blacklists_path
 %li
-  = link_to 'Debates', admin_debates_path
-%li
   = link_to 'Frases', admin_blacklists_path
 %li
   = link_to 'Eventos', admin_events_path
@@ -19,5 +17,7 @@
   = link_to 'Posturas Partidistas', admin_positions_path
 %li
   = link_to 'Preguntas', admin_questions_path
+%li
+  = link_to 'Candidatos', admin_candidates_path
 %li
   = link_to("Logout", destroy_admin_session_path, :method => :delete)

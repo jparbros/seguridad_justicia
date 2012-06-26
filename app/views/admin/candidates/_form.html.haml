@@ -1,0 +1,18 @@
+.form_element.select_element
+  .label
+    %label
+      Nombre
+  .value
+    = form.text_field :name
+
+.form_element.text_field_element
+  .label
+    %label
+      Partido Politico y/o Alianza
+  .value
+    = form.select :political_party_id, PoliticalParty.by_site(@site.id).collect {|p| [ p.name, p.id ]}, include_blank: true
+
+.form_element.submit_element
+  .label
+  .value
+    = form.submit (@candidate.new_record? ? 'Crear' : 'Editar')

@@ -12,6 +12,9 @@ SeguridadJusticia::Application.routes.draw do
     resources :topics
     resources :positions
     resources :questions
+    resources :candidates do
+      resources :anwsers
+    end
 
     root :to => "dashboard#show"
   end
@@ -21,6 +24,11 @@ SeguridadJusticia::Application.routes.draw do
   resources :preguntas, only: [:create, :index] do
     resource :votes, only: [:create]
   end
+
+  resources :respuestas, only: [] do
+    resource :votes, controller: 'respuestas_votes', only: [:create]
+  end
+
   root :to => "home#show"
 
   match '/posturas_partidistas' => 'posturas#index', as: :posturas

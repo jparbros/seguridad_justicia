@@ -1,0 +1,19 @@
+.form_element.select_element
+  .label
+    %label
+      Pregunta
+  .value
+    = form.select :question_id, @questions, include_blank: true
+
+.form_element.select_element
+  .label
+    %label
+      URL de la respuesta
+  .value
+    = form.text_field :url
+
+
+.form_element.submit_element
+  .label
+  .value
+    = form.submit (@anwser.new_record? ? 'Crear' : 'Editar')
