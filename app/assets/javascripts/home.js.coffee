@@ -55,5 +55,5 @@ $ ->
     question_div = $('#question-' + question_link);
     question_div.show();
     top_position = question_div.position().top - 120
-    $('html, body').animate({scrollTop:top_position}, 'slow');
+    $('html, body').animate({scrollTop:(top_position-40px)}, 'slow');
   )
