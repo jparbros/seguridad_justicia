@@ -6,6 +6,7 @@ class Candidate < ActiveRecord::Base
   has_many :questions, through: :answers
   belongs_to :political_party
 
+  default_scope order('political_parties.name ASC').includes(:political_party)
 
   def self.by_site(site_id)
     where(site_id: site_id)
