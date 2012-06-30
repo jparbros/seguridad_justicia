@@ -10,6 +10,12 @@
         = question.question
         %span
           = link_to 'Ver Respuesta', '', 'data-question-id' => question.id, class: 'question_link'
+
+.row
+  .span8
+    %p
+      = link_to 'Ver todas las preguntsas', evalua_index_path
+
 .row
   .span8.awnsers
     - @best_questions.each do |question|
@@ -29,3 +35,7 @@
                 = link_to image_tag('/assets/vote.png', class: 'label label-success'), respuesta_votes_path(answer), method: :post
               - else
                 #{answer.votes.count} votos
+
+.row
+  .alert.span7
+    Los videos son acomodados en orden alfabético.

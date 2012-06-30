@@ -24,6 +24,7 @@ SeguridadJusticia::Application.routes.draw do
   resources :preguntas, only: [:create, :index] do
     resource :votes, only: [:create]
   end
+  resources :evalua, only: [:index]
 
   resources :respuestas, only: [] do
     resource :votes, controller: 'respuestas_votes', only: [:create]

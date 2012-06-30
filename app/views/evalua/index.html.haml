@@ -1,0 +1,34 @@
+
+#main-content.span8
+  #content
+    .row
+      .span8
+        %p
+          Conoce las respuestas que las y los candidatos dieron a tus preguntas sobre seguridad con justicia y vota por la mejor respuesta.
+
+    %ul#question_list.row
+      - @best_questions.each do |question|
+        - if question.candidates.count > 0
+          %li.span4
+            = question.question
+            %span
+              = link_to 'Ver Respuesta', '', 'data-question-id' => question.id, class: 'question_link'
+    .row
+      .span8.awnsers
+        - @best_questions.each do |question|
+          - if question.candidates.count > 0
+            .row.hide{id: "question-#{question.id}"}
+              .span8
+                %h4
+                  = question.question
+              - question.candidates.each do |candidate|
+                - answer = candidate.answers.where(question_id: question.id).first
+                .video-container.span4
+                  %span
+                    = image_tag candidate.political_party.logo.url(:thumb) if candidate.political_party
+                    = candidate.name
+                  <iframe src="#{answer.url_for_youtube}" frameborder="0" allowfullscreen></iframe>
+                  - unless cookies["scg_respuesta_pregunta_#{answer.question.id}"]
+                    = link_to image_tag('/assets/vote.png', class: 'label label-success'), respuesta_votes_path(answer), method: :post
+                  - else
+                    #{answer.votes.count} votos
