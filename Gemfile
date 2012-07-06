@@ -22,3 +22,7 @@ group :development do
   gem 'heroku'
   gem 'taps'
 end
+
+group :production do
+  gem 'unicorn'
+end
