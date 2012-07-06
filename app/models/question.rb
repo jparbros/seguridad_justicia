@@ -52,4 +52,8 @@ class Question < ActiveRecord::Base
   def self.best_by_site(site_id)
     where(site_id: site_id).order('votes_count desc').limit(10)
   end
+
+  def self.with_anwser_by_site(site_id)
+    includes(:answers).where('answers.id IS NOT NULL').where(site_id: site_id)
+  end
 end
