@@ -1,12 +1,3 @@
-GIT
-  remote: git@github.com:jparbros/comfortable-mexican-sofa.git
-  revision: 62074d922bc15902d056a4ecce3167933549f9c6
-  specs:
-    comfortable_mexican_sofa (1.6.22)
-      active_link_to (~> 1.0.0)
-      paperclip (>= 2.3.0)
-      rails (>= 3.0.0)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -53,6 +44,10 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.3.3)
+    comfortable_mexican_sofa (1.6.21)
+      active_link_to (~> 1.0.0)
+      paperclip (>= 2.3.0)
+      rails (>= 3.0.0)
     detect_browser_os (0.2.0)
     devise (2.1.2)
       bcrypt-ruby (~> 3.0)
@@ -191,7 +186,7 @@ PLATFORMS
 DEPENDENCIES
   carrierwave
   coffee-rails (~> 3.2.1)
-  comfortable_mexican_sofa!
+  comfortable_mexican_sofa
   detect_browser_os
   devise
   fog (= 1.3.1)

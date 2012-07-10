@@ -4,7 +4,7 @@ gem 'rails', '3.2.3'
 
 gem 'pg'
 gem 'jquery-rails'
-gem 'comfortable_mexican_sofa', git: 'git@github.com:jparbros/comfortable-mexican-sofa.git'
+gem 'comfortable_mexican_sofa'
 gem 'devise'
 gem 'haml-rails'
 gem 'carrierwave'
