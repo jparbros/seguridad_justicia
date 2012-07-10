@@ -11,11 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-<<<<<<< Updated upstream
-ActiveRecord::Schema.define(:version => 20120615145753) do
-=======
-ActiveRecord::Schema.define(:version => 20120623141226) do
->>>>>>> Stashed changes
+ActiveRecord::Schema.define(:version => 20120709165651) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -106,16 +102,17 @@ ActiveRecord::Schema.define(:version => 20120623141226) do
   add_index "cms_categorizations", ["category_id", "categorized_type", "categorized_id"], :name => "index_cms_categorizations_on_cat_id_and_catd_type_and_catd_id", :unique => true
 
   create_table "cms_files", :force => true do |t|
-    t.integer  "site_id",                                          :null => false
+    t.integer  "site_id",                                              :null => false
     t.integer  "block_id"
-    t.string   "label",                                            :null => false
-    t.string   "file_file_name",                                   :null => false
-    t.string   "file_content_type",                                :null => false
-    t.integer  "file_file_size",                                   :null => false
+    t.string   "label",                                                :null => false
+    t.string   "file_file_name",                                       :null => false
+    t.string   "file_content_type",                                    :null => false
+    t.integer  "file_file_size",                                       :null => false
     t.string   "description",       :limit => 2048
-    t.integer  "position",                          :default => 0, :null => false
-    t.datetime "created_at",                                       :null => false
-    t.datetime "updated_at",                                       :null => false
+    t.integer  "position",                          :default => 0,     :null => false
+    t.datetime "created_at",                                           :null => false
+    t.datetime "updated_at",                                           :null => false
+    t.boolean  "archived",                          :default => false
   end
 
   add_index "cms_files", ["site_id", "block_id"], :name => "index_cms_files_on_site_id_and_block_id"
