@@ -1,8 +1,8 @@
 GIT
   remote: git@github.com:jparbros/comfortable-mexican-sofa.git
-  revision: 053424e7befce3f89f8a3fd79ca982c783774b63
+  revision: 62074d922bc15902d056a4ecce3167933549f9c6
   specs:
-    comfortable_mexican_sofa (1.6.21.4)
+    comfortable_mexican_sofa (1.6.22)
       active_link_to (~> 1.0.0)
       paperclip (>= 2.3.0)
       rails (>= 3.0.0)
