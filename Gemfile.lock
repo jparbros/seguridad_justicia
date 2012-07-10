@@ -1,5 +1,5 @@
 GIT
-  remote: git@github.com:jparbros/comfortable-mexican-sofa.git
+  remote: git://github.com/jparbros/comfortable-mexican-sofa.git
   revision: ca3f5abd59b3629806bbd739c8c202e246a97014
   specs:
     comfortable_mexican_sofa (1.6.21.5)
