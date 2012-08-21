@@ -1,28 +1,6 @@
 #main-content.span8
   #content
     = render partial: 'carousel'
-    .sentir-ciudadano.phase-header.old
-      %h2
-        %span
-          1
-        Opina
-    = render partial: 'phrases' if phase_one_available?
-
-    .seleccion.phase-header
-      %h2
-        %span
-          2
-        Preg&uacute;ntales
-
-    = render partial: 'questions' if phase_two_available?
-
-    .destacadas.phase-header
-      %h2
-        %span
-          3
-        Compara, eval&uacute;a y decide
-
-    = render partial: 'evalua' if phase_three_available?
 
     .seguimiento.phase-header
       %h2

@@ -1,0 +1,2 @@
+class OpinaController < ApplicationController
+end

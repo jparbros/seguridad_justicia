@@ -1,0 +1,34 @@
+#main-content.span8
+  #content
+    .sentir-ciudadano.phase-header.old
+      %h2
+        %span
+          1
+        Opina
+
+    %div#phase_one
+      = form_for Phrase.new, url: frases_path do |form|
+        .row.seria-seguro
+          .span3
+            %span
+              = question_phrase.html_safe
+          .span5.input-container
+            = form.text_field :phrase, class: :span4
+            = form.submit 'Enviar >>', class: :span1
+
+      - if flash[:error]
+        .row
+          .alert.alert-error.span7
+            = flash[:error]
+
+      .row
+        .span8
+          #phrases-container
+            #phrases-box
+
+= render partial: 'common/right_column'
+
+:javascript
+    $.get('/frases.json', function(data) {
+      $("#phrases-box").jQCloud(data);
+    });

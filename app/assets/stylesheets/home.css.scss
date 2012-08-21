@@ -90,7 +90,6 @@ ul#question_list {
 
 .sentir-ciudadano {
   background: #ffc230;
-  cursor: pointer;
 
   &:before { content: url("/assets/sentir-before.png"); }
 
@@ -102,6 +101,14 @@ ul#question_list {
     &:before { content: url("/assets/sentir-before-old.png"); }
 
     &:after { content: url("/assets/sentir-after-old.png"); }
+  }
+
+  &.span4 {
+    &:before { content: none; }
+    &:after { content: none; }
+
+    margin: 30px 0 0 0;
+    padding: 0 0 0 20px;
   }
 }
 
@@ -119,6 +126,14 @@ ul#question_list {
 
     &:after { content: url("/assets/seleccion-after-old.png"); }
   }
+
+  &.span4 {
+    &:before { content: none; }
+    &:after { content: none; }
+
+    margin: 30px 0 0 0;
+    padding: 0 0 0 20px;
+  }
 }
 
 .destacadas {
@@ -127,6 +142,14 @@ ul#question_list {
   &:before { content: url("/assets/destacada-before.png"); }
 
   &:after { content: url("/assets/destacada-after.png"); }
+
+  &.span4 {
+    &:before { content: none; }
+    &:after { content: none; }
+
+    margin: 30px 0 0 0;
+    padding: 0 0 0 20px;
+  }
 }
 
 .seguimiento {

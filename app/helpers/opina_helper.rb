@@ -1,0 +1,2 @@
+module OpinaHelper
+end

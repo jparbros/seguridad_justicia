@@ -6,7 +6,7 @@ class PreguntasController < ApplicationController
     unless @question.save
       flash[:error] = "No se pudo crear la pregunta, #{@question.errors.messages.values.join(',')}"
     end
-    redirect_to root_url
+    redirect_to pregunta_url
   end
 
   def index

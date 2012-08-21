@@ -1,6 +1,12 @@
 
 #main-content.span8
   #content
+    .destacadas.phase-header
+      %h2
+        %span
+          3
+        Compara, eval&uacute;a y decide
+
     .row
       .span8
         %p
@@ -32,3 +38,5 @@
                     = link_to image_tag('/assets/vote.png', class: 'label label-success'), respuesta_votes_path(answer), method: :post
                   - else
                     #{answer.votes.count} votos
+
+= render partial: 'common/right_column'

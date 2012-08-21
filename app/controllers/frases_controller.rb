@@ -17,6 +17,6 @@ class FrasesController < ApplicationController
     unless @phrase.save
       flash[:error] = "No se pudo crear la frase, #{@phrase.errors.messages.values.join(',')}"
     end
-    redirect_to root_url
+    redirect_to opina_index_url
   end
 end
