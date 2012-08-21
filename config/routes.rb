@@ -12,6 +12,7 @@ SeguridadJusticia::Application.routes.draw do
     resources :topics
     resources :positions
     resources :questions
+    resources :representatives
     resources :candidates do
       resources :anwsers
     end

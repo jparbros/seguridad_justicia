@@ -1,0 +1,14 @@
+= link_to 'Crear Representante', new_admin_representative_path, class: 'big button'
+%h1
+  Representantes
+
+%ul{class: :list}
+  - @representatives.each do |representative|
+    %li{id: 'representative_#{representative.id}'}
+      .item
+        .icon
+        .action_links
+          = link_to 'Editar', edit_admin_representative_path(representative)
+          = link_to 'Eliminar', admin_representative_path(representative), method: :delete, confirm: '¿Esta seguro de eliminar el representante?'
+        .label
+          = representative.name

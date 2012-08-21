@@ -1,0 +1,68 @@
+.form_element.select_element
+  .label
+    %label
+      Nombre
+  .value
+    = form.text_field :name
+
+.form_element.text_field_element
+  .label
+    %label
+      Partido Politico y/o Alianza
+  .value
+    = form.select :political_party_id, PoliticalParty.by_site(@site.id).collect {|p| [ p.name, p.id ]}, include_blank: true
+
+.form_element.select_element
+  .label
+    %label
+      Distrito
+  .value
+    = form.text_field :district
+
+.form_element.text_field_element
+  .label
+    %label
+      Puesto
+  .value
+    = form.select :position, [['Diputado','diputado'],['Senador','senador']], include_blank: true
+
+.form_element.select_element
+  .label
+    %label
+      Email
+  .value
+    = form.text_field :email
+
+.form_element.select_element
+  .label
+    %label
+      Telefono
+  .value
+    = form.text_field :phone
+
+.form_element.select_element
+  .label
+    %label
+      Imagen
+  .value
+    = form.file_field :avatar
+
+.form_element.select_element
+  .label
+    %label
+      Comisiones
+  .value
+    = form.text_area :comissions
+
+
+.form_element.select_element
+  .label
+    %label
+      Biografia
+  .value
+    = form.text_area :biography
+
+.form_element.submit_element
+  .label
+  .value
+    = form.submit (@representative.new_record? ? 'Crear' : 'Editar')
