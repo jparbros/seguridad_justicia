@@ -1,0 +1,11 @@
+.row
+  .span8
+    %h2 Representantes
+
+    %ul#representatives-list.row
+      - @representantes.each do |representante|
+        %li.span4
+          = representante.name.titleize
+          (#{representante.position.humanize})
+          %span
+            = link_to 'Ver Perfil', representante_path(representante)

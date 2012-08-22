@@ -1,0 +1,14 @@
+= link_to 'Crear Noticia', new_admin_news_path, class: 'big button'
+%h1
+  Noticias
+
+%ul{class: :list}
+  - @news.each do |news|
+    %li{id: 'news_#{news.id}'}
+      .item
+        .icon
+        .action_links
+          = link_to 'Editar', edit_admin_news_path(news)
+          = link_to 'Eliminar', admin_news_path(news), method: :delete, confirm: '¿Esta seguro de eliminar el evento?'
+        .label
+          = news.title

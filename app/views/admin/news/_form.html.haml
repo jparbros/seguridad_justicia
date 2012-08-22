@@ -1,0 +1,32 @@
+.form_element.text_field_element
+  .label
+    %label
+      Titulo
+  .value
+    = form.text_field :title
+
+.form_element.select_element
+  .label
+    %label
+      Tema
+  .value
+    = form.text_field :topic
+
+.form_element.select_element
+  .label
+    %label
+      Fecha
+  .value
+    = form.text_field :date
+
+.form_element.select_element
+  .label
+    %label
+      Descripci&oacute;n
+  .value
+    = form.text_area :content, class: :rich_text
+
+.form_element.submit_element
+  .label
+  .value
+    = form.submit (@news.new_record? ? 'Crear' : 'Editar')

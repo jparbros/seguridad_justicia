@@ -1,0 +1,18 @@
+#main-content.span8
+  #content
+
+    %h2= @news.title
+
+    %p
+      %b Tema(s):
+      = @news.topic
+
+    %p
+      %b Fecha:
+      = @news.date.to_date
+
+
+    .news-content
+      = @news.content.html_safe
+
+= render partial: 'common/right_column'

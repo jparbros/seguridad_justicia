@@ -1,0 +1,42 @@
+#main-content.span8
+  #content
+    .seguimiento.phase-header
+      %h2
+        %div.sigueles-title
+          = image_tag @representante.political_party.logo.thumb
+          %span
+            = @representante.political_party.initials
+        = @representante.name.titleize
+        (#{@representante.position.humanize})
+
+    .row.profile
+      .span3
+        = image_tag @representante.avatar.small
+      .span4
+        %p
+          %span
+            Email:
+          = @representante.email
+
+        %p
+          %span
+            Distrito:
+          = @representante.district
+
+        %p
+          %span
+            Telefono:
+          = @representante.phone
+
+        %p
+          %span
+            Comisiones:
+          = @representante.comissions
+
+      .row.profile
+        .span7
+          %span
+            Biografia:
+          = @representante.biography
+
+= render partial: 'common/right_column'

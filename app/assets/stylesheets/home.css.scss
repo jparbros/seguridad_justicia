@@ -187,7 +187,7 @@ ul#question_list {
   padding: 0 0 0 20px;
 }
 
-.events-container {
+.news-container ,.events-container {
   margin: 0 0 0 20px;
 
   ul {
@@ -401,4 +401,44 @@ ul {
 
 #sessions {
   #content { background-color: #ffffff !important;}
+}
+
+ul#representatives-list {
+  list-style: none;
+  margin-left: 20px;
+
+  li {
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #999;
+    margin: 5px 20px 5px 0;
+    width: 280px;
+
+    span {
+      display: block;
+      font-size: 12px;
+      margin: 10px 0;
+    }
+
+    &:hover {
+      background: url('/assets/arrow-right.png') no-repeat right;
+    }
+  }
+}
+
+.sigueles-title {
+  float: left;
+  text-align: center;
+  margin-top: -5px;
+
+  span {
+    display: block;
+    font-size: 12px !important;
+    line-height: 1;
+  }
+}
+
+.profile {
+  margin-left: 0px;
+
+  img {border: 5px solid #FFFFFF;}
 }
