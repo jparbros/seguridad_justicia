@@ -428,6 +428,7 @@ ul#representatives-list {
 .sigueles-title {
   float: left;
   text-align: center;
+  margin-right: 10px;
   margin-top: -5px;
 
   span {
@@ -440,5 +441,69 @@ ul#representatives-list {
 .profile {
   margin-left: 0px;
 
-  img {border: 5px solid #FFFFFF;}
+  img {
+    border: 5px solid #FFFFFF;
+    margin-bottom: 10px;
+    width: 210px;
+  }
+
+  .active {
+    .icon-chevron-right {background-image:url("/assets/glyphicons-halflings-white.png");}
+   }
+
+  .tab-content {width: 300px}
+
+  .nav-tabs.nav-stacked {
+    width: 240px;
+
+
+    li {
+      i {
+        float:right;
+        -moz-opacity:.50;
+        filter:alpha(opacity=50);
+        opacity:.50;
+      }
+
+      &:hover, &.active {
+        i {
+          -moz-opacity:1;
+          filter:alpha(opacity=100);
+          opacity:1;
+        }
+      }
+    }
+  }
+
+  .label {margin-right:5px;}
+
+  .nav-tabs.nav-stacked > li:last-child > a {
+    -webkit-border-radius: 0 0 0 4px;
+    -moz-border-radius: 0 0 0 4px;
+    border-radius: 0 0 0 4px;
+  }
+
+  .nav-tabs.nav-stacked > li:first-child > a {
+    -webkit-border-radius: 4px 0 0 0;
+    -moz-border-radius: 4px 0 0 0;
+    border-radius: 4px 0 0 0 ;
+  }
+
+  .nav-tabs.nav-stacked > li > a {border-right: 0;}
+
+  .nav-tabs > .active > a, .nav-tabs > .active > a:hover {
+    background: #363636;
+    color: #ffffff;
+  }
+
+  ul.tweet_list {
+    list-style: none;
+
+    li {
+      background: url("/assets/bullet.png") no-repeat scroll 0 3px transparent;
+      margin-bottom: 20px;
+      padding: 0 0 0 20px;
+    }
+  }
+
 }

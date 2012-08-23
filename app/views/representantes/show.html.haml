@@ -10,33 +10,63 @@
         (#{@representante.position.humanize})
 
     .row.profile
-      .span3
-        = image_tag @representante.avatar.small
-      .span4
-        %p
-          %span
-            Email:
-          = @representante.email
+      .span3.well
+        = image_tag @representante.avatar.thumb
+        %ul#profileTab.nav.nav-tabs.nav-stacked
+          %li.active
+            %a{'data-toggle' =>"tab", :href => '#informacion'}
+              Informaci&oacute;n
+              %i.icon-chevron-right
+          %li
+            %a{'data-toggle' =>"tab", :href => '#biografia'}
+              Biograf&iacute;a
+              %i.icon-chevron-right
+          %li
+            %a{'data-toggle' =>"tab", :href => '#twitter'}
+              Twitter
+              %i.icon-chevron-right
 
-        %p
-          %span
-            Distrito:
-          = @representante.district
+      .tab-content.span4
+        #informacion.tab-pane.active
+          %p
+            %span
+              Email:
+            = @representante.email
 
-        %p
-          %span
-            Telefono:
-          = @representante.phone
+          %p
+            %span
+              Distrito:
+            = @representante.district
 
-        %p
-          %span
-            Comisiones:
-          = @representante.comissions
+          %p
+            %span
+              Telefono:
+            = @representante.phone
 
-      .row.profile
-        .span7
-          %span
-            Biografia:
+          %p
+            %span
+              Comisiones:
+            - @representante.comissions.split(',').each do |commission|
+              %span.label.label-info
+                = commission
+
+        #biografia.tab-pane
           = @representante.biography
 
+        #twitter.tab-pane
+
+
 = render partial: 'common/right_column'
+
+:javascript
+  $('#profileTab a').click(function (e) {
+    e.preventDefault();
+    $(this).tab('show');
+  })
+
+  $("#twitter").tweet({
+  username: "#{@representante.twitter}",
+  count: 6,
+  loading_text: "cargando tweets...",
+  template: "{text}"
+  });

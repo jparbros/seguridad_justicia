@@ -228,3 +228,7 @@ a {
   border-width: 1px 0 0;
   padding: 20px 0;
 }
+
+div p:first {
+  margin-top: 0;
+}

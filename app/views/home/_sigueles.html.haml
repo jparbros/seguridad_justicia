@@ -5,6 +5,10 @@
     %ul#representatives-list.row
       - @representantes.each do |representante|
         %li.span4
+          %div.sigueles-title
+            = image_tag representante.political_party.logo.thumb
+            %span
+              = representante.political_party.initials
           = representante.name.titleize
           (#{representante.position.humanize})
           %span
