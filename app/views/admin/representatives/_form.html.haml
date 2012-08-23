@@ -36,6 +36,14 @@
 .form_element.select_element
   .label
     %label
+      Twitter
+  .value
+    = form.text_field :twitter
+
+
+.form_element.select_element
+  .label
+    %label
       Telefono
   .value
     = form.text_field :phone
@@ -60,7 +68,7 @@
     %label
       Biografia
   .value
-    = form.text_area :biography
+    = form.text_area :biography, class: :rich_text
 
 .form_element.submit_element
   .label
