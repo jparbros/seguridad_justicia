@@ -26,8 +26,9 @@
               Twitter
               %i.icon-chevron-right
 
-      .tab-content.span4
+      .tab-content.span4.well
         #informacion.tab-pane.active
+
           %p
             %span
               Email:
@@ -65,8 +66,8 @@
   })
 
   $("#twitter").tweet({
-  username: "#{@representante.twitter}",
-  count: 6,
+  username: "jparbros#{@representante.twitter}",
+  count: 5,
   loading_text: "cargando tweets...",
   template: "{text}"
   });

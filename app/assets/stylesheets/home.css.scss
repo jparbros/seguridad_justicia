@@ -441,6 +441,8 @@ ul#representatives-list {
 .profile {
   margin-left: 0px;
 
+  & > div {height: 430px}
+
   img {
     border: 5px solid #FFFFFF;
     margin-bottom: 10px;
@@ -451,7 +453,22 @@ ul#representatives-list {
     .icon-chevron-right {background-image:url("/assets/glyphicons-halflings-white.png");}
    }
 
-  .tab-content {width: 300px}
+  .tab-content {
+    width: 250px;
+
+    .tab-pane {
+      color: #363636;
+      height: 430px;
+
+      &#biografia { font-size: 12px;}
+
+      p {
+        color: #363636 !important;
+        margin-left: 0 !important;
+        margin-top: 0 !important;
+      }
+    }
+  }
 
   .nav-tabs.nav-stacked {
     width: 240px;
@@ -496,13 +513,14 @@ ul#representatives-list {
     color: #ffffff;
   }
 
+
+
   ul.tweet_list {
     list-style: none;
+    margin: 0;
 
     li {
-      background: url("/assets/bullet.png") no-repeat scroll 0 3px transparent;
       margin-bottom: 20px;
-      padding: 0 0 0 20px;
     }
   }
 

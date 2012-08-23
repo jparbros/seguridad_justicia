@@ -227,6 +227,21 @@ a {
   border: 1px solid #999;
   border-width: 1px 0 0;
   padding: 20px 0;
+
+  .details {
+    border: 1px dashed white;
+    float: left;
+    margin: 0 15px 5px 0;
+    padding: 10px;
+    width: 200px;
+
+    span.detail-label {
+      font-size: 13px;
+      font-weight: bold;
+      line-height: 1;
+    }
+    .label { margin-right: 5px;}
+  }
 }
 
 div p:first {

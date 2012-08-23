@@ -3,16 +3,18 @@
 
     %h2= @news.title
 
-    %p
-      %b Tema(s):
-      = @news.topic
-
-    %p
-      %b Fecha:
-      = @news.date.to_date
-
-
     .news-content
+      .details
+        .news-topic
+          %span.detail-label Tema(s):
+          - @news.topic.split(',').each do |topic|
+            %span.label.label-info
+              = topic
+
+        .news-date
+          %span.detail-label Fecha:
+          = @news.date.to_date
+
       = @news.content.html_safe
 
 = render partial: 'common/right_column'
