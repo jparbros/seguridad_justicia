@@ -459,6 +459,7 @@ ul#representatives-list {
     .tab-pane {
       color: #363636;
       height: 430px;
+      max-width: 250px;
       overflow-x: auto;
 
       &#biografia { font-size: 12px;}
