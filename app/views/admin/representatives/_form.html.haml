@@ -19,6 +19,14 @@
   .value
     = form.text_field :district
 
+.form_element.select_element
+  .label
+    %label
+      Circumscripcion
+  .value
+    = form.text_field :circumscription
+
+
 .form_element.text_field_element
   .label
     %label
@@ -51,6 +59,14 @@
 .form_element.select_element
   .label
     %label
+      Fecha de nacimiento
+  .value
+    = form.text_field :birthday
+
+
+.form_element.select_element
+  .label
+    %label
       Imagen
   .value
     = form.file_field :avatar
@@ -58,10 +74,16 @@
 .form_element.select_element
   .label
     %label
+      Substituto
+  .value
+    = form.text_field :substitute
+
+.form_element.select_element
+  .label
+    %label
       Comisiones
   .value
-    = form.text_area :comissions
-
+    = form.text_field :comissions
 
 .form_element.select_element
   .label

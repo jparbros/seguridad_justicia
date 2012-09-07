@@ -1,0 +1,2 @@
+class Stance < Document
+end

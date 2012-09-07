@@ -1,0 +1,14 @@
+= link_to 'Crear Seguimineto', new_admin_representative_tracing_path(@representative), class: 'big button'
+%h1
+  Seguimiento
+
+%ul{class: :list}
+  - @tracings.each do |tracing|
+    %li{id: 'tracing_#{tracing.id}'}
+      .item
+        .icon
+        .action_links
+          = link_to 'Editar', edit_admin_representative_tracing_path(@representative, tracing)
+          = link_to 'Eliminar', admin_representative_tracing_path(@representative, tracing), method: :delete, confirm: '¿Esta seguro de eliminar el seguimiento?'
+        .label
+          = tracing.title

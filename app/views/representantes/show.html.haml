@@ -30,6 +30,14 @@
         #informacion.tab-pane.active
 
           %p
+            %span.one-line
+              Partido Politico:
+
+            = image_tag @representante.political_party.logo.thumb, class: :thumb
+
+            = @representante.political_party.name
+
+          %p
             %span
               Email:
             = @representante.email
@@ -41,8 +49,20 @@
 
           %p
             %span
+              Circumscripcion:
+            = @representante.circumscription
+
+
+          %p
+            %span
               Telefono:
             = @representante.phone
+
+          %p
+            %span
+              substituto:
+            = @representante.substitute
+
 
           %p
             %span

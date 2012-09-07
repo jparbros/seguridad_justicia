@@ -1,0 +1,14 @@
+= link_to 'Crear Postura', new_admin_representative_stance_path(@representative), class: 'big button'
+%h1
+  Posturas
+
+%ul{class: :list}
+  - @stances.each do |stance|
+    %li{id: 'stance_#{stance.id}'}
+      .item
+        .icon
+        .action_links
+          = link_to 'Editar', edit_admin_representative_stance_path(@representative, stance)
+          = link_to 'Eliminar', admin_representative_stance_path(@representative, stance), method: :delete, confirm: '¿Esta seguro de eliminar la postura?'
+        .label
+          = stance.title

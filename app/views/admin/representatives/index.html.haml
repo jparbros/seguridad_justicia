@@ -8,6 +8,9 @@
       .item
         .icon
         .action_links
+        
+          = link_to 'Seguimiento', admin_representative_tracings_path(representative)
+          = link_to 'Posturas', admin_representative_stances_path(representative)
           = link_to 'Editar', edit_admin_representative_path(representative)
           = link_to 'Eliminar', admin_representative_path(representative), method: :delete, confirm: '¿Esta seguro de eliminar el representante?'
         .label

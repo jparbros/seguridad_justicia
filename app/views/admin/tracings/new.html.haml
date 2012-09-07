@@ -1,0 +1,5 @@
+%h1
+  Nuevo Seguimiento
+
+= form_for(@tracing, url: admin_representative_tracings_path(@representatives), class: 'form_element', multipart: true) do |form|
+  = render partial: 'form', object: form

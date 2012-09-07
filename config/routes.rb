@@ -18,7 +18,11 @@ SeguridadJusticia::Application.routes.draw do
     resources :topics
     resources :positions
     resources :questions
-    resources :representatives
+    resources :document_topics, only: [:index]
+    resources :representatives do
+      resources :tracings
+      resources :stances
+    end
     resources :news
     resources :candidates do
       resources :anwsers

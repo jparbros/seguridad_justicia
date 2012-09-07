@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120823061732) do
+ActiveRecord::Schema.define(:version => 20120907141259) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -201,6 +201,29 @@ ActiveRecord::Schema.define(:version => 20120823061732) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "document_topics", :force => true do |t|
+    t.string   "name"
+    t.integer  "site_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "document_topics_documents", :id => false, :force => true do |t|
+    t.integer "document_topic_id"
+    t.integer "document_id"
+  end
+
+  create_table "documents", :force => true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.integer  "site_id"
+    t.integer  "representative_id"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+    t.string   "topic_ids"
+    t.string   "type"
+  end
+
   create_table "events", :force => true do |t|
     t.string   "title"
     t.text     "description"
@@ -274,6 +297,9 @@ ActiveRecord::Schema.define(:version => 20120823061732) do
     t.integer  "site_id"
     t.text     "comissions"
     t.string   "twitter"
+    t.integer  "circumscription"
+    t.date     "birthday"
+    t.string   "substitute"
   end
 
   add_index "representatives", ["commisions_id"], :name => "index_representatives_on_commisions_id"

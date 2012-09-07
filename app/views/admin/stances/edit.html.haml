@@ -1,0 +1,5 @@
+%h1
+  Editar Postura
+
+= form_for(@stance, url: admin_representative_stance_path(@representative, @stance), class: 'form_element', method: :put) do |form|
+  = render partial: 'form', object: form

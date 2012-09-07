@@ -447,11 +447,13 @@ ul#representatives-list {
     border: 5px solid #FFFFFF;
     margin-bottom: 10px;
     width: 210px;
+
+    &.thumb { width: 45px }
   }
 
   .active {
     .icon-chevron-right {background-image:url("/assets/glyphicons-halflings-white.png");}
-   }
+  }
 
   .tab-content {
     width: 250px;
@@ -515,7 +517,9 @@ ul#representatives-list {
     color: #ffffff;
   }
 
-
+  span {
+    &.one-line { display:block; }
+  }
 
   ul.tweet_list {
     list-style: none;
