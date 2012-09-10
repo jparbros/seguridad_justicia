@@ -1,0 +1,12 @@
+#main-content.span8
+  #content
+    - @seguimientos.each do |seguimiento|
+      
+      .postura      
+        .postura-content
+          %h4
+            = seguimiento.title
+      
+          = seguimiento.first_paragraph.html_safe
+          
+          = link_to 'Leer mas...', representante_seguimiento_path(seguimiento.representative, seguimiento)

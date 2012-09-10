@@ -11,3 +11,37 @@
     = render partial: 'sigueles'
 
 = render partial: 'common/right_column'
+
+#articles.span12
+  .row
+    %article.span6
+      %h2
+        Posturas
+
+      - if @postura
+        %h4
+          = @postura.try(:title)
+      
+        = @postura.try(:first_paragraph).html_safe
+      
+        = link_to 'Leer mas...', representante_postura_path(@postura.representative, @postura)
+
+      - else
+        %h4
+          No se encontraron posturas.
+      
+    %article.span6
+      %h2
+        Seguimiento
+      
+      - if @seguimiento
+        %h4
+          = @seguimiento.try(:title)
+      
+        = @seguimiento.try(:first_paragraph).html_safe
+      
+        = link_to 'Leer mas...', representante_postura_path(@seguimiento.representative, @seguimiento)
+      
+      - else
+        %h4
+          No se encontraron seguimientos.

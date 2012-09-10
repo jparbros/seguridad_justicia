@@ -42,7 +42,10 @@ SeguridadJusticia::Application.routes.draw do
   resources :opina, only: [:index]
   resources :pregunta, only: [:index]
   resources :compara, only: [:index]
-  resources :representantes, only: [:show]
+  resources :representantes, only: [:show] do
+    resources :seguimientos, only: [:index, :show]
+    resources :posturas, controller: 'posicion', only: [:index, :show]
+  end
 
   resources :respuestas, only: [] do
     resource :votes, controller: 'respuestas_votes', only: [:create]

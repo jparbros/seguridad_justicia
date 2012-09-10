@@ -1,0 +1,12 @@
+#main-content.span8
+  #content
+    - @posturas.each do |postura|
+      
+      .postura      
+        .postura-content
+          %h4
+            = postura.title
+      
+          = postura.first_paragraph.html_safe
+          
+          = link_to 'Leer mas...', representante_postura_path(postura.representative, postura)

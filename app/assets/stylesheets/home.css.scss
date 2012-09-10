@@ -531,3 +531,52 @@ ul#representatives-list {
   }
 
 }
+
+#articles {
+  margin: 50px 0 -60px 0;
+  
+  h2 {
+    color: black;
+    border-bottom: 1px solid #999;
+    font-size: 40px;
+    font-family: 'Medula One', cursive;
+    font-weight: normal;
+    margin: 10px 0 5px 0;
+    
+    a {
+      font-size: 13px;
+      float: right;
+      font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    }
+  }
+}
+
+.postura {
+  padding: 10px 0 10px 80px;
+  width: 520px;
+  background: url('/assets/timeline.png') no-repeat center left;
+  margin-left: 10px;
+  
+  &:hover {
+    background-image: url('/assets/timeline-hover.png');
+  }
+  
+  .postura-content {
+    background: #fff;
+    border-radius: 10px;
+    padding: 10px;
+    
+    p, h4 { color: #333 !important;}
+    
+    p {
+      margin: 0 !important;
+      padding: 0 !important;
+      font-size: 12px !important;
+    }
+    
+    h4 {
+      margin: 0 !important;
+      padding: 0 0 10px 0 !important;
+    }
+  }
+}
