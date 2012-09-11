@@ -1,1 +1,0 @@
-{"klass":"Taps::Push","database_url":"postgres://jparbros:p0stgres@127.0.0.1/seguridad_justicia_development?encoding=utf8","remote_url":"http://heroku:osui59a24am79x@taps19.heroku.com","session_uri":"/sessions/337988682","stream_state":{},"completed_tables":[],"table_filter":"(^representatives$)","local_tables_info":{"representatives":50}}
