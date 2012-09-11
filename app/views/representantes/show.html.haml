@@ -40,28 +40,43 @@
           %p
             %span
               Email:
-            = @representante.email
+            - if @representante.email
+              = @representante.email
+            - else
+              Todavia no se cuenta con la direcci&oacute;n de correo electronico.
 
           %p
             %span
               Distrito:
-            = @representante.district
+            - if @representante.district
+              = @representante.district
+            - else
+              Distrito no disponible.
 
           %p
             %span
-              Circumscripcion:
-            = @representante.circumscription
+              Circunscripción:
+            - if @representante.circumscription
+              = @representante.circumscription
+            - else
+              Circunscripción no esta disponible.
 
 
           %p
             %span
               Telefono:
-            = @representante.phone
+            - @representante.phone
+              = @representante.phone
+            - else
+              Telefono no disponible.
 
           %p
             %span
-              substituto:
-            = @representante.substitute
+              Sustituto:
+            - if @representante.substitute
+              = @representante.substitute
+            - else
+              Sustituo no disponible.
 
 
           %p
@@ -71,11 +86,18 @@
               - @representante.comissions.split(',').each do |commission|
                 %span.label.label-info
                   = commission
+            - else
+              Comisiones no disponibles.
 
         #biografia.tab-pane
-          = @representante.biography
+          - if @representante.biography
+            = @representante.biography
+          - else
+            Biografia no disponible.
 
         #twitter.tab-pane
+          - if @representante.twitter.blank?
+            Cuenta de twitter no disponible
 
 
 = render partial: 'common/right_column'
