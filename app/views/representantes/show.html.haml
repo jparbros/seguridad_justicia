@@ -65,7 +65,7 @@
           %p
             %span
               Telefono:
-            - @representante.phone
+            - if @representante.phone
               = @representante.phone
             - else
               Telefono no disponible.
