@@ -85,7 +85,7 @@
     %article.span6
       %h2
         Posturas
-        = link_to 'Ver Todas', representante_posturas_path(@postura.representative)
+        = link_to 'Ver Todas', representante_posturas_path(@postura.representative) if @posturas
         
       - if @postura
         %h4
@@ -102,7 +102,7 @@
     %article.span6
       %h2
         Seguimiento
-        = link_to 'Ver Todas', representante_seguimientos_path(@seguimiento.representative)
+        = link_to 'Ver Todas', representante_seguimientos_path(@seguimiento.representative) if @seguimiento
       
       - if @seguimiento
         %h4
