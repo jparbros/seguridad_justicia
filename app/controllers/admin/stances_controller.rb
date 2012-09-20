@@ -12,6 +12,7 @@ class Admin::StancesController < Admin::BaseController
 
   def create
     @stance = @representative.stances.new(params[:stance])
+    @stance.site_id = @site.id
     if @stance.save
       redirect_to admin_representative_stances_path(@representative)
     else

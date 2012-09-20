@@ -3,6 +3,10 @@
     - @posturas.each do |postura|
       
       .postura      
+        .postura-created-at.tooltip.bottom.in
+          .tooltip-arrow
+          .tooltip-inner
+            = postura.created_at.to_date.to_s :short
         .postura-content
           %h4
             = postura.title
@@ -10,3 +14,5 @@
           = postura.first_paragraph.html_safe
           
           = link_to 'Leer mas...', representante_postura_path(postura.representative, postura)
+          
+= render partial: 'common/right_column'

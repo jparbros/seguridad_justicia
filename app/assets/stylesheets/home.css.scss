@@ -555,11 +555,23 @@ ul#representatives-list {
 .postura {
   padding: 10px 0 10px 80px;
   width: 520px;
-  background: url('/assets/timeline.png') no-repeat center left;
+  background: url('/assets/timeline.png') no-repeat 30px center;
   margin-left: 10px;
+  position: relative;
+  
+  .postura-created-at {
+    display: none;
+    position: absolute;
+    top: 55%;
+    margin-left: -69px;
+  }
   
   &:hover {
-    background-image: url('/assets/timeline-hover.png');
+    background: url('/assets/timeline-hover.png') no-repeat 25px center;
+    
+    .postura-created-at {
+      display: inline;
+    }
   }
   
   .postura-content {
@@ -567,9 +579,9 @@ ul#representatives-list {
     border-radius: 10px;
     padding: 10px;
     
-    p, h4 { color: #333 !important;}
+    p, h4, div { color: #333 !important;}
     
-    p {
+    p, div {
       margin: 0 !important;
       padding: 0 !important;
       font-size: 12px !important;
@@ -586,4 +598,10 @@ ul#representatives-list {
   .sentir-ciudadano, .seleccion, .destacadas {
     margin-top: 10px;
   }
+}
+
+.fb-comments {
+  background-color: #ffffff;
+  margin-left: 40px;
+  padding: 15px;
 }

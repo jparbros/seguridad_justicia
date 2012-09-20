@@ -172,7 +172,7 @@ a {
   position: fixed;
   top: 92px;
   width: 940px;
-  z-index: 100000000; /* 10 less than .navbar-fixed to prevent any overlap */
+  z-index: 100000000;
 }
 
 #cms_content, #eventos {
@@ -241,6 +241,12 @@ a {
       line-height: 1;
     }
     .label { margin-right: 5px;}
+    
+    .share {
+      margin-top: 5px;
+      
+      .twitter, .facebook {float: left; margin: 0 5px 0 0}
+    }
   }
 }
 

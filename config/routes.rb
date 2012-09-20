@@ -1,11 +1,5 @@
 SeguridadJusticia::Application.routes.draw do
 
-  get "representantes/show"
-
-  get "noticias/index"
-
-  get "noticias/show"
-
   devise_for :admins, :controllers => { :sessions => "admin/sessions" }
 
   namespace :admin do
@@ -20,9 +14,9 @@ SeguridadJusticia::Application.routes.draw do
     resources :questions
     resources :document_topics, only: [:index]
     resources :representatives do
-      resources :tracings
       resources :stances
     end
+    resources :tracings
     resources :news
     resources :candidates do
       resources :anwsers
@@ -31,6 +25,9 @@ SeguridadJusticia::Application.routes.draw do
     root :to => "dashboard#show"
   end
 
+
+  match '/seguimientos/temas/:tema' => 'seguimientos#index', as: :seguimientos_temas
+  
   resources :frases
   resources :eventos, only: [:show, :index]
   resources :noticias, only: [:show, :index]
@@ -42,8 +39,8 @@ SeguridadJusticia::Application.routes.draw do
   resources :opina, only: [:index]
   resources :pregunta, only: [:index]
   resources :compara, only: [:index]
+  resources :seguimientos, only: [:index, :show]
   resources :representantes, only: [:show] do
-    resources :seguimientos, only: [:index, :show]
     resources :posturas, controller: 'posicion', only: [:index, :show]
   end
 

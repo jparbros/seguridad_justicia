@@ -24,7 +24,7 @@
       
         = @seguimientos[0].try(:first_paragraph).html_safe
       
-        = link_to 'Leer mas...', representante_postura_path(@seguimientos[0].representative, @seguimientos[0])
+        = link_to 'Leer mas...', seguimiento_path(@seguimientos[0])
       
       - else
         %h4
@@ -41,7 +41,7 @@
       
         = @seguimientos[1].try(:first_paragraph).html_safe
       
-        = link_to 'Leer mas...', representante_postura_path(@seguimientos[1].representative, @seguimientos[1])
+        = link_to 'Leer mas...', seguimiento_path(@seguimientos[1])
       
       - else
         %h4

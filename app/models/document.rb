@@ -9,7 +9,7 @@ class Document < ActiveRecord::Base
   # Associations
   #
   belongs_to :representative
-  belongs_to :site
+  belongs_to :site, class_name: 'Cms::Site'
   belongs_to :representative
   has_and_belongs_to_many :document_topics
   
@@ -30,7 +30,7 @@ class Document < ActiveRecord::Base
   end
   
   def topic_tokens=(tokens)
-    self.topic_ids = document_topics.ids_from_tokens(tokens)
+    self.topic_ids = document_topics.ids_from_tokens(tokens, site_id)
   end
   
   def topic_tokens

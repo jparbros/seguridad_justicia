@@ -9,6 +9,12 @@ class DocumentTopic < ActiveRecord::Base
   # Associations
   #
   has_and_belongs_to_many :documents
+  has_and_belongs_to_many :tracings, class_name: 'Document', conditions: {type: 'Tracing'}
+  belongs_to :site, class_name: 'Cms::Site'
+  
+  def self.by_site(site_id)
+    where(site_id: site_id)
+  end
   
   def self.tokens(query)
     topics = where("name like ?", "%#{query}%")
@@ -19,8 +25,8 @@ class DocumentTopic < ActiveRecord::Base
     end
   end
   
-  def self.ids_from_tokens(tokens)
-    tokens.gsub!(/<<<(.+?)>>>/) { create!(name: $1).id }
+  def self.ids_from_tokens(tokens, site_id)
+    tokens.gsub!(/<<<(.+?)>>>/) { create!(name: $1, site_id: site_id).id }
     tokens.split(',')
   end
 end

@@ -16,8 +16,16 @@
           = @postura.created_at.to_date
           
         .back-buton
-          = link_to 'Regresar', representante_posturas_path(@postura.representative)
-
+          = link_to 'Ver las posturas', representante_posturas_path(@postura.representative)
+        .share
+          .twitter
+            %a{"href" => "https://twitter.com/share", :class => "twitter-share-button", "data-text" => "#{@postura.title[0..90]}", "data-lang" => "es", "data-count" => "none", "data-url" => "#{request.url}"}
+              Twittear
+          .facebook
+            .fb-like{"data-href" => "#{request.url}", "data-send" => "false", "data-layout" => "button_count", "data-show-faces" => "false", "data-action" => "recommend", "data-font" => "tahoma"}
+          
       = @postura.content.html_safe
+
+    .fb-comments{'data-href' => "#{request.url}", 'data-width' => "510"}
 
 = render partial: 'common/right_column'

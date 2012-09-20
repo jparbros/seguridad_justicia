@@ -1,5 +1,5 @@
 %h1
   Editar Seguimiento
 
-= form_for(@tracing, url: admin_representative_tracing_path(@representative, @tracing), class: 'form_element', method: :put) do |form|
+= form_for(@tracing, url: admin_tracing_path(@tracing), class: 'form_element', method: :put) do |form|
   = render partial: 'form', object: form

@@ -98,45 +98,24 @@
         #twitter.tab-pane
           - if @representante.twitter.blank?
             Cuenta de twitter no disponible
-
+    %h2
+      Postura sobre Seguridad y Justicia
+    - @posturas.each do |postura|
+      
+      .postura      
+        .postura-created-at.tooltip.bottom.in
+          .tooltip-arrow
+          .tooltip-inner
+            = postura.created_at.to_date.to_s :short
+        .postura-content
+          %h4
+            = postura.title
+      
+          = postura.first_paragraph.html_safe
+          
+          = link_to 'Leer mas...', representante_postura_path(postura.representative, postura)
 
 = render partial: 'common/right_column'
-
-#articles.span12
-  .row
-    %article.span6
-      %h2
-        Posturas
-        = link_to 'Ver Todas', representante_posturas_path(@postura.representative) if @posturas
-        
-      - if @postura
-        %h4
-          = @postura.title
-      
-        = @postura.first_paragraph.html_safe
-      
-        = link_to 'Leer mas...', representante_postura_path(@postura.representative, @postura)
-
-      - else
-        %h4
-          No se encontraron seguimientos.
-      
-    %article.span6
-      %h2
-        Seguimiento
-        = link_to 'Ver Todas', representante_seguimientos_path(@seguimiento.representative) if @seguimiento
-      
-      - if @seguimiento
-        %h4
-          = @seguimiento.title
-      
-        = @seguimiento.first_paragraph.html_safe
-      
-        = link_to 'Leer mas...', representante_postura_path(@seguimiento.representative, @seguimiento)
-
-      - else
-        %h4
-          No se encontraron seguimientos.
 
 
 :javascript
