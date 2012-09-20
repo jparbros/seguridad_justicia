@@ -40,7 +40,7 @@
           %p
             %span
               Email:
-            - if @representante.email
+            - if @representante.email.present?
               = @representante.email
             - else
               Todavia no se cuenta con la direcci&oacute;n de correo electronico.
@@ -48,7 +48,7 @@
           %p
             %span
               Distrito:
-            - if @representante.district
+            - if @representante.district.present?
               = @representante.district
             - else
               Distrito no disponible.
@@ -56,7 +56,7 @@
           %p
             %span
               Circunscripción:
-            - if @representante.circumscription
+            - if @representante.circumscription.present?
               = @representante.circumscription
             - else
               Circunscripción no esta disponible.
@@ -65,7 +65,7 @@
           %p
             %span
               Telefono:
-            - if @representante.phone
+            - if @representante.phone.present?
               = @representante.phone
             - else
               Telefono no disponible.
@@ -73,16 +73,23 @@
           %p
             %span
               Sustituto:
-            - if @representante.substitute
+            - if @representante.substitute.present?
               = @representante.substitute
             - else
               Sustituo no disponible.
 
+          %p
+            %span
+              Facebook:
+            - if @representante.facebook.present?
+            = link_to @representante.facebook, @representante.facebook
+            - else
+              Facebook no disponible.
 
           %p
             %span
               Comisiones:
-            - if @representante.comissions
+            - if @representante.comissions.present?
               - @representante.comissions.split(',').each do |commission|
                 %span.label.label-info
                   = commission
@@ -90,7 +97,7 @@
               Comisiones no disponibles.
 
         #biografia.tab-pane
-          - if @representante.biography
+          - if @representante.biography.present?
             = @representante.biography
           - else
             Biografia no disponible.
@@ -124,9 +131,10 @@
     $(this).tab('show');
   })
 
-  $("#twitter").tweet({
-  username: "#{@representante.twitter}",
-  count: 5,
-  loading_text: "cargando tweets...",
-  template: "{text}"
-  });
+  - if @representante.twitter.present?
+    $("#twitter").tweet({
+    username: "#{@representante.twitter}",
+    count: 5,
+    loading_text: "cargando tweets...",
+    template: "{text}"
+    });

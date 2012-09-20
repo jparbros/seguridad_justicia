@@ -300,7 +300,6 @@ ActiveRecord::Schema.define(:version => 20120920035725) do
     t.integer  "circumscription"
     t.date     "birthday"
     t.string   "substitute"
-    t.string   "facebook"
   end
 
   add_index "representatives", ["commisions_id"], :name => "index_representatives_on_commisions_id"
