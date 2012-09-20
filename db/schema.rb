@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120907141259) do
+ActiveRecord::Schema.define(:version => 20120920035725) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -300,6 +300,7 @@ ActiveRecord::Schema.define(:version => 20120907141259) do
     t.integer  "circumscription"
     t.date     "birthday"
     t.string   "substitute"
+    t.string   "facebook"
   end
 
   add_index "representatives", ["commisions_id"], :name => "index_representatives_on_commisions_id"

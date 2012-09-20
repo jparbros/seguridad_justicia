@@ -16,31 +16,32 @@
   .row
     %article.span6
       %h2
-        Posturas
-
-      - if @postura
+        Seguimiento
+      
+      - if @seguimientos[0]
         %h4
-          = @postura.try(:title)
+          = @seguimientos[0].try(:title)
       
-        = @postura.try(:first_paragraph).html_safe
+        = @seguimientos[0].try(:first_paragraph).html_safe
       
-        = link_to 'Leer mas...', representante_postura_path(@postura.representative, @postura)
-
+        = link_to 'Leer mas...', representante_postura_path(@seguimientos[0].representative, @seguimientos[0])
+      
       - else
         %h4
-          No se encontraron posturas.
+          No se encontraron seguimientos.
+    
       
     %article.span6
       %h2
         Seguimiento
       
-      - if @seguimiento
+      - if @seguimientos[1]
         %h4
-          = @seguimiento.try(:title)
+          = @seguimientos[1].try(:title)
       
-        = @seguimiento.try(:first_paragraph).html_safe
+        = @seguimientos[1].try(:first_paragraph).html_safe
       
-        = link_to 'Leer mas...', representante_postura_path(@seguimiento.representative, @seguimiento)
+        = link_to 'Leer mas...', representante_postura_path(@seguimientos[1].representative, @seguimientos[1])
       
       - else
         %h4

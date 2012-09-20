@@ -1,3 +1,7 @@
+.row.span4.events-header#tooltip-header{:rel => "tooltip", :title => "Conoce las actividades realizadas antes de las elecciones 2012"}
+  %h2
+    Fase Pre-electoral
+  
 .row.span4.sentir-ciudadano.old
   = link_to opina_index_path do
     %h2
@@ -18,3 +22,6 @@
       %span
         3
       Compara, eval&uacute;a y decide
+
+%script
+  $('#tooltip-header').tooltip({placement: 'bottom'})
