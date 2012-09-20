@@ -219,6 +219,7 @@ ul#question_list {
 
 ul {
   &.questions-list {
+    display: inline-block;
     list-style: none;
     margin-top: 15px;
 
@@ -466,6 +467,20 @@ ul#representatives-list {
       overflow-x: auto;
 
       &#biografia { font-size: 12px;}
+      
+      &#twitter {
+        font-size: 12px;
+        
+        .tweet_odd, .tweet_even {
+          background-color: white;
+          padding: 5px;
+          -webkit-border-radius: 5px;
+          -moz-border-radius: 5px;
+          border-radius: 5px;
+        }
+        
+        .tweet_even { background-color: #ccc; }
+      }
 
       p {
         color: #363636 !important;

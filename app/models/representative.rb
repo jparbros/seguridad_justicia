@@ -21,4 +21,8 @@ class Representative < ActiveRecord::Base
   def self.by_site(site_id)
     where(site_id: site_id)
   end
+  
+  def twitter_username
+    twitter.strip.gsub('@','')
+  end
 end

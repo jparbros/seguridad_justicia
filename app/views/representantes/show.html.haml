@@ -98,7 +98,7 @@
 
         #biografia.tab-pane
           - if @representante.biography.present?
-            = @representante.biography
+            = @representante.biography.html_safe
           - else
             Biografia no disponible.
 
@@ -125,16 +125,16 @@
 = render partial: 'common/right_column'
 
 
-:javascript
+%script
   $('#profileTab a').click(function (e) {
-    e.preventDefault();
-    $(this).tab('show');
-  })
-
-  - if @representante.twitter.present?
+  e.preventDefault();
+  $(this).tab('show');
+  });
+- if @representante.twitter.present?
+  %script
     $("#twitter").tweet({
-    username: "#{@representante.twitter}",
-    count: 5,
+    username: "#{@representante.twitter_username}",
+    count: 20,
     loading_text: "cargando tweets...",
     template: "{text}"
     });
