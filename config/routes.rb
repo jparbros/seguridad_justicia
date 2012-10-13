@@ -29,7 +29,7 @@ SeguridadJusticia::Application.routes.draw do
   match '/seguimientos/temas/:tema' => 'seguimientos#index', as: :seguimientos_temas
   
   resources :frases
-  resources :eventos, only: [:show, :index]
+  resources :events, only: [:show, :index], controller: 'eventos'
   resources :noticias, only: [:show, :index]
   resources :preguntas, only: [:create, :index] do
     resource :votes, only: [:create]

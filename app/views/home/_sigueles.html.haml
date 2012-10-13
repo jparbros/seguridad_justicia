@@ -6,7 +6,7 @@
       - @representantes.each do |representante|
         %li.span4
           %div.sigueles-title
-            = image_tag representante.political_party.logo.thumb
+            = image_tag representante.political_party.logo.thumb if representante.political_party
             %span
               = representante.political_party.initials
           = representante.name.titleize

@@ -17,7 +17,7 @@ class Eventos.Collections.Eventos extends Backbone.Collection
   model: window.Eventos.Models.Evento
 
 class Eventos.Views.EventosIndex extends Backbone.View
-  template: _.template('<li><span><a href="/eventos/<%= id %>"><%= title %></a></span><%= venue %> | <%= date %></li>')
+  template: _.template('<li><span><a href="/events/<%= id %>"><%= title %></a></span><%= venue %> | <%= date %></li>')
 
   tagName: 'ul'
 
