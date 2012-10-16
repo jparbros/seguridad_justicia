@@ -16,7 +16,7 @@ module ApplicationHelper
     elsif @site.hostname.match /nl/
       'https://www.facebook.com/pages/Seguridad-con-Justicia-NL/419191424768202'
     elsif @site.hostname.match /ch/
-      'https://www.facebook.com/groups/seguridadconjusticiach/'
+      'https://www.facebook.com/SeguridadconJusticiaCH'
    end
   end
 
