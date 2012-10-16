@@ -17,14 +17,18 @@
             %a{'data-toggle' =>"tab", :href => '#informacion'}
               Informaci&oacute;n
               %i.icon-chevron-right
-          %li
-            %a{'data-toggle' =>"tab", :href => '#biografia'}
-              Biograf&iacute;a
-              %i.icon-chevron-right
-          %li
-            %a{'data-toggle' =>"tab", :href => '#twitter'}
-              Twitter
-              %i.icon-chevron-right
+
+          - if @representante.biography.present?
+            %li
+              %a{'data-toggle' =>"tab", :href => '#biografia'}
+                Biograf&iacute;a
+                %i.icon-chevron-right
+
+          - if @representante.twitter.present?
+            %li
+              %a{'data-toggle' =>"tab", :href => '#twitter'}
+                Twitter
+                %i.icon-chevron-right
 
       .tab-content.span4.well
         #informacion.tab-pane.active
