@@ -17,6 +17,12 @@ class Representative < ActiveRecord::Base
   # Uploaders
   #
   mount_uploader :avatar, AvatarUploader
+  
+  #
+  # Constants
+  #
+  
+  TYPES = ['']
 
   def self.by_site(site_id)
     where(site_id: site_id)

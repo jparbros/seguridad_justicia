@@ -37,65 +37,56 @@
 
             = @representante.political_party.name
 
-          %p
-            %span
-              Email:
-            - if @representante.email.present?
-              = @representante.email
-            - else
-              Todavia no se cuenta con la direcci&oacute;n de correo electronico.
+          - if @representante.email.present?
+            %p
+              %span
+                Email:
+              - if @representante.email.present?
+                = @representante.email
 
-          %p
-            %span
-              Distrito:
-            - if @representante.district.present?
-              = @representante.district
-            - else
-              Distrito no disponible.
+          - if @representante.district.present?
+            %p
+              %span
+                Distrito:
+              - if @representante.district.present?
+                = @representante.district
 
-          %p
-            %span
-              Circunscripción:
-            - if @representante.circumscription.present?
-              = @representante.circumscription
-            - else
-              Circunscripción no esta disponible.
+          - if @representante.circumscription.present?
+            %p
+              %span
+                Circunscripción:
+              - if @representante.circumscription.present?
+                = @representante.circumscription
 
+          - if @representante.phone.present?
+            %p
+              %span
+                Telefono:
+              - if @representante.phone.present?
+                = @representante.phone
 
-          %p
-            %span
-              Telefono:
-            - if @representante.phone.present?
-              = @representante.phone
-            - else
-              Telefono no disponible.
+          - if @representante.substitute.present?
+            %p
+              %span
+                Sustituto:
+              - if @representante.substitute.present?
+                = @representante.substitute
 
-          %p
-            %span
-              Sustituto:
-            - if @representante.substitute.present?
-              = @representante.substitute
-            - else
-              Sustituo no disponible.
+          - if @representante.facebook.present?
+            %p
+              %span
+                Facebook:
+              = link_to @representante.facebook, @representante.facebook
 
-          %p
-            %span
-              Facebook:
-            - if @representante.facebook.present?
-            = link_to @representante.facebook, @representante.facebook
-            - else
-              Facebook no disponible.
-
-          %p
-            %span
-              Comisiones:
-            - if @representante.comissions.present?
+          - if @representante.comissions.present?
+            %p
+              %span
+                Comisiones:
               - @representante.comissions.split(',').each do |commission|
                 %span.label.label-info
                   = commission
-            - else
-              Comisiones no disponibles.
 
+                
         #biografia.tab-pane
           - if @representante.biography.present?
             = @representante.biography.html_safe
