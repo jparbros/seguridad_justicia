@@ -27,6 +27,7 @@ SeguridadJusticia::Application.routes.draw do
 
 
   match '/seguimientos/temas/:tema' => 'seguimientos#index', as: :seguimientos_temas
+  match '/seguimientos/tipo/:tipo' => 'seguimientos#index', as: :seguimientos_tipos
   
   resources :frases
   resources :eventos, only: [:show, :index]

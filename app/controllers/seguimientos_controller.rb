@@ -1,7 +1,11 @@
 class SeguimientosController < ApplicationController
   
   def index
-    @seguimientos = Tracing.by_site(@site.id).most_recent
+    if params[:tipo]
+      @seguimientos = Tracing.by_site(@site.id).most_recent.where(document_kind: params[:tipo])
+    else
+      @seguimientos = Tracing.by_site(@site.id).most_recent
+    end
   end
   
   def show

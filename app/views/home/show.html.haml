@@ -11,38 +11,3 @@
     = render partial: 'sigueles'
 
 = render partial: 'common/right_column'
-
-#articles.span12
-  .row
-    %article.span6
-      %h2
-        Seguimiento
-      
-      - if @seguimientos[0]
-        %h4
-          = @seguimientos[0].try(:title)
-      
-        = @seguimientos[0].try(:first_paragraph).html_safe
-      
-        = link_to 'Leer mas...', seguimiento_path(@seguimientos[0])
-      
-      - else
-        %h4
-          No se encontraron seguimientos.
-    
-      
-    %article.span6
-      %h2
-        Seguimiento
-      
-      - if @seguimientos[1]
-        %h4
-          = @seguimientos[1].try(:title)
-      
-        = @seguimientos[1].try(:first_paragraph).html_safe
-      
-        = link_to 'Leer mas...', seguimiento_path(@seguimientos[1])
-      
-      - else
-        %h4
-          No se encontraron seguimientos.

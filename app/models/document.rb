@@ -3,7 +3,7 @@ class Document < ActiveRecord::Base
   #
   # Accessors
   #
-  attr_accessible :content, :documentable_id, :documentable_type, :representative_id, :site_id, :title, :topic_tokens
+  attr_accessible :content, :documentable_id, :documentable_type, :representative_id, :site_id, :title, :topic_tokens, :document_kind
   
   #
   # Associations

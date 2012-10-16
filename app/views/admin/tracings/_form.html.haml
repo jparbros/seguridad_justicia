@@ -12,6 +12,12 @@
   .value
     = form.text_field :topic_tokens, data: {load: @tracing.json_topics}
 
+.form_element.select_element
+  .label
+    %label
+      Tipo de seguimiento
+  .value
+    = form.select :document_kind, ['prevención','seguridad','justicia'], include_blank: true
 
 .form_element.select_element
   .label
