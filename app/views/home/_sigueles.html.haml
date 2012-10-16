@@ -1,15 +1,26 @@
 .row
   .span8
-    %h2 Representantes
+    %h2
+      Diputados Federales
 
     %ul#representatives-list.row
-      - @representantes.each do |representante|
-        %li.span4
-          %div.sigueles-title
-            = image_tag representante.political_party.logo.thumb if representante.political_party
-            %span
-              = representante.political_party.initials if representante.political_party
-          = representante.name.titleize
-          (#{representante.position.humanize})
-          %span
-            = link_to 'Ver Perfil', representante_path(representante)
+      =render partial: 'representante', collection: @diputados_federales
+
+    %h2
+      Senadores
+
+    %ul#representatives-list.row
+      =render partial: 'representante', collection: @senadores
+
+    %h2
+      Presidentes Municipales
+
+    %ul#representatives-list.row
+      =render partial: 'representante', collection: @alcaldes
+      
+    %h2
+      Diputados Locales
+
+    %ul#representatives-list.row
+      =render partial: 'representante', collection: @diputados_locales
+      

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120920035725) do
+ActiveRecord::Schema.define(:version => 20121016134402) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -66,13 +66,6 @@ ActiveRecord::Schema.define(:version => 20120920035725) do
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
     t.integer  "political_party_id"
-  end
-
-  create_table "candidates_questions", :force => true do |t|
-    t.integer  "candidate_id"
-    t.integer  "question_id"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
   end
 
   create_table "cms_blocks", :force => true do |t|
@@ -292,14 +285,18 @@ ActiveRecord::Schema.define(:version => 20120920035725) do
     t.string   "avatar"
     t.integer  "commisions_id"
     t.text     "biography"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
     t.integer  "site_id"
     t.text     "comissions"
     t.string   "twitter"
     t.integer  "circumscription"
     t.date     "birthday"
     t.string   "substitute"
+    t.string   "facebook"
+    t.string   "gender"
+    t.integer  "section"
+    t.string   "representation_type"
   end
 
   add_index "representatives", ["commisions_id"], :name => "index_representatives_on_commisions_id"

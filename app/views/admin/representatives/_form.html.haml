@@ -32,7 +32,22 @@
     %label
       Puesto
   .value
-    = form.select :position, [['Diputado','diputado'],['Senador','senador'],['Presidente Municipal','presidente_municipal']], include_blank: true
+    = form.select :position, [['Diputado local','diputado_local'],['Diputado federal','diputado_federal'],['Senador','senador'],['Presidente Municipal','presidente_municipal']], include_blank: true
+
+.form_element.text_field_element
+  .label
+    %label
+      Tipo de representacion (solo senadores)
+  .value
+    = form.select :representation_type, [['Mayoría Relativa','mayoría relativa'],['1ra Minoría','1ra minoría'],['Plurinominal','plurinominal']], include_blank: true
+
+.form_element.text_field_element
+  .label
+    %label
+      Genero:
+  .value
+    = form.select :gender, [['Femenino','f'],['Masculino','m']], include_blank: true
+
 
 .form_element.select_element
   .label
@@ -90,6 +105,13 @@
       Comisiones
   .value
     = form.text_field :comissions
+
+.form_element.select_element
+  .label
+    %label
+      Seccion
+  .value
+    = form.text_field :section
 
 .form_element.select_element
   .label

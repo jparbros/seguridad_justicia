@@ -7,7 +7,7 @@
           %span
             = @representante.political_party.initials
         = @representante.name.titleize
-        (#{@representante.position.humanize})
+        (#{@representante.position_parsed.humanize})
 
     .row.profile
       .span3.well
@@ -51,30 +51,38 @@
           - if @representante.district.present?
             %p
               %span
+                Sección:
+              = @representante.section
+
+          - if @representante.district.present?
+            %p
+              %span
                 Distrito:
-              - if @representante.district.present?
-                = @representante.district
+              = @representante.district
 
           - if @representante.circumscription.present?
             %p
               %span
                 Circunscripción:
-              - if @representante.circumscription.present?
-                = @representante.circumscription
+              = @representante.circumscription
+
+          - if @representante.representation_type.present? && @representante.position == 'senador'
+            %p
+              %span
+                Tipo de reprsentación:
+              = @representante.representation_type.humanize
 
           - if @representante.phone.present?
             %p
               %span
                 Telefono:
-              - if @representante.phone.present?
-                = @representante.phone
+              = @representante.phone
 
           - if @representante.substitute.present?
             %p
               %span
                 Sustituto:
-              - if @representante.substitute.present?
-                = @representante.substitute
+              = @representante.substitute
 
           - if @representante.facebook.present?
             %p
@@ -86,7 +94,7 @@
             %p
               %span
                 Comisiones:
-              - @representante.comissions.split(',').each do |commission|
+              - @representante.split_commisions.each do |commission|
                 %span.label.label-info
                   = commission
 

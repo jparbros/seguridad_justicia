@@ -1,0 +1,9 @@
+%li.span4
+  %div.sigueles-title
+    = image_tag representante.political_party.logo.thumb if representante.political_party
+    %span
+      = representante.political_party.initials if representante.political_party
+  = representante.name.titleize
+  (#{representante.position.humanize})
+  %span
+    = link_to 'Ver Perfil', representante_path(representante)
