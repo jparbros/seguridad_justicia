@@ -9,4 +9,4 @@
           =link_to news.title, noticia_path(news)
         = news.topic
         |
-        = news.date.to_date
+        = news.date.to_date if news.date.present?
