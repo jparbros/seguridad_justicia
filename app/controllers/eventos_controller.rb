@@ -4,7 +4,7 @@ class EventosController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.js { render json: @events.to_json }
+      format.js { render json: @events.order('date DESC').to_json }
     end
   end
 

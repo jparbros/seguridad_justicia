@@ -10,10 +10,10 @@ window.Eventos =
 
 
 class Eventos.Models.Evento extends Backbone.Model
-  urlRoot: '/eventos'
+  urlRoot: '/events.js'
 
 class Eventos.Collections.Eventos extends Backbone.Collection
-  url: '/eventos'
+  url: '/events.js'
   model: window.Eventos.Models.Evento
 
 class Eventos.Views.EventosIndex extends Backbone.View
