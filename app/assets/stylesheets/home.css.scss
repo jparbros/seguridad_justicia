@@ -158,6 +158,14 @@ ul#question_list {
   &:before { content: url("/assets/seguimiento-before.png"); }
 
   &:after { content: url("/assets/seguimiento-after.png"); }
+  
+  &.span4 {
+    &:before { content: none; }
+    &:after { content: none; }
+
+    margin: 10px 0 0 0;
+    padding: 0 0 0 20px;
+  }
 }
 
 .mailing-list {
