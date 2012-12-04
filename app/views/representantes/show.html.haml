@@ -29,6 +29,13 @@
               %a{'data-toggle' =>"tab", :href => '#twitter'}
                 Twitter
                 %i.icon-chevron-right
+        
+        .share
+          .twitter
+            %a{"href" => "https://twitter.com/share", :class => "twitter-share-button", "data-text" => "#{@representante.name}", "data-lang" => "es", "data-count" => "none", "data-url" => "#{request.url}"}
+              Twittear
+          .facebook
+            .fb-like{"data-href" => "#{request.url}", "data-send" => "false", "data-layout" => "button_count", "data-show-faces" => "false", "data-action" => "recommend", "data-font" => "tahoma"}
 
       .tab-content.span4.well
         #informacion.tab-pane.active
