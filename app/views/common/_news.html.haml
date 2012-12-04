@@ -3,7 +3,7 @@
     Noticias
 .news-container.span4
   %ul
-    - News.by_site(@site.id).limit(3).each do |news|
+    - News.to_sidebar(@site.id).each do |news|
       %li
         %span
           =link_to news.title, noticia_path(news)
