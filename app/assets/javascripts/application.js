@@ -19,4 +19,12 @@
 //= require jquery.tweet
 //= require jquery.ui.min
 //= require bootstrap.min
+//= require polygonzo
+//= require coords/baja_california
+//= require coords/chihuahua
+//= require coords/nuevo_leon
+//= require sections/baja_california
+//= require sections/chihuahua
+//= require sections/nuevo_leon
+
 //= require_tree .

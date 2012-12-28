@@ -10,4 +10,15 @@
 
     = render partial: 'sigueles'
 
+    .row
+      .span8
+        %span Secci&oacute;n
+        %input{type: :text}
+        %inpuy{type: :button, class: [:btn, 'btn-primary']} Buscar
+    
+    #map
+
 = render partial: 'common/right_column'
+
+:javascript
+  window.mapas.initialize({state: '#{@site.label.downcase.gsub(' ', '_')}'});
