@@ -116,6 +116,13 @@
 .form_element.select_element
   .label
     %label
+      Oficina de enlace
+  .value
+    = form.text_field :office
+
+.form_element.select_element
+  .label
+    %label
       Biografia
   .value
     = form.text_area :biography, class: :rich_text

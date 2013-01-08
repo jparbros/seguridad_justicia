@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121016142859) do
+ActiveRecord::Schema.define(:version => 20130108192738) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -298,6 +298,7 @@ ActiveRecord::Schema.define(:version => 20121016142859) do
     t.string   "gender"
     t.integer  "section"
     t.string   "representation_type"
+    t.string   "office"
   end
 
   add_index "representatives", ["commisions_id"], :name => "index_representatives_on_commisions_id"

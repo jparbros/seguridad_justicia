@@ -97,6 +97,12 @@
                 Facebook:
               = link_to @representante.facebook, @representante.facebook
 
+          - if @representante.office.present?
+            %p
+              %span
+                Oficina de enlace:
+              = @representante.office
+
           - if @representante.comissions.present?
             %p
               %span
@@ -104,7 +110,6 @@
               - @representante.split_commisions.each do |commission|
                 %span.label.label-info
                   = commission
-
                 
         #biografia.tab-pane
           - if @representante.biography.present?
