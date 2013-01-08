@@ -21,4 +21,4 @@
 = render partial: 'common/right_column'
 
 :javascript
-  window.mapas.initialize({state: '#{@site.label.downcase.gsub(' ', '_')}'});
+  window.mapas.initialize({state: '#{@site.label.downcase.gsub(' ', '_').gsub('ó','o')}'});
