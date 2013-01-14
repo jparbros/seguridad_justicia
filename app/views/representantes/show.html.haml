@@ -103,6 +103,13 @@
                 Oficina de enlace:
               = @representante.office
 
+          - if @representante.curul_link.present?
+            %p
+              %span
+                Enlace a Curul 501:
+              = link_to @representante.curul_link, @representante.curul_link
+
+
           - if @representante.comissions.present?
             %p
               %span
