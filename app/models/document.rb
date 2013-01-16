@@ -46,7 +46,7 @@ class Document < ActiveRecord::Base
   end
   
   def parse_content
-    @content_parsed = Nokogiri::HTML(content)
+    @content_parsed = Nokogiri::HTML(content) rescue nil
   end
 
   def first_paragraph

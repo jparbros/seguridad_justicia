@@ -3,9 +3,6 @@
     Iniciativas
 
   %ul
-    %li
-      = link_to 'Prevención', seguimientos_tipos_path('prevención')
-    %li
-      = link_to 'Seguridad', seguimientos_tipos_path('seguridad')
-    %li
-      = link_to 'Justicia', seguimientos_tipos_path('justicia')
+    - Tracing.document_types.each do |document_kind|
+      %li
+        = link_to document_kind.humanize, seguimientos_tipos_path(document_kind)

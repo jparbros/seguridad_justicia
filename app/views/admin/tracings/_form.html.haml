@@ -18,6 +18,7 @@
       Tipo de seguimiento
   .value
     = form.select :document_kind, ['prevención','seguridad','justicia'], include_blank: true
+    = form.text_field :document_kind_text
 
 .form_element.select_element
   .label
