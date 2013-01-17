@@ -1,27 +1,25 @@
-.row
-  .span8
-    
-    - if @diputados_federales.present?
-      %h2
-        Diputados Federales
-      %ul#representatives-list.row
-        =render partial: 'representante', collection: @diputados_federales
+.span8
+  - if @diputados_federales.present?
+    %h2
+      Diputados Federales
+    %ul#representatives-list.row
+      =render partial: 'representante', collection: @diputados_federales
 
-    - if @senadores.present?
-      %h2
-        Senadores
-      %ul#representatives-list.row
-        =render partial: 'representante', collection: @senadores
+  - if @senadores.present?
+    %h2
+      Senadores
+    %ul#representatives-list.row
+      =render partial: 'representante', collection: @senadores
 
-    - if @alcaldes.present?
-      %h2
-        Presidentes Municipales
-      %ul#representatives-list.row
-        =render partial: 'representante', collection: @alcaldes
+  - if @alcaldes.present?
+    %h2
+      Presidentes Municipales
+    %ul#representatives-list.row
+      =render partial: 'representante', collection: @alcaldes
       
-    - if @diputados_locales.present?
-      %h2
-        Diputados Locales
-      %ul#representatives-list.row
-        =render partial: 'representante', collection: @diputados_locales
+  - if @diputados_locales.present?
+    %h2
+      Diputados Locales
+    %ul#representatives-list.row
+      =render partial: 'representante', collection: @diputados_locales
       

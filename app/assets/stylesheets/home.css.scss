@@ -414,13 +414,12 @@ ul {
 
 ul#representatives-list {
   list-style: none;
-  margin-left: 20px;
 
   li {
     border-top: 1px solid #333;
     border-bottom: 1px solid #999;
     height: 80px;
-    margin: 15px 20px 5px 0;
+    margin: 15px 20px 5px;
     width: 280px;
 
     span {
