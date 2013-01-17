@@ -1,50 +1,46 @@
-#main-content.span8
-  #content
-    %p
-      En esta sección, promoviendo el voto informado, podras encontrar las propuestas de los diferentes partidos politicos y alianzas en temas de seguridad y justicias.
+  %p
+    En esta sección, promoviendo el voto informado, podras encontrar las propuestas de los diferentes partidos politicos y alianzas en temas de seguridad y justicias.
 
-    .sentir-ciudadano.phase-header
-      %h2
-        Seguridad
+  .sentir-ciudadano.phase-header
+    %h2
+      Seguridad
 
-    %ul.row
-      - @topics_seguridad.each do |topic|
-        %li.topics.span3
-          = link_to topic.name, "##{topic.name.parameterize}", 'data-toggle' => :modal
+  %ul.row
+    - @topics_seguridad.each do |topic|
+      %li.topics.span3
+        = link_to topic.name, "##{topic.name.parameterize}", 'data-toggle' => :modal
 
-    .seleccion.phase-header
-      %h2
-        Justicia
+  .seleccion.phase-header
+    %h2
+      Justicia
 
-    %ul.row
-      - @topics_justicia.each do |topic|
-        %li.topics.span3
-          = link_to topic.name, "##{topic.name.parameterize}", 'data-toggle' => :modal
+  %ul.row
+    - @topics_justicia.each do |topic|
+      %li.topics.span3
+        = link_to topic.name, "##{topic.name.parameterize}", 'data-toggle' => :modal
 
-
-= render partial: 'common/right_column'
 
 - @topics.each do |topic|
-  .modal{id: "#{topic.name.parameterize}"}
-    .modal-header
-      %button.close{'data-dismiss' => :modal}
-        ×
-      %h3
-        = topic.name
-    .row.modal-body
-      - @political_parties.each do |political_party|
-        .span3
-          %h3
-            = political_party.name
-          %ul
-            = image_tag political_party.logo.url
-            - Position.by_topic_and_political_party(topic.id, political_party.id).each do |position|
-              %li
-                %p
-                  = position.content
+.modal{id: "#{topic.name.parameterize}"}
+  .modal-header
+    %button.close{'data-dismiss' => :modal}
+      ×
+    %h3
+      = topic.name
+  .row.modal-body
+    - @political_parties.each do |political_party|
+      .span3
+        %h3
+          = political_party.name
+        %ul
+          = image_tag political_party.logo.url
+          - Position.by_topic_and_political_party(topic.id, political_party.id).each do |position|
+            %li
+              %p
+                = position.content
 
-    .modal-footer
-      = link_to 'Cerrar','#', class: :btn
+  .modal-footer
+    = link_to 'Cerrar','#', class: :btn
 
 %script
   $('.modal-footer a').click(function() { $('.modal').modal('hide') })

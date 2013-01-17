@@ -1,20 +1,16 @@
-#main-content.span8
-  #content
-    .seleccion.phase-header
-      %h2
-        %span
-          2
-        Preg&uacute;ntales
+.seleccion.phase-header
+  %h2
+    %span
+      2
+    Preg&uacute;ntales
 
-    %ul.questions-list
-      - @questions.each do |question|
-        %li.span7
-          = question.question
-          |
-          = "#{question.votes_count || 0} votos"
-          - if cookies["scg_pregunta_#{question.id}"] || cookies['scj_votes'].to_i >= 3
-            = image_tag('/assets/vote.png', class: 'label')
-          - else
-            = link_to image_tag('/assets/vote.png', class: 'label label-success'), pregunta_votes_path(pregunta_id: question.id), method: :post
-
-= render partial: 'common/right_column'
+%ul.questions-list
+  - @questions.each do |question|
+    %li.span7
+      = question.question
+      |
+      = "#{question.votes_count || 0} votos"
+      - if cookies["scg_pregunta_#{question.id}"] || cookies['scj_votes'].to_i >= 3
+        = image_tag('/assets/vote.png', class: 'label')
+      - else
+        = link_to image_tag('/assets/vote.png', class: 'label label-success'), pregunta_votes_path(pregunta_id: question.id), method: :post

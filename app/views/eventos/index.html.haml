@@ -1,22 +1,16 @@
-#main-content.span8
-  #content
+- @events.each do |evento|
+  %h2
+    = evento.title
 
-    - @events.each do |evento|
-      %h2
-        = evento.title
+  %p
+    Lugar:
+    %br/
+    = evento.venue
 
-      %p
-        Lugar:
-        %br/
-        = evento.venue
+  %p
+    Fecha y Hora:
+    %br/
+    = evento.date
 
-      %p
-        Fecha y Hora:
-        %br/
-        = evento.date
-
-      .event_description
-        = evento.description.html_safe
-
-
-= render partial: 'common/right_column'
+  .event_description
+    = evento.description.html_safe

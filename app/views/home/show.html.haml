@@ -1,23 +1,19 @@
-#main-content.span8
-  #content.row
-    = render partial: 'carousel'
+= render partial: 'carousel'
 
-    .seguimiento.phase-header
-      %h2
-        %span
-          4
-        Sígueles...
+.seguimiento.phase-header
+  %h2
+    %span
+      4
+    Sígueles...
 
-    = render partial: 'sigueles'
+= render partial: 'sigueles'
 
-    .span8
-      %span Secci&oacute;n
-      %input{type: :text}
-      %inpuy{type: :button, class: [:btn, 'btn-primary']} Buscar
+.span8
+  %span Secci&oacute;n
+  %input{type: :text}
+  %inpuy{type: :button, class: [:btn, 'btn-primary']} Buscar
     
-    #map
-
-= render partial: 'common/right_column'
+#map
 
 :javascript
   window.mapas.initialize({state: '#{@site.label.downcase.gsub(' ', '_').gsub('ó','o')}'});

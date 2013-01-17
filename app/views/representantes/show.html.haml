@@ -1,150 +1,146 @@
-#main-content.span8
-  #content
-    .seguimiento.phase-header
-      %h2
-        %div.sigueles-title
-          = image_tag @representante.political_party.logo.thumb
-          %span
-            = @representante.political_party.initials
-        = @representante.name.titleize
-        (#{@representante.position_parsed.humanize})
+.seguimiento.phase-header
+  %h2
+    %div.sigueles-title
+      = image_tag @representante.political_party.logo.thumb
+      %span
+        = @representante.political_party.initials
+    = @representante.name.titleize
+    (#{@representante.position_parsed.humanize})
 
-    .row.profile
-      .span3.well
-        = image_tag @representante.avatar.blank? ? '/assets/user.png' : @representante.avatar.thumb
-        %ul#profileTab.nav.nav-tabs.nav-stacked
-          %li.active
-            %a{'data-toggle' =>"tab", :href => '#informacion'}
-              Informaci&oacute;n
-              %i.icon-chevron-right
+.row.profile
+  .span3.well
+    = image_tag @representante.avatar.blank? ? '/assets/user.png' : @representante.avatar.thumb
+    %ul#profileTab.nav.nav-tabs.nav-stacked
+      %li.active
+        %a{'data-toggle' =>"tab", :href => '#informacion'}
+          Informaci&oacute;n
+          %i.icon-chevron-right
 
-          - if @representante.biography.present?
-            %li
-              %a{'data-toggle' =>"tab", :href => '#biografia'}
-                Biograf&iacute;a
-                %i.icon-chevron-right
+      - if @representante.biography.present?
+        %li
+          %a{'data-toggle' =>"tab", :href => '#biografia'}
+            Biograf&iacute;a
+            %i.icon-chevron-right
 
-          - if @representante.twitter.present?
-            %li
-              %a{'data-toggle' =>"tab", :href => '#twitter'}
-                Twitter
-                %i.icon-chevron-right
+      - if @representante.twitter.present?
+        %li
+          %a{'data-toggle' =>"tab", :href => '#twitter'}
+            Twitter
+            %i.icon-chevron-right
         
-        .share
-          .twitter
-            %a{"href" => "https://twitter.com/share", :class => "twitter-share-button", "data-text" => "#{@representante.name}", "data-lang" => "es", "data-count" => "none", "data-url" => "#{request.url}"}
-              Twittear
-          .facebook
-            .fb-like{"data-href" => "#{request.url}", "data-send" => "false", "data-layout" => "button_count", "data-show-faces" => "false", "data-action" => "recommend", "data-font" => "tahoma"}
+    .share
+      .twitter
+        %a{"href" => "https://twitter.com/share", :class => "twitter-share-button", "data-text" => "#{@representante.name}", "data-lang" => "es", "data-count" => "none", "data-url" => "#{request.url}"}
+          Twittear
+      .facebook
+        .fb-like{"data-href" => "#{request.url}", "data-send" => "false", "data-layout" => "button_count", "data-show-faces" => "false", "data-action" => "recommend", "data-font" => "tahoma"}
 
-      .tab-content.span4.well
-        #informacion.tab-pane.active
+  .tab-content.span4.well
+    #informacion.tab-pane.active
 
-          %p
-            %span.one-line
-              Partido Politico:
+      %p
+        %span.one-line
+          Partido Politico:
 
-            = image_tag @representante.political_party.logo.thumb, class: :thumb
+        = image_tag @representante.political_party.logo.thumb, class: :thumb
 
-            = @representante.political_party.name
+        = @representante.political_party.name
 
+      - if @representante.email.present?
+        %p
+          %span
+            Email:
           - if @representante.email.present?
-            %p
-              %span
-                Email:
-              - if @representante.email.present?
-                = @representante.email
+            = @representante.email
 
-          - if @representante.section.present?
-            %p
-              %span
-                Sección:
-              = @representante.section
+      - if @representante.section.present?
+        %p
+          %span
+            Sección:
+          = @representante.section
 
-          - if @representante.district.present?
-            %p
-              %span
-                Distrito:
-              = @representante.district
+      - if @representante.district.present?
+        %p
+          %span
+            Distrito:
+          = @representante.district
 
-          - if @representante.circumscription.present?
-            %p
-              %span
-                Circunscripción:
-              = @representante.circumscription
+      - if @representante.circumscription.present?
+        %p
+          %span
+            Circunscripción:
+          = @representante.circumscription
 
-          - if @representante.representation_type.present? && @representante.position == 'senador'
-            %p
-              %span
-                Tipo de reprsentación:
-              = @representante.representation_type.humanize
+      - if @representante.representation_type.present? && @representante.position == 'senador'
+        %p
+          %span
+            Tipo de reprsentación:
+          = @representante.representation_type.humanize
 
-          - if @representante.phone.present?
-            %p
-              %span
-                Telefono:
-              = @representante.phone
+      - if @representante.phone.present?
+        %p
+          %span
+            Telefono:
+          = @representante.phone
 
-          - if @representante.substitute.present?
-            %p
-              %span
-                Sustituto:
-              = @representante.substitute
+      - if @representante.substitute.present?
+        %p
+          %span
+            Sustituto:
+          = @representante.substitute
 
-          - if @representante.facebook.present?
-            %p
-              %span
-                Facebook:
-              = link_to @representante.facebook, @representante.facebook
+      - if @representante.facebook.present?
+        %p
+          %span
+            Facebook:
+          = link_to @representante.facebook, @representante.facebook
 
-          - if @representante.office.present?
-            %p
-              %span
-                Oficina de enlace:
-              = @representante.office
+      - if @representante.office.present?
+        %p
+          %span
+            Oficina de enlace:
+          = @representante.office
 
-          - if @representante.curul_link.present?
-            %p
-              %span
-                Enlace a Curul 501:
-              = link_to @representante.curul_link, @representante.curul_link
+      - if @representante.curul_link.present?
+        %p
+          %span
+            Enlace a Curul 501:
+          = link_to @representante.curul_link, @representante.curul_link
 
 
-          - if @representante.comissions.present?
-            %p
-              %span
-                Comisiones:
-              - @representante.split_commisions.each do |commission|
-                %span.label.label-info
-                  = commission
+      - if @representante.comissions.present?
+        %p
+          %span
+            Comisiones:
+          - @representante.split_commisions.each do |commission|
+            %span.label.label-info
+              = commission
                 
-        #biografia.tab-pane
-          - if @representante.biography.present?
-            = @representante.biography.html_safe
-          - else
-            Biografia no disponible.
+    #biografia.tab-pane
+      - if @representante.biography.present?
+        = @representante.biography.html_safe
+      - else
+        Biografia no disponible.
 
-        #twitter.tab-pane
-          - if @representante.twitter.blank?
-            Cuenta de twitter no disponible
-    %h2
-      Desempeño sobre Seguridad y Justicia
-    - @posturas.each do |postura|
+    #twitter.tab-pane
+      - if @representante.twitter.blank?
+        Cuenta de twitter no disponible
+%h2
+  Desempeño sobre Seguridad y Justicia
+- @posturas.each do |postura|
       
-      .postura      
-        .postura-created-at.tooltip.bottom.in
-          .tooltip-arrow
-          .tooltip-inner
-            = postura.created_at.to_date.to_s :short
-        .postura-content
-          %h4
-            = postura.title
+  .postura      
+    .postura-created-at.tooltip.bottom.in
+      .tooltip-arrow
+      .tooltip-inner
+        = postura.created_at.to_date.to_s :short
+    .postura-content
+      %h4
+        = postura.title
       
-          = postura.first_paragraph.html_safe
+      = postura.first_paragraph.html_safe
           
-          = link_to 'Leer mas...', representante_postura_path(postura.representative, postura)
-
-= render partial: 'common/right_column'
+      = link_to 'Leer mas...', representante_postura_path(postura.representative, postura)
 
 
 %script

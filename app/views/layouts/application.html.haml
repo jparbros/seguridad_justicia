@@ -50,7 +50,10 @@
                   = link_to page.label, page.full_path
 
       .row
-        = yield
+        #main-content.span8
+          #content.row
+            = yield
+        = render partial: 'common/right_column'
 
 <div id="fb-root"></div>
 <script>

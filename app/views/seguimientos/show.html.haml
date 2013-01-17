@@ -1,33 +1,28 @@
-#main-content.span8
-  #content
+%h2= @seguimiento.title
 
-    %h2= @seguimiento.title
+.news-content
+  .details
+    .news-topic
+      %span.detail-label Tema(s):
+      - @seguimiento.topics.each do |topic|
+        %span.label.label-info
+          = link_to topic.name, seguimientos_temas_path(topic.name)
 
-    .news-content
-      .details
-        .news-topic
-          %span.detail-label Tema(s):
-          - @seguimiento.topics.each do |topic|
-            %span.label.label-info
-              = link_to topic.name, seguimientos_temas_path(topic.name)
-
-        .news-date
-          %span.detail-label Fecha:
-          = @seguimiento.created_at.to_date
+    .news-date
+      %span.detail-label Fecha:
+      = @seguimiento.created_at.to_date
           
-        .back-buton
-          = link_to 'Ver los seguimientos', seguimientos_path
+    .back-buton
+      = link_to 'Ver los seguimientos', seguimientos_path
 
-        .share
-          .twitter
-            %a{"href" => "https://twitter.com/share", :class => "twitter-share-button", "data-text" => "#{@seguimiento.title[0..90]}", "data-lang" => "es", "data-count" => "none", "data-url" => "#{request.url}"}
-              Twittear
-          .facebook
-            .fb-like{"data-href" => "#{request.url}", "data-send" => "false", "data-layout" => "button_count", "data-show-faces" => "false", "data-action" => "recommend", "data-font" => "tahoma"}
+    .share
+      .twitter
+        %a{"href" => "https://twitter.com/share", :class => "twitter-share-button", "data-text" => "#{@seguimiento.title[0..90]}", "data-lang" => "es", "data-count" => "none", "data-url" => "#{request.url}"}
+          Twittear
+      .facebook
+        .fb-like{"data-href" => "#{request.url}", "data-send" => "false", "data-layout" => "button_count", "data-show-faces" => "false", "data-action" => "recommend", "data-font" => "tahoma"}
 
 
-      = @seguimiento.content.html_safe
+  = @seguimiento.content.html_safe
     
-    .fb-comments{'data-href' => "#{request.url}", 'data-width' => "510"}
-    
-= render partial: 'common/right_column'
+.fb-comments{'data-href' => "#{request.url}", 'data-width' => "510"}

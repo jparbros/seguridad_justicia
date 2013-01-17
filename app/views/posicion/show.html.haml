@@ -1,31 +1,26 @@
-#main-content.span8
-  #content
+%h2= @postura.title
 
-    %h2= @postura.title
+.news-content
+  .details
+    .news-topic
+      %span.detail-label Tema(s):
+      - @postura.topics.each do |topic|
+        %span.label.label-info
+          = topic.name
 
-    .news-content
-      .details
-        .news-topic
-          %span.detail-label Tema(s):
-          - @postura.topics.each do |topic|
-            %span.label.label-info
-              = topic.name
-
-        .news-date
-          %span.detail-label Fecha:
-          = @postura.created_at.to_date
+    .news-date
+      %span.detail-label Fecha:
+      = @postura.created_at.to_date
           
-        .back-buton
-          = link_to 'Ver las posturas', representante_posturas_path(@postura.representative)
-        .share
-          .twitter
-            %a{"href" => "https://twitter.com/share", :class => "twitter-share-button", "data-text" => "#{@postura.title[0..90]}", "data-lang" => "es", "data-count" => "none", "data-url" => "#{request.url}"}
-              Twittear
-          .facebook
-            .fb-like{"data-href" => "#{request.url}", "data-send" => "false", "data-layout" => "button_count", "data-show-faces" => "false", "data-action" => "recommend", "data-font" => "tahoma"}
+    .back-buton
+      = link_to 'Ver las posturas', representante_posturas_path(@postura.representative)
+    .share
+      .twitter
+        %a{"href" => "https://twitter.com/share", :class => "twitter-share-button", "data-text" => "#{@postura.title[0..90]}", "data-lang" => "es", "data-count" => "none", "data-url" => "#{request.url}"}
+          Twittear
+      .facebook
+        .fb-like{"data-href" => "#{request.url}", "data-send" => "false", "data-layout" => "button_count", "data-show-faces" => "false", "data-action" => "recommend", "data-font" => "tahoma"}
           
-      = @postura.content.html_safe
+  = @postura.content.html_safe
 
-    .fb-comments{'data-href' => "#{request.url}", 'data-width' => "510"}
-
-= render partial: 'common/right_column'
+.fb-comments{'data-href' => "#{request.url}", 'data-width' => "510"}
