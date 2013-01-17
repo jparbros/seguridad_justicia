@@ -1,5 +1,5 @@
 #main-content.span8
-  #content
+  #content.row
     = render partial: 'carousel'
 
     .seguimiento.phase-header
@@ -10,11 +10,10 @@
 
     = render partial: 'sigueles'
 
-    .row
-      .span8
-        %span Secci&oacute;n
-        %input{type: :text}
-        %inpuy{type: :button, class: [:btn, 'btn-primary']} Buscar
+    .span8
+      %span Secci&oacute;n
+      %input{type: :text}
+      %inpuy{type: :button, class: [:btn, 'btn-primary']} Buscar
     
     #map
 
