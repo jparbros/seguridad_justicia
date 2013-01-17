@@ -1,23 +1,23 @@
-  %p
-    En esta sección, promoviendo el voto informado, podras encontrar las propuestas de los diferentes partidos politicos y alianzas en temas de seguridad y justicias.
+%p
+  En esta sección, promoviendo el voto informado, podras encontrar las propuestas de los diferentes partidos politicos y alianzas en temas de seguridad y justicias.
 
-  .sentir-ciudadano.phase-header
-    %h2
-      Seguridad
+.sentir-ciudadano.phase-header
+  %h2
+    Seguridad
 
-  %ul.row
-    - @topics_seguridad.each do |topic|
-      %li.topics.span3
-        = link_to topic.name, "##{topic.name.parameterize}", 'data-toggle' => :modal
+%ul.row
+  - @topics_seguridad.each do |topic|
+    %li.topics.span3
+      = link_to topic.name, "##{topic.name.parameterize}", 'data-toggle' => :modal
 
-  .seleccion.phase-header
-    %h2
-      Justicia
+.seleccion.phase-header
+  %h2
+    Justicia
 
-  %ul.row
-    - @topics_justicia.each do |topic|
-      %li.topics.span3
-        = link_to topic.name, "##{topic.name.parameterize}", 'data-toggle' => :modal
+%ul.row
+  - @topics_justicia.each do |topic|
+    %li.topics.span3
+      = link_to topic.name, "##{topic.name.parameterize}", 'data-toggle' => :modal
 
 
 - @topics.each do |topic|
