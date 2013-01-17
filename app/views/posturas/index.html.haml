@@ -21,26 +21,26 @@
 
 
 - @topics.each do |topic|
-.modal{id: "#{topic.name.parameterize}"}
-  .modal-header
-    %button.close{'data-dismiss' => :modal}
-      ×
-    %h3
-      = topic.name
-  .row.modal-body
-    - @political_parties.each do |political_party|
-      .span3
-        %h3
-          = political_party.name
-        %ul
-          = image_tag political_party.logo.url
-          - Position.by_topic_and_political_party(topic.id, political_party.id).each do |position|
-            %li
-              %p
-                = position.content
+  .modal{id: "#{topic.name.parameterize}"}
+    .modal-header
+      %button.close{'data-dismiss' => :modal}
+        ×
+      %h3
+        = topic.name
+    .row.modal-body
+      - @political_parties.each do |political_party|
+        .span3
+          %h3
+            = political_party.name
+          %ul
+            = image_tag political_party.logo.url
+            - Position.by_topic_and_political_party(topic.id, political_party.id).each do |position|
+              %li
+                %p
+                  = position.content
 
-  .modal-footer
-    = link_to 'Cerrar','#', class: :btn
+    .modal-footer
+      = link_to 'Cerrar','#', class: :btn
 
 %script
   $('.modal-footer a').click(function() { $('.modal').modal('hide') })
