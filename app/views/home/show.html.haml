@@ -1,5 +1,29 @@
 = render partial: 'carousel'
 
+.sentir-ciudadano.old.phase-header{'data-phase' => 'phase-one'}
+  %h2
+    %span
+      1
+    Opina
+
+= render partial: 'phrases'
+
+.seleccion.phase-header{'data-phase' => 'phase-two'}
+  %h2
+    %span
+      2
+    Preg&uacute;ntales
+
+= render partial: 'questions'
+
+.destacadas.old.phase-header{'data-phase' => 'phase-three'}
+  %h2
+    %span
+      3
+    Compara, eval&uacute;a y decide
+
+= render partial: 'evalua'
+
 .seguimiento.phase-header
   %h2
     %span
@@ -11,7 +35,7 @@
 .span8
   %span Secci&oacute;n
   %input{type: :text}
-  %inpuy{type: :button, class: [:btn, 'btn-primary']} Buscar
+  %input{type: :button, class: [:btn, 'btn-primary'], value: 'Buscar'} 
     
 #map
 

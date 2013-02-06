@@ -28,3 +28,12 @@
 //= require sections/nuevo_leon
 
 //= require_tree .
+
+$('.phase-header').live('click', function() {
+  phaseToShow = $(this).data('phase');
+  divtoShow = $('#' + phaseToShow);
+  show = divtoShow.is(':hidden')
+  $('#phase-one, #phase-two, #phase-three').hide(500);
+  if(show)
+    divtoShow.fadeIn().css("display","inline-block");
+});
