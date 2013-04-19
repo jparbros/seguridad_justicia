@@ -33,9 +33,10 @@
 = render partial: 'sigueles'
 
 .span8
-  %span Secci&oacute;n
-  %input{type: :text}
-  %input{type: :button, class: [:btn, 'btn-primary'], value: 'Buscar'} 
+  = form_tag '/secciones/busqueda' do
+    %span Secci&oacute;n
+    %input{type: :text, name: :section_number}
+    %input{type: :submit, class: [:btn, 'btn-primary'], value: 'Buscar'} 
     
 #map
 

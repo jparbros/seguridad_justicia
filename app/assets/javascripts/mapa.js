@@ -49,9 +49,12 @@ window.mapas = {
   polygonzo: function() {
     klass = this
     this.gonzo = new PolyGonzo.PgOverlay({map: this.map, geo: this.geo, events: {
+                                            mousemove: function( event, where ) {
+                                              feature = where && where.feature
+                                              klass.map.setOptions({ draggableCursor: feature ? 'pointer' : null });
+                                            },
                                             click: function(event, where) {
-                                              console.log(event);
-                                              console.log(where);
+                                              window.location = "/secciones/" + where.feature.id;
                                             }
                                     }});
     this.gonzo.setMap(this.map);

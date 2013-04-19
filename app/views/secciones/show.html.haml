@@ -1,0 +1,15 @@
+.span6
+  %h2 Representantes del distrito: #{params[:id]}
+
+%ul
+  - @representatives.each do |representative|
+    %li.span4
+      %div.sigueles-title
+        = image_tag representative.political_party.logo.thumb if representative.political_party
+        %span
+          = representative.political_party.initials if representative.political_party
+      = representative.name.titleize
+      (#{representative.position.humanize})
+      %span
+        = link_to 'Ver Perfil', representante_path(representative)
+    
