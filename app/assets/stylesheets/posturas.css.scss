@@ -16,6 +16,17 @@
 #posturas {
 
   .modal {
+    z-index: 100000010;
+    
+    h3 {
+      color: #000 !important;
+      margin: 0 !important; 
+    }
+    
+    p {
+      color: #000 !important;
+    }
+    
     ul {
       margin: 0;
       padding: 0 10px 0 0;

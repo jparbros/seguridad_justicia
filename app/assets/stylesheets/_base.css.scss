@@ -1,0 +1,244 @@
+body {
+  background: url('/assets/background-bottom.png') repeat-x 0 bottom, url('/assets/background.png');
+  margin: 0 0 200px;
+}
+
+hr {
+  border-top-color: #333333;
+  border-bottom-color: #999999;
+  margin: 20px;
+}
+
+a {
+  color: #f869a6;
+
+  &:hover {
+    color: #f869a6;
+  }
+}
+
+.navbar {
+  .container {
+    padding-top: 0;
+  }
+
+  span {
+    color: #F59331;
+    display: inline;
+    float: left;
+    font-size: 21px;
+    font-family: Trebuchet MS;
+    margin: 35px 0 0;
+  }
+
+  .brand {
+    padding: 25px 20px 12px 20px;
+  }
+
+  .social-networs {
+    color: #ffffff;
+    float: right;
+    margin: 25px 0 0;
+    font-family: Trebuchet MS;
+  }
+}
+
+.container {
+  padding-top: 43px;
+}
+
+.navbar-inner {
+  background: url('/assets/menu-pattern.png') repeat;
+  height: 85px;
+}
+
+#main-content {
+  background: url('/assets/main-content-background.png') repeat-x 0 bottom;
+
+  #content {
+    background: #363636;
+    margin-bottom: 19px;
+    min-height: 800px;
+    padding: 95px 0 30px 0;
+
+    p {
+      color: #ffffff;
+      font-family: Trebuchet MS,san serif;
+      font-size: 16px;
+      margin: 0 20px 0 0;
+
+      span {
+        font-weight: bold;
+      }
+    }
+
+    h3 {
+      color: #ffffff;
+      font-family: 'Medula One',cursive;
+      font-size: 28px;
+      font-weight: normal;
+      margin: 40px 0 5px;
+    }
+
+    h4 {
+      color: #ffffff;
+      font-family: Oswald, serif;
+      font-size: 18px;
+      font-weight: normal;
+      margin: 0 0 0;
+    }
+  }
+}
+
+#side-bar {
+  margin: 0;
+  padding: 95px 0 0 0;
+
+  h2 {
+    color: #000000;
+    font-size: 40px;
+    font-family: 'Medula One', cursive;
+    font-weight: normal;
+    margin: 10px 0 5px 0;
+  }
+}
+
+/* Subnav */
+.subnav {
+  background: #ffffff;
+  border: 0;
+  height: 39px;
+  width: 100%;
+  margin: 3px 0 0 0;
+
+  &:before {
+    content: url('/assets/menu-ribbon.png');
+    float: left;
+    margin: -10px 0 0 -47px;
+  }
+
+  &:after {
+    content: url('/assets/menu-tail.png');
+    float: right;
+    margin: -43px -18px 0 0;
+
+    body.chrome & { margin: -72px -18px 0 0;}
+  }
+}
+
+.subnav .nav {
+  margin-bottom: 0;
+
+  a {
+    color: #363636;
+    font-family: Trebuchet MS, San Serif;
+    font-size: 12px;
+    text-transform: uppercase;
+
+    &:hover { background: none; text-decoration: underline;}
+  }
+}
+
+.subnav .nav > li > a {
+  margin: 0;
+  padding-top:    11px;
+  padding-bottom: 11px;
+}
+
+.subnav .nav > .active > a,
+.subnav .nav > .active > a:hover {
+  padding-left: 13px;
+  color: #777;
+}
+
+.subnav-fixed {
+  position: fixed;
+  top: 92px;
+  width: 940px;
+  z-index: 100000000;
+}
+
+#cms_content, #eventos {
+  #content {
+    color: #ffffff;
+    font-family: Trebuchet MS,san serif;
+    font-size: 16px;
+
+    .event_description {
+      margin: 0 0 0 20px;
+    }
+
+    .thumbnail {
+      border: 0;
+      margin: 0;
+      padding: 0 10px 10px 0;
+    }
+  }
+}
+
+#cms_content {
+  #content {
+    .phase-header:after {
+      margin: -60px -16px 0 0;
+    }
+  }
+}
+
+#main-content {
+  #content {
+    color: #FFFFFF;
+    font-family: Trebuchet MS,san serif;
+    font-size: 16px;
+
+    h2 {
+      color: #FFFFFF;
+      font-family: 'Medula One',cursive;
+      font-size: 34px;
+      font-weight: normal;
+      margin: 40px 0 5px 0px;
+    }
+  }
+}
+
+.news-content {
+  margin: 20px;
+  font-size: 12px;
+  border: 1px solid #999;
+  border-width: 1px 0 0;
+  padding: 20px 0;
+
+  .details {
+    border: 1px dashed white;
+    float: left;
+    margin: 0 15px 5px 0;
+    padding: 10px;
+    width: 200px;
+
+    span.detail-label {
+      font-size: 13px;
+      font-weight: bold;
+      line-height: 1;
+    }
+    .label { margin-right: 5px;}
+    
+    .share {
+      margin-top: 5px;
+      
+      .twitter, .facebook {float: left; margin: 0 5px 0 0}
+    }
+  }
+}
+
+div p:first {
+  margin-top: 0;
+}
+
+#map {
+  width: 580px;
+  height: 400px;
+  margin: 20px;
+}
+
+#secciones #content li {
+  margin-bottom: 20px;
+}
