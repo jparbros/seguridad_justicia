@@ -33,12 +33,21 @@
 = render partial: 'sigueles'
 
 .span8
+  %h2 Buscar representantes por secci&oacute;n
   = form_tag '/secciones/busqueda' do
-    %span Secci&oacute;n
+    %span 
+      Secci&oacute;n
+      %i{class: 'icon icon-white icon-question-sign'}
     %input{type: :text, name: :section_number}
     %input{type: :submit, class: [:btn, 'btn-primary'], value: 'Buscar'} 
-    
+
+.span8
+  %h2 Buscar representantes por distrito
+  %p
+    %small
+      Selecciona el distrito que quieras ver.
 #map
 
 :javascript
   window.mapas.initialize({state: '#{@site.label.downcase.gsub(' ', '_').gsub('ó','o')}'});
+  $('i.icon.icon-white.icon-question-sign').popover({title: '', content: '<img src="/assets/seccion-ife.png"/>', trigger: 'hover', placement: 'top', html: true})

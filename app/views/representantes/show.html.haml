@@ -103,9 +103,7 @@
 
       - if @representante.curul_link.present?
         %p
-          %span
-            Enlace a Curul 501:
-          = link_to @representante.curul_link, @representante.curul_link
+          = link_to 'Ver Perfil en Curul 501', @representante.curul_link, target: :blank
 
 
       - if @representante.comissions.present?

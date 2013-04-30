@@ -4,7 +4,7 @@ class Representative < ActiveRecord::Base
   # Accessors
   #
   attr_accessible :avatar, :district, :email, :name, :phone, :position, :political_party_id, :comissions, 
-    :biography, :site_id, :twitter, :circumscription, :birthday, :substitute, :gender, :section, :representation_type, :facebook, :office
+    :biography, :site_id, :twitter, :circumscription, :birthday, :substitute, :gender, :section, :representation_type, :facebook, :office, :curul_link
 
   #
   # Associations

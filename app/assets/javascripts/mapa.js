@@ -54,7 +54,7 @@ window.mapas = {
                                               klass.map.setOptions({ draggableCursor: feature ? 'pointer' : null });
                                             },
                                             click: function(event, where) {
-                                              window.location = "/secciones/" + where.feature.id;
+                                              window.location = "/distritos/" + where.feature.id;
                                             }
                                     }});
     this.gonzo.setMap(this.map);

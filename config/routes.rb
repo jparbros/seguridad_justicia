@@ -47,6 +47,7 @@ SeguridadJusticia::Application.routes.draw do
   
   match '/secciones/busqueda' => 'secciones#busqueda'
   resources :secciones, only: [:show]
+  resources :distritos, only: [:show]
 
   resources :respuestas, only: [] do
     resource :votes, controller: 'respuestas_votes', only: [:create]

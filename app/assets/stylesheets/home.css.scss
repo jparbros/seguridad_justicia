@@ -580,6 +580,7 @@ ul#representatives-list {
   background: url('/assets/timeline.png') no-repeat 30px center;
   margin-left: 10px;
   position: relative;
+  display: inline-block;
   
   .postura-created-at {
     display: none;
@@ -630,4 +631,24 @@ ul#representatives-list {
 
 #phase-one, #phase-two, #phase-three {
   display: none;
+}
+
+ul.representantes-list {
+  li {
+    min-height: 60px;
+    margin-bottom: 10px;
+  }
+}
+
+#home {
+  .popover.top {
+    
+    .popover-title { display: none;}
+  }
+}
+
+#representantes {
+  #informacion {
+    p { margin-bottom: 10px;}
+  }
 }
