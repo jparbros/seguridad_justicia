@@ -20,6 +20,7 @@
 //= require jquery.ui.min
 //= require bootstrap.min
 //= require polygonzo
+//= require jquery.tokeninput
 //= require coords/baja_california
 //= require coords/chihuahua
 //= require coords/nuevo_leon
