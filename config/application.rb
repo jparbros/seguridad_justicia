@@ -59,6 +59,7 @@ module SeguridadJusticia
     
     config.assets.initialize_on_precompile = false
     config.assets.compile = true
+    config.assets.precompile << ['admin.css', 'admin.js']
 
     # Enable the asset pipeline
     config.assets.enabled = true
