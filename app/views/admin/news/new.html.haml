@@ -1,5 +1,6 @@
-%h1
-  Nueva Noticia
+.page-header
+  %h2
+    Nueva Noticia
 
-= form_for(@news, url: admin_news_index_path, class: 'form_element') do |form|
+= form_for(@news, url: admin_news_index_path, html: {class: 'formatted form-horizontal'}) do |form|
   = render partial: 'form', object: form
