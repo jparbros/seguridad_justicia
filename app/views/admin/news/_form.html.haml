@@ -19,4 +19,4 @@
     = form.text_area :content, 'data-rich-text' => "true"
 
 .form-actions
-  = form.submit (@event.new_record? ? 'Crear' : 'Editar'), class: ['btn', 'btn-primary']
+  = form.submit (@news.new_record? ? 'Crear' : 'Editar'), class: ['btn', 'btn-primary']
