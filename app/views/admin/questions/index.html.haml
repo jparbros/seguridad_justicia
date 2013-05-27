@@ -1,14 +1,15 @@
-= link_to 'Crear Pregunta', new_admin_question_path, class: 'big button'
-%h1
-  Preguntas
+.page-header
+  = link_to 'Crear Pregunta', new_admin_question_path, class: 'btn pull-right'
+  %h2
+    Preguntas
 
-%ul{class: :list}
+%ul{class: ['list', 'sortable', 'ui-sortable']}
   - @questions.each do |question|
     %li{id: 'question_#{question.id}'}
       .item
         .icon
-        .action_links
-          = link_to 'Editar', edit_admin_question_path(question)
-          = link_to 'Eliminar', admin_question_path(question), method: :delete, confirm: '¿Esta seguro de eliminar la pregunta?'
-        .label
-          = question.question
+        .btn-group
+          = link_to 'Editar', edit_admin_question_path(question), class: ['btn', 'btn-small']
+          = link_to 'Eliminar', admin_question_path(question), method: :delete, confirm: '¿Esta seguro de eliminar la pregunta?', class: ['btn', 'btn-small', 'btn-danger']
+        .item-content
+          .item-title= question.question

@@ -1,14 +1,15 @@
-= link_to 'Crear Seguimineto', new_admin_tracing_path, class: 'big button'
-%h1
-  Iniciativas
+.page-header
+  = link_to 'Crear Seguimineto', new_admin_tracing_path, class: 'btn pull-right'
+  %h2
+    Iniciativas
 
-%ul{class: :list}
+%ul{class: ['list', 'sortable', 'ui-sortable']}
   - @tracings.each do |tracing|
     %li{id: 'tracing_#{tracing.id}'}
       .item
         .icon
-        .action_links
-          = link_to 'Editar', edit_admin_tracing_path(tracing)
-          = link_to 'Eliminar', admin_tracing_path(tracing), method: :delete, confirm: '¿Esta seguro de eliminar el seguimiento?'
-        .label
-          = tracing.title
+        .btn-group
+          = link_to 'Editar', edit_admin_tracing_path(tracing), class: ['btn', 'btn-small']
+          = link_to 'Eliminar', admin_tracing_path(tracing), method: :delete, confirm: '¿Esta seguro de eliminar el seguimiento?', class: ['btn', 'btn-small', 'btn-danger']
+        .item-content
+          .item-title= tracing.title

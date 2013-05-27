@@ -26,10 +26,9 @@
 //= require sections/baja_california
 //= require sections/chihuahua
 //= require sections/nuevo_leon
-
 //= require_tree .
 
-$('.phase-header').live('click', function() {
+$('.phase-header').click(function() {
   phaseToShow = $(this).data('phase');
   divtoShow = $('#' + phaseToShow);
   show = divtoShow.is(':hidden')

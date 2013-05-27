@@ -1,5 +1,6 @@
-%h1
-  Editar Evento
+.page-header
+  %h2
+    Editar Evento
 
-= form_for(@event, url: admin_event_path(@event), class: 'form_element', method: :put) do |form|
+= form_for(@event, url: admin_event_path(@event), html: {class: 'formatted form-horizontal'}, method: :put) do |form|
   = render partial: 'form', object: form

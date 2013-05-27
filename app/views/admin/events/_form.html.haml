@@ -1,32 +1,22 @@
-.form_element.text_field_element
-  .label
-    %label
-      Titulo
-  .value
+.control-group
+  .control-label Titulo
+  .controls
     = form.text_field :title
 
-.form_element.select_element
-  .label
-    %label
-      Lugar
-  .value
+.control-group
+  .control-label Lugar
+  .controls
     = form.text_field :venue
 
-.form_element.select_element
-  .label
-    %label
-      Fecha
-  .value
+.control-group
+  .control-label Fecha
+  .controls
     = form.text_field :date
 
-.form_element.select_element
-  .label
-    %label
-      Descripci&oacute;n
-  .value
-    = form.text_area :description, class: :rich_text
+.control-group
+  .control-label Descripci&oacute;n
+  .controls
+    = form.text_area :description, 'data-rich-text' => "true"
 
-.form_element.submit_element
-  .label
-  .value
-    = form.submit (@event.new_record? ? 'Crear' : 'Editar')
+.form-actions
+  = form.submit (@event.new_record? ? 'Crear' : 'Editar'), class: ['btn', 'btn-primary']

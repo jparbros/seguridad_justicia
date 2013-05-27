@@ -1,16 +1,18 @@
-= link_to 'Crear Banner', new_admin_banner_path, class: 'big button'
-%h1
-  Banners
+.page-header
+  = link_to 'Crear Banner', new_admin_banner_path, class: 'btn pull-right'
+  %h2
+    Banners
 
-%ul{class: :list}
+%ul{class: ['list', 'sortable', 'ui-sortable']}
   - @banners.each do |banner|
     %li{id: 'banner_#{banner.id}'}
       .item
         .icon
-        .action_links
-          = link_to 'Editar', edit_admin_banner_path(banner)
-          = link_to 'Eliminar', admin_banner_path(banner), method: :delete, confirm: '¿Esta seguro de eliminar el banner?'
-        .label
-          = image_tag banner.image.thumb.url
-          .sublabel
-            = banner.active? ? 'Activado' : 'Desactivado'
+        .btn-group
+          = link_to 'Editar', edit_admin_banner_path(banner), class: ['btn', 'btn-small']
+          = link_to 'Eliminar', admin_banner_path(banner), method: :delete, confirm: '¿Esta seguro de eliminar el banner?', class: ['btn', 'btn-small', 'btn-danger']
+        .item-content
+          .label{class: "#{banner.active? ? 'label-success' : ''}"}
+            = image_tag banner.image.thumb.url
+            .sublabel
+              = banner.active? ? 'Activado' : 'Desactivado'

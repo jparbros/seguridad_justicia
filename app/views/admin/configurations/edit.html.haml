@@ -1,0 +1,55 @@
+%h1
+  Editar Configuraciones
+
+= form_tag admin_configurations_path, class: 'form-horizontal', method: :put do
+  
+  .control-group
+    %label.control-label 
+      Mostrar Encabezado Fase 1 - Opina
+    .controls
+      = check_box_tag 'setting[phase_1]', true, @site.settings.phase_1
+  
+  .control-group
+    %label.control-label 
+      Mostrar Encabezado Fase 2 - Pregúntales  
+    .controls
+      = check_box_tag 'setting[phase_2]', true, @site.settings.phase_2
+
+  .control-group
+    %label.control-label 
+      Mostrar Encabezado Fase 3 - Compara, evalúa y decide
+    .controls
+      = check_box_tag 'setting[phase_3]', true, @site.settings.phase_3
+
+  .control-group
+    %label.control-label 
+      Mostrar Encabezado Fase 4 - Sígueles...
+    .controls
+      = check_box_tag 'setting[phase_4]', true, @site.settings.phase_4
+
+  .control-group
+    %label.control-label Fase a mostrar: 
+    .controls
+      = select_tag 'setting[default_phase]', options_for_select([['Ninguno', 'None'], ['Fase 1', 'phase_1'] , ['Fase 2', 'phase_2'], ['Fase 3', 'phase_3'], ['Fase 4', 'phase_4']], @site.settings.default_phase), include_blank: true
+
+  .control-group
+    %label.control-label 
+      Mostrar Busqueda
+    .controls
+      = check_box_tag 'setting[show_search]', true, @site.settings.show_search
+
+  .control-group
+    %label.control-label 
+      Mostrar Mapa
+    .controls
+      = check_box_tag 'setting[show_map]', true, @site.settings.show_map
+
+  .control-group
+    %label.control-label 
+      Mostrar Banners
+    .controls
+      = check_box_tag 'setting[show_banners]', true, @site.settings.show_banners
+
+  
+  .form-actions
+    = submit_tag 'Actualizar', class: ['btn', 'btn-primary']

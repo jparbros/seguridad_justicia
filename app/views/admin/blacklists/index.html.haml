@@ -1,14 +1,14 @@
-= link_to 'Crear blacklist', new_admin_blacklist_path, class: 'big button'
-%h1
-  Blacklist
+.page-header
+  = link_to 'Crear blacklist', new_admin_blacklist_path, class: 'btn pull-right'
+  %h2 Blacklist
 
-%ul{class: :list}
+%ul{class: ['list', 'sortable', 'ui-sortable']}
   - @blacklists.each do |blacklist|
     %li{id: 'blacklist_#{blacklist.id}'}
       .item
         .icon
-        .action_links
-          = link_to 'Editar', edit_admin_blacklist_path(blacklist)
-          = link_to 'Eliminar', admin_blacklist_path(blacklist), method: :delete, confirm: '¿Esta seguro de eliminar la palabra bloqueada?'
-        .label
-          = blacklist.word
+        .btn-group
+          = link_to 'Editar', edit_admin_blacklist_path(blacklist), class: ['btn', 'btn-small']
+          = link_to 'Eliminar', admin_blacklist_path(blacklist), method: :delete, confirm: '¿Esta seguro de eliminar la palabra bloqueada?', class: ['btn', 'btn-small', 'btn-danger']
+        .item-content
+          .item-title= blacklist.word

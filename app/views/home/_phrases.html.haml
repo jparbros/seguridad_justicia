@@ -1,4 +1,4 @@
-#phase-one.hide
+#phase-one{class: "#{(@site.settings.default_phase == 'phase_1')? 'show' : 'hide'}"}
   = form_for Phrase.new, url: frases_path do |form|
     .seria-seguro
       .span3
@@ -15,3 +15,9 @@
   .span8
     #phrases-container
       #phrases-box
+
+- if @site.settings.default_phase == 'phase_1'
+  %script
+    $.get('/frases.json', function(data) {
+    $("#phrases-box").jQCloud(data)
+    });

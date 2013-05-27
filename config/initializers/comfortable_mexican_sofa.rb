@@ -17,7 +17,7 @@ ComfortableMexicanSofa.configure do |config|
   # Default url to access admin area is http://yourhost/cms-admin/
   # You can change 'cms-admin' to 'admin', for example. To disable admin area
   # entirely set this to '' or nil
-  config.admin_route_prefix = 'admin/cms'
+  # config.admin_route_prefix = 'admin/cms'
 
   # When arriving at /cms-admin you may chose to redirect to arbirtary path,
   # for example '/cms-admin/users'

@@ -1,16 +1,16 @@
-= link_to 'Crear Representante', new_admin_representative_path, class: 'big button'
-%h1
-  Representantes
+.page-header
+  = link_to 'Crear Representante', new_admin_representative_path, class: 'btn pull-right'
+  %h2
+    Representantes
 
-%ul{class: :list}
+%ul{class: ['list', 'sortable', 'ui-sortable']}
   - @representatives.each do |representative|
     %li{id: 'representative_#{representative.id}'}
       .item
         .icon
-        .action_links
-        
-          = link_to 'Posturas', admin_representative_stances_path(representative)
-          = link_to 'Editar', edit_admin_representative_path(representative)
-          = link_to 'Eliminar', admin_representative_path(representative), method: :delete, confirm: '¿Esta seguro de eliminar el representante?'
-        .label
-          = representative.name
+        .btn-group
+          = link_to 'Posturas', admin_representative_stances_path(representative), class: ['btn', 'btn-small']
+          = link_to 'Editar', edit_admin_representative_path(representative), class: ['btn', 'btn-small']
+          = link_to 'Eliminar', admin_representative_path(representative), method: :delete, confirm: '¿Esta seguro de eliminar el representante?', class: ['btn', 'btn-small', 'btn-danger']
+        .item-content
+          .item-title= representative.name

@@ -1,5 +1,7 @@
 SeguridadJusticia::Application.routes.draw do
 
+  ComfortableMexicanSofa::Routing.admin   :path => '/admin/cms'
+  
   devise_for :admins, :controllers => { :sessions => "admin/sessions" }
 
   namespace :admin do
@@ -21,6 +23,8 @@ SeguridadJusticia::Application.routes.draw do
     resources :candidates do
       resources :anwsers
     end
+    
+    resource :configurations
 
     root :to => "dashboard#show"
   end
@@ -56,4 +60,6 @@ SeguridadJusticia::Application.routes.draw do
   root :to => "home#show"
 
   match '/posturas_partidistas' => 'posturas#index', as: :posturas
+  
+  ComfortableMexicanSofa::Routing.content :path => '/', :sitemap => false
 end

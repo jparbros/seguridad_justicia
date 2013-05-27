@@ -630,7 +630,11 @@ ul#representatives-list {
 }
 
 #phase-one, #phase-two, #phase-three {
-  display: none;
+  display: inline-block;
+  
+  &.hide {
+    display: none;
+  }
 }
 
 ul.representantes-list {

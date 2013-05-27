@@ -1,16 +1,17 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.3'
+gem 'rails', '3.2.13'
 
 gem 'pg'
 gem 'jquery-rails'
-gem 'comfortable_mexican_sofa','1.6.21.5', git: 'git://github.com/jparbros/comfortable-mexican-sofa.git'
+gem 'comfortable_mexican_sofa','1.8.1'
 gem 'devise'
 gem 'haml-rails'
 gem 'carrierwave'
 gem 'fog','1.3.1'
 gem 'mini_magick'
 gem 'detect_browser_os'
+gem "rails-settings-cached", "0.2.4"
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
