@@ -1,29 +1,21 @@
-.form_element.select_element
-  .label
-    %label
-      Titulo
-  .value
+.control-group
+  .control-label Titulo
+  .controls
     = form.text_field :title
 
-.form_element.select_element
-  .label
-    %label
-      Tema
-  .value
+.control-group
+  .control-label Tema
+  .controls
     = form.text_field :topic_tokens, data: {load: @stance.json_topics}
 
 
-.form_element.select_element
-  .label
-    %label
-      Contenido
-  .value
-    = form.text_area :content, class: :rich_text
+.control-group
+  .control-label Contenido
+  .controls
+    = form.text_area :content, 'data-rich-text' => "true"
 
-.form_element.submit_element
-  .label
-  .value
-    = form.submit (@stance.new_record? ? 'Crear' : 'Editar')
+.form-actions
+  = form.submit (@stance.new_record? ? 'Crear' : 'Editar')
     
 %script{type: "text/javascript"}
   $('#stance_topic_tokens').tokenInput('/admin/document_topics.json', {prePopulate: $('#stance_topic_tokens').data('load')}) 

@@ -1,5 +1,6 @@
-%h1
-  Nueva Postura
+.page-header
+  %h2
+    Nueva Postura
 
-= form_for(@stance, url: admin_representative_stances_path(@representatives), class: 'form_element', multipart: true) do |form|
+= form_for(@stance, url: admin_representative_stances_path(@representative), html: {class: 'formatted form-horizontal'}, multipart: true) do |form|
   = render partial: 'form', object: form

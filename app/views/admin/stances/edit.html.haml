@@ -1,5 +1,6 @@
-%h1
-  Editar Postura
+.page-header
+  %h2
+    Editar Postura
 
-= form_for(@stance, url: admin_representative_stance_path(@representative, @stance), class: 'form_element', method: :put) do |form|
+= form_for(@stance, url: admin_representative_stance_path(@representative, @stance), html: {class: 'formatted form-horizontal'}, method: :put) do |form|
   = render partial: 'form', object: form
