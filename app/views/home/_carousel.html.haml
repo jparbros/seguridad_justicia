@@ -2,11 +2,12 @@
   #myCarousel.carousel.slide
     .carousel-inner
       - @banners.each_with_index do |banner, index|
-        .item{class: "#{'active' if index==0}"}
-          - if banner.link.present?
-            = link_to image_tag(banner.image.url, width: 652, height: 155), banner.link_to_banner
-          - else
-            = image_tag(banner.image.url, width: 652, height: 155)
+        - if banner.image
+          .item{class: "#{'active' if index==0}"}
+            - if banner.link.present?
+              = link_to image_tag(banner.image.url, width: 652, height: 155), banner.link_to_banner
+            - else
+              = image_tag(banner.image.url, width: 652, height: 155)
 
     %a.carousel-control.left{"data-slide" => "prev", :href => "#myCarousel"} ‹
     %a.carousel-control.right{"data-slide" => "next", :href => "#myCarousel"} ›
