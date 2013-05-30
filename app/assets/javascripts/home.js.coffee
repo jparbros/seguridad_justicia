@@ -3,6 +3,13 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 $ ->
+  $('.phase-header').click ->
+    phaseToShow = $(this).data('phase')
+    divtoShow = $('#' + phaseToShow)
+    show = divtoShow.is(':hidden')
+    $('#phase-one, #phase-two, #phase-three').hide(500)
+    divtoShow.fadeIn().css("display","inline-block") if(show)
+  
   initCallback = (carousel) ->
     $('.jcarousel-control a').first().addClass('bullet-filled')
 

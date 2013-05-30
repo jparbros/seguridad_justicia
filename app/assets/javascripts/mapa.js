@@ -34,7 +34,6 @@ window.mapas = {
   paintChildren: function() {
     klass = this;
     $.each(this.geo.features, function(index, feature) {
-      console.log(feature);
       feature.fillColor = klass.colors[index]
       feature.fillOpacity = '0.4';
       feature.strokeColor = '#666666';

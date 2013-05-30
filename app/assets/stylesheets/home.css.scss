@@ -59,6 +59,7 @@ ul#question_list {
   margin: 20px 0 !important;
   position: relative;
   z-index: 10;
+  cursor: pointer;
 
   &:before { float: left; margin: -11px 0 0 -16px; }
 
