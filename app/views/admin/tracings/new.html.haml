@@ -1,5 +1,6 @@
-%h1
-  Nueva Iniciativas
+.page-header
+  %h2
+    Nueva Iniciativas
 
-= form_for(@tracing, url: admin_tracings_path, class: 'form_element', multipart: true) do |form|
+= form_for(@tracing, url: admin_tracings_path, html: {class: 'formatted form-horizontal'}, multipart: true) do |form|
   = render partial: 'form', object: form

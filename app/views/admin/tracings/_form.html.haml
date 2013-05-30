@@ -1,36 +1,26 @@
-.form_element.select_element
-  .label
-    %label
-      Titulo
-  .value
+.control-group
+  .control-label Titulo
+  .controls
     = form.text_field :title
 
-.form_element.select_element
-  .label
-    %label
-      Tema
-  .value
+.control-group
+  .control-label Tema
+  .controls
     = form.text_field :topic_tokens, data: {load: @tracing.json_topics}
 
-.form_element.select_element
-  .label
-    %label
-      Tipo de seguimiento
-  .value
+.control-group
+  .control-label Tipo de seguimiento
+  .controls
     = form.select :document_kind, ['prevención','seguridad','justicia'], include_blank: true
     = form.text_field :document_kind_text
 
-.form_element.select_element
-  .label
-    %label
-      Contenido
-  .value
-    = form.text_area :content, class: :rich_text
+.control-group
+  .control-label Contenido
+  .controls
+    = form.text_area :content, 'data-rich-text' => "true"
 
-.form_element.submit_element
-  .label
-  .value
-    = form.submit (@tracing.new_record? ? 'Crear' : 'Editar')
+.form-actions
+  = form.submit (@tracing.new_record? ? 'Crear' : 'Editar'), class: ['btn', 'btn-primary']
     
 %script{type: "text/javascript"}
   $('#tracing_topic_tokens').tokenInput('/admin/document_topics.json', {prePopulate: $('#tracing_topic_tokens').data('load')}) 

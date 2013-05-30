@@ -1,140 +1,99 @@
-.form_element.select_element
-  .label
-    %label
-      Nombre
-  .value
+.control-group
+  .control-label Nombre
+  .controls
     = form.text_field :name
 
-.form_element.text_field_element
-  .label
-    %label
-      Partido Politico y/o Alianza
-  .value
+.control-group
+  .control-label Partido Politico / Alianza
+  .controls
     = form.select :political_party_id, PoliticalParty.by_site(@site.id).collect {|p| [ p.name, p.id ]}, include_blank: true
 
-.form_element.select_element
-  .label
-    %label
-      Distrito
-  .value
+.control-group
+  .control-label Distrito
+  .controls
     = form.text_field :district
 
-.form_element.select_element
-  .label
-    %label
-      Circumscripcion
-  .value
+.control-group
+  .control-label Circumscripcion
+  .controls
     = form.text_field :circumscription
 
 
-.form_element.text_field_element
-  .label
-    %label
-      Puesto
-  .value
+.control-group
+  .control-label Puesto
+  .controls
     = form.select :position, [['Diputado local','diputado_local'],['Diputado federal','diputado_federal'],['Senador','senador'],['Presidente Municipal','presidente_municipal']], include_blank: true
 
-.form_element.text_field_element
-  .label
-    %label
-      Tipo de representacion (solo senadores)
-  .value
+.control-group
+  .control-label Tipo de representacion (solo senadores)
+  .controls
     = form.select :representation_type, [['Mayoría Relativa','mayoría relativa'],['1ra Minoría','1ra minoría'],['Plurinominal','plurinominal']], include_blank: true
 
-.form_element.text_field_element
-  .label
-    %label
-      Genero:
-  .value
+.control-group
+  .control-label Genero
+  .controls
     = form.select :gender, [['Femenino','f'],['Masculino','m']], include_blank: true
 
-
-.form_element.select_element
-  .label
-    %label
-      Email
-  .value
+.control-group
+  .control-label Email
+  .controls
     = form.text_field :email
 
-.form_element.select_element
-  .label
-    %label
-      Twitter
-  .value
+.control-group
+  .control-label Twitter
+  .controls
     = form.text_field :twitter
 
-.form_element.select_element
-  .label
-    %label
-      Facebook
-  .value
+.control-group
+  .control-label Facebook
+  .controls
     = form.text_field :facebook
 
-.form_element.select_element
-  .label
-    %label
-      Telefono
-  .value
+.control-group
+  .control-label Telefono
+  .controls
     = form.text_field :phone
 
-.form_element.select_element
-  .label
-    %label
-      Fecha de nacimiento
-  .value
+.control-group
+  .control-label Fecha de nacimiento
+  .controls
     = form.text_field :birthday
 
 
-.form_element.select_element
-  .label
-    %label
-      Imagen
-  .value
+.control-group
+  .control-label Imagen
+  .controls
     = form.file_field :avatar
 
-.form_element.select_element
-  .label
-    %label
-      Substituto
-  .value
+.control-group
+  .control-label Substituto
+  .controls
     = form.text_field :substitute
 
-.form_element.select_element
-  .label
-    %label
-      Comisiones
-  .value
+.control-group
+  .control-label Comisiones
+  .controls
     = form.text_field :comissions
 
-.form_element.select_element
-  .label
-    %label
-      Seccion
-  .value
+.control-group
+  .control-label Seccion
+  .controls
     = form.text_field :section
 
-.form_element.select_element
-  .label
-    %label
-      Oficina de enlace
-  .value
+.control-group
+  .control-label Oficina de enlace
+  .controls
     = form.text_field :office
 
-.form_element.select_element
-  .label
-    %label
-      Link a curul501
-  .value
+.control-group
+  .control-label Link a Curul501
+  .controls
     = form.text_field :curul_link
 
-.form_element.select_element
-  .label
-    %label
-      Biografia
-  .value
-    = form.text_area :biography, class: :rich_text
+.control-group
+  .control-label Biografia
+  .controls
+    = form.text_area :biography, 'data-rich-text' => "true"
 
-.form_element.submit_element
-  .label
-  .value
-    = form.submit (@representative.new_record? ? 'Crear' : 'Editar')
+.form-actions
+  = form.submit (@representative.new_record? ? 'Crear' : 'Editar'), class: ['btn', 'btn-primary']
