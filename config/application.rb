@@ -57,6 +57,8 @@ module SeguridadJusticia
     # parameters by using an attr_accessible or attr_protected declaration.
     config.active_record.whitelist_attributes = false
     
+    config.assets.precompile << %w( token-input.css admin.css admin.js jquery.tokeninput.js)
+    
     config.assets.initialize_on_precompile = false
 
     # Enable the asset pipeline
