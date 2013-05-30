@@ -12,6 +12,8 @@ gem 'fog','1.3.1'
 gem 'mini_magick'
 gem 'detect_browser_os'
 gem "rails-settings-cached", "0.2.4"
+gem 'newrelic_rpm'
+gem 'comfy_blog', git: 'git://github.com/joshuaogle/comfy-blog.git', branch: 'feature/1-8-1'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -26,5 +28,4 @@ end
 
 group :production do
   gem 'unicorn'
-  gem 'newrelic_rpm'
 end
