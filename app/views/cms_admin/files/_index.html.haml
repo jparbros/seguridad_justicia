@@ -1,6 +1,7 @@
 - type ||= nil
 - files_scope = (type == 'image') ? @site.files .images.where(archived: false) : @site.files
 - puts files_scope
+- puts files_scope.size
 
 .box.file-uploader
   = form_for :file, :url => cms_admin_site_files_path(@site, :ajax => true), :html => {:multipart => true, :target => 'file-upload-frame'} do |form|
