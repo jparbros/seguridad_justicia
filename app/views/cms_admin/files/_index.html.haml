@@ -1,5 +1,5 @@
 - type ||= nil
-- files_scope = (type == 'image') ? @site.files.images.where(archived: false) : @site.files
+- files_scope = (type == 'image') ? @site.files.images.where(archived: false) : @site.files.where(archived: false)
 - puts files_scope
 - puts files_scope.size
 
