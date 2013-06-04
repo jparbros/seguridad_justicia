@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130530135047) do
+ActiveRecord::Schema.define(:version => 20130604084506) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -113,6 +113,7 @@ ActiveRecord::Schema.define(:version => 20130530135047) do
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
     t.integer  "political_party_id"
+    t.integer  "election_id"
   end
 
   create_table "cms_blocks", :force => true do |t|
@@ -265,6 +266,14 @@ ActiveRecord::Schema.define(:version => 20130530135047) do
     t.string   "document_kind"
   end
 
+  create_table "elections", :force => true do |t|
+    t.string   "name"
+    t.boolean  "active"
+    t.integer  "site_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "events", :force => true do |t|
     t.string   "title"
     t.text     "description"
@@ -321,6 +330,7 @@ ActiveRecord::Schema.define(:version => 20130530135047) do
     t.datetime "created_at",                 :null => false
     t.datetime "updated_at",                 :null => false
     t.integer  "votes_count", :default => 0
+    t.integer  "election_id"
   end
 
   create_table "representatives", :force => true do |t|
@@ -347,6 +357,7 @@ ActiveRecord::Schema.define(:version => 20130530135047) do
     t.string   "representation_type"
     t.string   "office"
     t.string   "curul_link"
+    t.integer  "election_id"
   end
 
   add_index "representatives", ["commisions_id"], :name => "index_representatives_on_commisions_id"

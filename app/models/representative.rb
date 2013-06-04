@@ -4,7 +4,8 @@ class Representative < ActiveRecord::Base
   # Accessors
   #
   attr_accessible :avatar, :district, :email, :name, :phone, :position, :political_party_id, :comissions, 
-    :biography, :site_id, :twitter, :circumscription, :birthday, :substitute, :gender, :section, :representation_type, :facebook, :office, :curul_link
+    :biography, :site_id, :twitter, :circumscription, :birthday, :substitute, :gender, :section, :representation_type, 
+    :facebook, :office, :curul_link, :election_id
 
   #
   # Associations
@@ -13,6 +14,7 @@ class Representative < ActiveRecord::Base
   has_many :stances
   belongs_to :site, class_name: 'Cms::Site'
   belongs_to :political_party
+  belongs_to :election
 
   #
   # Uploaders
@@ -25,6 +27,10 @@ class Representative < ActiveRecord::Base
   
   def self.by_site(site_id)
     where(site_id: site_id)
+  end
+  
+  def self.by_election(election_id)
+    where(election_id: election_id)
   end
   
   def twitter_username

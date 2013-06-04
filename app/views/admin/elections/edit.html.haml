@@ -1,0 +1,6 @@
+.page-header
+  %h2
+    Editar Eleccion
+
+= form_for(@election, url: admin_election_path(@election), html: {class: 'formatted form-horizontal'}, method: :put) do |form|
+  = render partial: 'form', object: form

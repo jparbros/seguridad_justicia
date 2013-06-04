@@ -4,12 +4,13 @@ class Question < ActiveRecord::Base
 
   act_as_votes
 
-  attr_accessible :question, :site_id
+  attr_accessible :question, :site_id, :election_id
 
   #
   # Relations
   #
   belongs_to :site, class_name: 'Cms::Site'
+  belongs_to :election
   has_many :answers
   has_many :candidates, through: :answers
 
@@ -23,7 +24,9 @@ class Question < ActiveRecord::Base
   # Delegates
   #
 
-
+  def self.by_election(election_id)
+    where(election_id: election_id)
+  end
 
   def allowed_words
     not_allowed_words = Blacklist.all.collect {|word| word.word}

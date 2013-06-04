@@ -1,18 +1,17 @@
-.form_element.select_element
-  .label
-    %label
-      Nombre
-  .value
+.control-group
+  .control-label Nombre
+  .controls
     = form.text_field :name
 
-.form_element.text_field_element
-  .label
-    %label
-      Partido Politico y/o Alianza
-  .value
+.control-group
+  .control-label Partido Politico y/o Alianza
+  .controls
     = form.select :political_party_id, PoliticalParty.by_site(@site.id).collect {|p| [ p.name, p.id ]}, include_blank: true
 
-.form_element.submit_element
-  .label
-  .value
-    = form.submit (@candidate.new_record? ? 'Crear' : 'Editar')
+.control-group
+  .control-label Elecci&oacute;n
+  .controls
+    = form.select :election, @site.elections.collect {|p| [ p.name, p.id ] }, include_blank: true
+
+.form-actions    
+  = form.submit (@candidate.new_record? ? 'Crear' : 'Editar')

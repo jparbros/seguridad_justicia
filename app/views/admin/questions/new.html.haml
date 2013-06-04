@@ -1,5 +1,5 @@
 %h1
   Nueva Pregunta
 
-= form_for(@question, url: admin_questions_path, class: 'form_element') do |form|
+= form_for(@question, url: admin_questions_path, html: {class: 'formatted form-horizontal'}) do |form|
   = render partial: 'form', object: form

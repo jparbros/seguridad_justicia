@@ -1,14 +1,16 @@
-= link_to 'Crear Respuesta', new_admin_candidate_anwser_path(@candidate), class: 'big button'
-%h1
-  #{@candidate.name} - Respuestas
+.page-header
+  = link_to 'Crear Respuesta', new_admin_candidate_anwser_path(@candidate), class: 'btn pull-right'
+  %h2
+    #{@candidate.name} - Respuestas
 
-%ul{class: :list}
+%ul{class: ['list', 'sortable', 'ui-sortable']}
   - @anwsers.each do |anwser|
     %li{id: 'anwser_#{anwser.id}'}
       .item
         .icon
-        .action_links
-          = link_to 'Editar', edit_admin_candidate_anwser_path(@candidate, anwser)
-          = link_to 'Eliminar', admin_candidate_anwser_path(@candidate, anwser), method: :delete, confirm: '¿Esta seguro de eliminar la respuesta?'
-        .label
-          = anwser.question.question if anwser.question
+        .btn-group
+          = link_to 'Editar', edit_admin_candidate_anwser_path(@candidate, anwser), class: ['btn', 'btn-small']
+          = link_to 'Eliminar', admin_candidate_anwser_path(@candidate, anwser), method: :delete, confirm: '¿Esta seguro de eliminar la respuesta?', class: ['btn', 'btn-small', 'btn-danger']
+        .item-content
+          .item-title
+            = anwser.question.question if anwser.question
