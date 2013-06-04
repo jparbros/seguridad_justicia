@@ -1,6 +1,6 @@
 class DistritosController < ApplicationController
   def show
-    @representatives = Representative.where(district: params[:id])
+    @representatives = Representative.by_site(@site.id).where(district: params[:id])
   end
   
   def busqueda

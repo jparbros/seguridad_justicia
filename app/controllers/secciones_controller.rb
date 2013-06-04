@@ -1,7 +1,7 @@
 class SeccionesController < ApplicationController
   
   def show
-    @representatives = Representative.where(section: params[:id])
+    @representatives = Representative.by_site(@site.id).where(section: params[:id])
   end
   
   def busqueda

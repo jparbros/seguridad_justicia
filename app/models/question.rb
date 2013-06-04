@@ -1,29 +1,31 @@
 class Question < ActiveRecord::Base
   include Votes
 
-
   act_as_votes
 
-  attr_accessible :question, :site_id
+  attr_accessible :question, :site_id, :election_id
 
   #
   # Relations
   #
   belongs_to :site, class_name: 'Cms::Site'
+  belongs_to :election
   has_many :answers
   has_many :candidates, through: :answers
 
   #
   # Validates
   #
-  validate :allowed_words, :uniqueness_by_site
+  validate :allowed_words, :uniqueness_by_site, on: :create
   validates :question, length: { maximum: 250 , :too_long => " solo se permiten %{count} caracteres." }
 
   #
   # Delegates
   #
 
-
+  def self.by_election(election_id)
+    where(election_id: election_id)
+  end
 
   def allowed_words
     not_allowed_words = Blacklist.all.collect {|word| word.word}

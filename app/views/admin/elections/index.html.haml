@@ -1,0 +1,26 @@
+.page-header
+  = link_to 'Crear Eleccion', new_admin_election_path, class: 'btn pull-right'
+  %h2
+    Elecciones
+
+%ul{class: ['list', 'sortable', 'ui-sortable']}
+  - @elections.each do |election|
+    %li{id: 'election_#{election.id}'}
+      .item
+        .icon
+        .btn-group
+          = link_to 'Editar', edit_admin_election_path(election), class: ['btn', 'btn-small']
+          - if election.active?
+            = link_to 'Desactivar', deactivate_admin_election_path(election), class: ['btn', 'btn-small', 'btn-danger']
+          -else
+            = link_to 'Activar', activate_admin_election_path(election), class: ['btn', 'btn-small', 'btn-success']
+            
+          = link_to 'Eliminar', admin_election_path(election), method: :delete, confirm: '¿Esta seguro de eliminar la eleccion?', class: ['btn', 'btn-small', 'btn-danger']
+        .item-content
+          .item-title
+            = election.name
+            .sublabel
+              - if election.active?
+                .label.label-success Activo
+              -else
+                .label.label-important Desactivo

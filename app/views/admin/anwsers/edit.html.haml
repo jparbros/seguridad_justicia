@@ -1,5 +1,6 @@
-%h1
-  Editar Respuesta
+.page-header
+  %h2
+    Editar Respuesta
 
-= form_for(@anwser, url: admin_candidate_anwser_path(@candidate, @anwser), class: 'form_element', multipart: true, method: :put) do |form|
+= form_for(@anwser, url: admin_candidate_anwser_path(@candidate, @anwser), html: {class: 'formatted form-horizontal'}, multipart: true, method: :put) do |form|
   = render partial: 'form', object: form

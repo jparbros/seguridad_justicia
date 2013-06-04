@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130527073602) do
+ActiveRecord::Schema.define(:version => 20130604084506) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -58,6 +58,53 @@ ActiveRecord::Schema.define(:version => 20130527073602) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "blog_comments", :force => true do |t|
+    t.integer  "post_id",                         :null => false
+    t.string   "author",                          :null => false
+    t.string   "email",                           :null => false
+    t.text     "content"
+    t.boolean  "is_published", :default => false, :null => false
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
+  end
+
+  add_index "blog_comments", ["post_id", "created_at"], :name => "index_blog_comments_on_post_id_and_created_at"
+  add_index "blog_comments", ["post_id", "is_published", "created_at"], :name => "index_blog_comments_on_post_published_created"
+
+  create_table "blog_posts", :force => true do |t|
+    t.string   "title",                                          :null => false
+    t.string   "slug",                                           :null => false
+    t.text     "content"
+    t.string   "excerpt",      :limit => 1024
+    t.string   "author"
+    t.integer  "year",                                           :null => false
+    t.integer  "month",        :limit => 2,                      :null => false
+    t.boolean  "is_published",                 :default => true, :null => false
+    t.datetime "published_at",                                   :null => false
+    t.datetime "created_at",                                     :null => false
+    t.datetime "updated_at",                                     :null => false
+  end
+
+  add_index "blog_posts", ["created_at"], :name => "index_blog_posts_on_created_at"
+  add_index "blog_posts", ["is_published", "created_at"], :name => "index_blog_posts_on_is_published_and_created_at"
+  add_index "blog_posts", ["is_published", "year", "month", "slug"], :name => "index_blog_posts_on_published_year_month_slug"
+
+  create_table "blog_taggings", :force => true do |t|
+    t.integer "post_id", :null => false
+    t.integer "tag_id",  :null => false
+  end
+
+  add_index "blog_taggings", ["post_id", "tag_id"], :name => "index_blog_taggings_on_post_tag", :unique => true
+
+  create_table "blog_tags", :force => true do |t|
+    t.string  "name",                              :null => false
+    t.boolean "is_category",    :default => false, :null => false
+    t.integer "taggings_count", :default => 0,     :null => false
+  end
+
+  add_index "blog_tags", ["name", "taggings_count"], :name => "index_blog_tags_on_name_and_taggings_count", :unique => true
+  add_index "blog_tags", ["taggings_count"], :name => "index_blog_tags_on_taggings_count"
+
   create_table "candidates", :force => true do |t|
     t.string   "name"
     t.string   "image"
@@ -66,6 +113,7 @@ ActiveRecord::Schema.define(:version => 20130527073602) do
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
     t.integer  "political_party_id"
+    t.integer  "election_id"
   end
 
   create_table "cms_blocks", :force => true do |t|
@@ -218,6 +266,14 @@ ActiveRecord::Schema.define(:version => 20130527073602) do
     t.string   "document_kind"
   end
 
+  create_table "elections", :force => true do |t|
+    t.string   "name"
+    t.boolean  "active"
+    t.integer  "site_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "events", :force => true do |t|
     t.string   "title"
     t.text     "description"
@@ -274,6 +330,7 @@ ActiveRecord::Schema.define(:version => 20130527073602) do
     t.datetime "created_at",                 :null => false
     t.datetime "updated_at",                 :null => false
     t.integer  "votes_count", :default => 0
+    t.integer  "election_id"
   end
 
   create_table "representatives", :force => true do |t|
@@ -300,6 +357,7 @@ ActiveRecord::Schema.define(:version => 20130527073602) do
     t.string   "representation_type"
     t.string   "office"
     t.string   "curul_link"
+    t.integer  "election_id"
   end
 
   add_index "representatives", ["commisions_id"], :name => "index_representatives_on_commisions_id"

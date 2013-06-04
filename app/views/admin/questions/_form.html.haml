@@ -1,11 +1,12 @@
-.form_element.text_field_element
-  .label
-    %label
-      Pregunta
-  .value
+.control-group
+  .control-label Pregunta
+  .controls
     = form.text_field :question
 
-.form_element.submit_element
-  .label
-  .value
-    = form.submit (@question.new_record? ? 'Crear' : 'Editar')
+.control-group
+  .control-label Elecci&oacute;n
+  .controls
+    = form.select :election_id, @site.elections.collect {|p| [ p.name, p.id ] }, include_blank: true
+
+.form-actions
+  = form.submit (@question.new_record? ? 'Crear' : 'Editar')

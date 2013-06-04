@@ -1,19 +1,13 @@
-.form_element.select_element
-  .label
-    %label
-      Pregunta
-  .value
+.control-group
+  .control-label Pregunta
+  .controls
     = form.select :question_id, @questions, include_blank: true
 
-.form_element.select_element
-  .label
-    %label
-      URL de la respuesta
-  .value
+.control-group
+  .control-label URL de la respuesta
+  .controls
     = form.text_field :url
 
 
-.form_element.submit_element
-  .label
-  .value
-    = form.submit (@anwser.new_record? ? 'Crear' : 'Editar')
+.form-actions
+  = form.submit (@anwser.new_record? ? 'Crear' : 'Editar'), class: 'btn btn-primary'
