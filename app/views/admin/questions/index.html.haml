@@ -13,3 +13,6 @@
           = link_to 'Eliminar', admin_question_path(question), method: :delete, confirm: '¿Esta seguro de eliminar la pregunta?', class: ['btn', 'btn-small', 'btn-danger']
         .item-content
           .item-title= question.question
+          .sublabel
+            .label= question.election.name if question.election
+            

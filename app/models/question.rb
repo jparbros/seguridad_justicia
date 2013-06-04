@@ -1,7 +1,6 @@
 class Question < ActiveRecord::Base
   include Votes
 
-
   act_as_votes
 
   attr_accessible :question, :site_id, :election_id
@@ -17,7 +16,7 @@ class Question < ActiveRecord::Base
   #
   # Validates
   #
-  validate :allowed_words, :uniqueness_by_site
+  validate :allowed_words, :uniqueness_by_site, on: :create
   validates :question, length: { maximum: 250 , :too_long => " solo se permiten %{count} caracteres." }
 
   #

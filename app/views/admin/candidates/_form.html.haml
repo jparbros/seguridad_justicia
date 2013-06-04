@@ -11,7 +11,7 @@
 .control-group
   .control-label Elecci&oacute;n
   .controls
-    = form.select :election, @site.elections.collect {|p| [ p.name, p.id ] }, include_blank: true
+    = form.select :election_id, @site.elections.collect {|p| [ p.name, p.id ] }, include_blank: true
 
 .form-actions    
   = form.submit (@candidate.new_record? ? 'Crear' : 'Editar')
