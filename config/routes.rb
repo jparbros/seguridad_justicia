@@ -70,9 +70,6 @@ SeguridadJusticia::Application.routes.draw do
   root :to => "home#show"
 
   match '/posturas_partidistas' => 'posturas#index', as: :posturas
-  
-  ComfyBlog::Routing.admin
-  ComfyBlog::Routing.content
 
   ComfortableMexicanSofa::Routing.content :path => '/', :sitemap => false
 end
