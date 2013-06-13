@@ -1,0 +1,6 @@
+.page-header
+  %h2
+    Editar Entrada
+
+= form_for(@post, url: admin_events_post_path(@post), html: {class: 'formatted form-horizontal'}, method: :put) do |form|
+  = render partial: 'form', object: form

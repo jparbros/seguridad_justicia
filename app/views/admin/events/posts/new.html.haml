@@ -1,0 +1,6 @@
+.page-header
+  %h2
+    Nueva Entrada
+
+= form_for(@post, url: admin_events_posts_path, html: {class: 'formatted form-horizontal'}) do |form|
+  = render partial: 'form', object: form

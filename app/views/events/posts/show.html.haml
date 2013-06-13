@@ -1,0 +1,19 @@
+%h2= @post.title
+
+.news-content
+  .details
+    .news-date
+      %span.detail-label Fecha:
+      = @post.published_at.to_date
+
+    .share
+      .twitter
+        %a{"href" => "https://twitter.com/share", :class => "twitter-share-button", "data-text" => "#{@post.title[0..90]}", "data-lang" => "es", "data-count" => "none", "data-url" => "#{request.url}"}
+          Twittear
+      .facebook
+        .fb-like{"data-href" => "#{request.url}", "data-send" => "false", "data-layout" => "button_count", "data-show-faces" => "false", "data-action" => "recommend", "data-font" => "tahoma"}
+
+
+  = @post.body.html_safe
+      
+.fb-comments{'data-href' => "#{request.url}", 'data-width' => "510"}

@@ -1,0 +1,22 @@
+.page-header
+  = link_to 'Crear Entrada', new_admin_events_post_path, class: 'btn pull-right'
+  %h2
+    Blog de Eventos
+
+%ul{class: ['list', 'sortable', 'ui-sortable']}
+  - @posts.each do |post|
+    %li{id: 'post_#{post.id}'}
+      .item
+        .icon
+        .btn-group
+          = link_to 'Editar', edit_admin_events_post_path(post), class: ['btn', 'btn-small']
+          - if post.draft? 
+            = link_to 'Publicar', publish_admin_events_post_path(post), class: ['btn', 'btn-small', 'btn-success']
+          -else
+            = link_to 'Desactivar', unpublish_admin_events_post_path(post), class: ['btn', 'btn-small', 'btn-danger']
+          = link_to 'Eliminar', admin_events_post_path(post), method: :delete, confirm: '¿Esta seguro de eliminar la entrada?', class: ['btn', 'btn-small', 'btn-danger']
+        .item-content
+          .item-title
+            = post.title
+            .label{class: "#{post.draft? ? '' : 'label-success'}"}
+              = post.draft? ? 'Borrador' : 'Publicado'

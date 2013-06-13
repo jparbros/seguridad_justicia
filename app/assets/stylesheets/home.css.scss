@@ -189,6 +189,12 @@ ul#question_list {
   }
 }
 
+.events-posts-header {
+  background-color: #f8f8f8;
+  margin: 30px 0 0 0;
+  padding: 0 0 0 20px;
+}
+
 
 .events-header {
   background-color: #f8f8f8;
@@ -196,7 +202,7 @@ ul#question_list {
   padding: 0 0 0 20px;
 }
 
-.news-container ,.events-container {
+.news-container, .events-container, .events-posts-container {
   margin: 0 0 0 20px;
 
   ul {

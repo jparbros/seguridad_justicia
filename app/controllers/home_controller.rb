@@ -20,5 +20,7 @@ class HomeController < ApplicationController
     
     @best_questions = Question.with_anwser_by_site(@site.id).limit(3)
     @best_questions = @best_questions.by_election(Election.active) if Election.active
+    
+    @events_posts = ::Events::Post.by_site(@site.id).published.limit(3)
   end
 end

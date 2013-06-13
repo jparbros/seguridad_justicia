@@ -1,0 +1,12 @@
+.control-group
+  .control-label Titulo
+  .controls
+    = form.text_field :title
+
+.control-group
+  .control-label Contenido:
+  .controls
+    = form.text_area :body, 'data-rich-text' => "true"
+
+.form-actions
+  = form.submit (@post.new_record? ? 'Crear' : 'Editar'), class: ['btn', 'btn-primary']

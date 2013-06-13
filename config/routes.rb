@@ -13,7 +13,17 @@ SeguridadJusticia::Application.routes.draw do
     resources :banners
     resources :admins
     resources :debates
-    resources :events
+    resources :events, only: [:index, :new, :edit, :create, :update, :destroy]
+
+    namespace :events do
+      resources :posts do
+        member do
+          get :publish
+          get :unpublish
+        end
+      end
+    end
+    
     resources :political_parties
     resources :topics
     resources :positions
@@ -44,6 +54,9 @@ SeguridadJusticia::Application.routes.draw do
   match '/seguimientos/tipo/:tipo' => 'seguimientos#index', as: :seguimientos_tipos
   
   resources :frases
+  namespace :events do
+    resources :posts, only: [:show, :index]
+  end
   resources :events, only: [:show, :index], controller: 'eventos'
   resources :noticias, only: [:show, :index]
   resources :preguntas, only: [:create, :index] do
