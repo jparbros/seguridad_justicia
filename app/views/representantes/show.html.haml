@@ -7,139 +7,148 @@
     = @representante.name.titleize
     (#{@representante.position_parsed.humanize})
 
-.row.profile
-  .span3.well
-    = image_tag @representante.avatar.blank? ? '/assets/user.png' : @representante.avatar.thumb
-    %ul#profileTab.nav.nav-tabs.nav-stacked
-      %li.active
-        %a{'data-toggle' =>"tab", :href => '#informacion'}
-          Informaci&oacute;n
-          %i.icon-chevron-right
+#seguimiento-container
+  %ul#profileTab.nav.nav-tabs
+    %li.active
+      %a.profile{'data-toggle' =>"tab", :href => '#informacion'}
+        Informaci&oacute;n
 
-      - if @representante.biography.present?
-        %li
-          %a{'data-toggle' =>"tab", :href => '#biografia'}
-            Biograf&iacute;a
-            %i.icon-chevron-right
+    - if @representante.biography.present?
+      %li
+        %a.biography{'data-toggle' =>"tab", :href => '#biografia'}
+          Biograf&iacute;a
 
-      - if @representante.twitter.present?
-        %li
-          %a{'data-toggle' =>"tab", :href => '#twitter'}
-            Twitter
-            %i.icon-chevron-right
+    - if @representante.twitter.present?
+      %li
+        %a.twitter{'data-toggle' =>"tab", :href => '#twitter'}
+          Twitter
+    %li
+      %a.performance{'data-toggle' =>"tab", :href => '#performance'}
+        Desempeño Legislativo
+            
+  .profile-container
+    .profile-avatar
+      = image_tag @representante.avatar.blank? ? '/assets/user.png' : @representante.avatar
+    
         
-    .share
-      .twitter
-        %a{"href" => "https://twitter.com/share", :class => "twitter-share-button", "data-text" => "#{@representante.name}", "data-lang" => "es", "data-count" => "none", "data-url" => "#{request.url}"}
-          Twittear
-      .facebook
-        .fb-like{"data-href" => "#{request.url}", "data-send" => "false", "data-layout" => "button_count", "data-show-faces" => "false", "data-action" => "recommend", "data-font" => "tahoma"}
+      .share
+        .twitter
+          %a{"href" => "https://twitter.com/share", :class => "twitter-share-button", "data-text" => "#{@representante.name}", "data-lang" => "es", "data-count" => "none", "data-url" => "#{request.url}"}
+            Twittear
+        .facebook
+          .fb-like{"data-href" => "#{request.url}", "data-send" => "false", "data-layout" => "button_count", "data-show-faces" => "false", "data-action" => "recommend", "data-font" => "tahoma"}
 
-  .tab-content.span4.well
-    #informacion.tab-pane.active
+    .tab-content.profile-content
+      #informacion.tab-pane.active
+        %h2 Informaci&oacute;n personal
 
-      %p
-        %span.one-line
-          Partido Politico:
-
-        = image_tag @representante.political_party.logo.thumb, class: :thumb
-
-        = @representante.political_party.name
-
-      - if @representante.email.present?
         %p
-          %span
-            Email:
-          - if @representante.email.present?
-            = @representante.email
+          %span.one-line
+            Partido Politico:
 
-      - if @representante.section.present?
-        %p
-          %span
-            Sección:
-          = @representante.section
+          = image_tag @representante.political_party.logo.thumb, class: :thumb
 
-      - if @representante.district.present?
-        %p
-          %span
-            Distrito:
-          = @representante.district
+          = @representante.political_party.name
 
-      - if @representante.circumscription.present?
-        %p
-          %span
-            Circunscripción:
-          = @representante.circumscription
+        - if @representante.email.present?
+          %p
+            %span
+              Email:
+            - if @representante.email.present?
+              = @representante.email
 
-      - if @representante.representation_type.present? && @representante.position == 'senador'
-        %p
-          %span
-            Tipo de reprsentación:
-          = @representante.representation_type.humanize
+        - if @representante.section.present?
+          %p
+            %span
+              Sección:
+            = @representante.section
 
-      - if @representante.phone.present?
-        %p
-          %span
-            Telefono:
-          = @representante.phone
+        - if @representante.district.present?
+          %p
+            %span
+              Distrito:
+            = @representante.district
 
-      - if @representante.substitute.present?
-        %p
-          %span
-            Sustituto:
-          = @representante.substitute
+        - if @representante.circumscription.present?
+          %p
+            %span
+              Circunscripción:
+            = @representante.circumscription
 
-      - if @representante.facebook.present?
-        %p
-          %span
-            Facebook:
-          = link_to 'Ver Facebook', @representante.facebook, target: :blank
+        - if @representante.representation_type.present? && @representante.position == 'senador'
+          %p
+            %span
+              Tipo de reprsentación:
+            = @representante.representation_type.humanize
 
-      - if @representante.office.present?
-        %p
-          %span
-            Oficina de enlace:
-          = @representante.office
+        - if @representante.phone.present?
+          %p
+            %span
+              Telefono:
+            = @representante.phone
 
-      - if @representante.curul_link.present?
-        %p
-          = link_to 'Ver Perfil en Curul 501', @representante.curul_link, target: :blank
+        - if @representante.substitute.present?
+          %p
+            %span
+              Sustituto:
+            = @representante.substitute
+
+        - if @representante.facebook.present?
+          %p
+            %span
+              Facebook:
+            = link_to 'Ver Facebook', @representante.facebook, target: :blank
+
+        - if @representante.office.present?
+          %p
+            %span
+              Oficina de enlace:
+            = @representante.office
+
+        - if @representante.curul_link.present?
+          %p
+            = link_to 'Ver Perfil en Curul 501', @representante.curul_link, target: :blank
 
 
-      - if @representante.comissions.present?
-        %p
-          %span
-            Comisiones:
-          - @representante.split_commisions.each do |commission|
-            %span.label.label-info
-              = commission
+        - if @representante.comissions.present?
+          %p
+            %span
+              Comisiones:
+          %ul.comisiones
+            - @representante.split_commisions.each do |commission|
+              %li
+                = commission
                 
-    #biografia.tab-pane
-      - if @representante.biography.present?
-        = @representante.biography.html_safe
-      - else
-        Biografia no disponible.
-
-    #twitter.tab-pane
-      - if @representante.twitter.blank?
-        Cuenta de twitter no disponible
-.span8
-  %h2
-    Desempeño Legislativo
-- @posturas.each do |postura|
-      
-  .postura      
-    .postura-created-at.tooltip.bottom.in
-      .tooltip-arrow
-      .tooltip-inner
-        = postura.created_at.to_date.to_s :short
-    .postura-content
-      %h4
-        = postura.title
-      
-      = postura.first_paragraph.html_safe
+      #biografia.tab-pane
+        %h2 Biografia
           
-      = link_to 'Leer mas...', representante_postura_path(postura.representative, postura)
+        - if @representante.biography.present?
+          = @representante.biography.html_safe
+        - else
+          Biografia no disponible.
+
+      #twitter.tab-pane
+        %h2 Twitter
+        - if @representante.twitter.blank?
+          Cuenta de twitter no disponible
+          
+      #performance.tab-pane
+        %h2 Desempeño Legislativo
+
+        - @posturas.each do |postura|
+      
+          .postura      
+            .postura-created-at.tooltip.bottom.in
+              .tooltip-arrow
+              .tooltip-inner
+                = postura.created_at.to_date.to_s :short
+            .postura-content
+              %h4
+                = postura.title
+      
+              = postura.first_paragraph.html_safe
+          
+              = link_to 'Leer mas...', representante_postura_path(postura.representative, postura)
 
 
 %script

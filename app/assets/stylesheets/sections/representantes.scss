@@ -1,0 +1,140 @@
+#representantes {
+  .phase-header:after {
+    margin: -59px -16px 0 0;
+  }
+}
+
+.sigueles-title {
+  float: left;
+  text-align: center;
+  margin-right: 10px;
+  margin-top: -5px;
+
+  span {
+    display: block;
+    font-size: 12px !important;
+    line-height: 1;
+  }
+}
+
+#seguimiento-container {
+  @include makeRow;
+  
+  .profile-container {
+    @include makeColumn(9);
+    
+    .profile-avatar {
+      @include makeColumn(3);
+      
+      .share {margin-top: 20px;}
+    }
+    
+    .profile-content {
+      @include makeColumn(5);
+      
+      #informacion {
+        ul.comisiones {
+          list-style: none;
+          margin-left: 40px;
+          
+          li {
+            background: url('/assets/bullet.png') no-repeat 0 3px;
+            padding: 0 0 10px 20px;
+            margin: 0;
+
+            &:hover {
+              background: url('/assets/bullet-hover.png') no-repeat 0 3px;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  ul#profileTab {
+    @include makeColumn(9);
+    border: 0;
+    
+    li {
+      border-right: 1px solid #dddddd;
+      width: 216px;
+      
+      a {
+        -webkit-border-radius: 0px;
+        -moz-border-radius: 0px;
+        border-radius: 0px;
+        border: 0;
+        background: no-repeat center top;
+        padding-top: 70px;
+        margin: 0;
+        text-align: center;
+        
+        &:hover {
+          color: #ddd;
+          border: 0;
+          
+          &.profile {
+            background-image: url('/assets/profile-hover.png');
+          }
+          
+          &.biography {
+            background-image: url('/assets/biography-hover.png');
+          }
+          
+          &.twitter {
+            background-image: url('/assets/profile-twitter-hover.png');
+          }
+          
+          &.performance {
+            background-image: url('/assets/desempeno-hover.png');
+          }
+        }
+        
+        &.profile {
+          background-image: url('/assets/profile.png');
+        }
+        
+        &.biography {
+          background-image: url('/assets/biography.png');
+        }
+        
+        &.twitter {
+          background-image: url('/assets/profile-twitter.png');
+        }
+        
+        &.performance {
+          background-image: url('/assets/desempeno.png');
+        }
+      }
+      
+      &.active {
+        a {
+          background-color: transparent;
+          border: 0;
+          color: #ffffff;
+          
+          &.profile {
+            background-image: url('/assets/profile-active.png');
+          }
+          
+          &.biography {
+            background-image: url('/assets/biography-active.png');
+          }
+          
+          &.twitter {
+            background-image: url('/assets/profile-twitter-active.png');
+          }
+          
+          &.performance {
+            background-image: url('/assets/desempeno-active.png');
+          }
+        }
+        
+      }
+      
+      &:last-child {
+        border: 0;
+      }
+    }
+  }
+}
