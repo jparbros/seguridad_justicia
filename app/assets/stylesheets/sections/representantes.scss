@@ -51,6 +51,49 @@
     }
   }
   
+  .postura {
+    padding: 10px 0 10px 35px;
+    width: 435px;
+    background: url('/assets/timeline.png') no-repeat 5px center;
+    margin-left: 0;
+    position: relative;
+    display: inline-block;
+  
+    .postura-created-at {
+      display: none;
+      position: absolute;
+      top: 43%;
+      margin-left: -35px;
+    }
+  
+    &:hover {
+      background: url('/assets/timeline-hover.png') no-repeat 0px center;
+    
+      .postura-created-at {
+        display: inline;
+      }
+    }
+  
+    .postura-content {
+      background: #fff;
+      border-radius: 10px;
+      padding: 10px;
+    
+      p, h4, div { color: #333 !important;}
+    
+      p, div {
+        margin: 0 !important;
+        padding: 0 !important;
+        font-size: 12px !important;
+      }
+    
+      h4 {
+        margin: 0 !important;
+        padding: 0 0 10px 0 !important;
+      }
+    }
+  }
+  
   ul#profileTab {
     @include makeColumn(9);
     border: 0;

@@ -136,10 +136,9 @@
         %h2 Desempeño Legislativo
 
         - @posturas.each do |postura|
-      
+
           .postura      
             .postura-created-at.tooltip.bottom.in
-              .tooltip-arrow
               .tooltip-inner
                 = postura.created_at.to_date.to_s :short
             .postura-content
