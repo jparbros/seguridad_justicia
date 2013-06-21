@@ -1,26 +1,29 @@
-%h2= @postura.title
+.section-post-container
+  %h2= @postura.title
 
-.news-content
-  .details
-    .news-topic
-      %span.detail-label Tema(s):
-      - @postura.topics.each do |topic|
-        %span.label.label-info
-          = topic.name
+  .post-container
+    .post-sidebar
+      .post-date
+        %span.detail-label Fecha:
+        = @postura.created_at.to_date
 
-    .news-date
-      %span.detail-label Fecha:
-      = @postura.created_at.to_date
-          
-    .back-buton
-      = link_to 'Ver las posturas', representante_posturas_path(@postura.representative)
-    .share
-      .twitter
-        %a{"href" => "https://twitter.com/share", :class => "twitter-share-button", "data-text" => "#{@postura.title[0..90]}", "data-lang" => "es", "data-count" => "none", "data-url" => "#{request.url}"}
-          Twittear
-      .facebook
-        .fb-like{"data-href" => "#{request.url}", "data-send" => "false", "data-layout" => "button_count", "data-show-faces" => "false", "data-action" => "recommend", "data-font" => "tahoma"}
-          
-  = @postura.content.html_safe
+      .post-topic
+        %span.detail-label Tema(s):
+        - @postura.topics.each do |topic|
+          %span.label.label-info
+            = topic.name
 
-.fb-comments{'data-href' => "#{request.url}", 'data-width' => "510"}
+      .back-buton
+        = link_to 'Ver las posturas', representante_posturas_path(@postura.representative)
+      .share
+        %span Compartir
+        .twitter
+          %a{"href" => "https://twitter.com/share", :class => "twitter-share-button", "data-text" => "#{@postura.title[0..90]}", "data-lang" => "es", "data-count" => "none", "data-url" => "#{request.url}"}
+            Twittear
+        .facebook
+          .fb-like{"data-href" => "#{request.url}", "data-send" => "false", "data-layout" => "button_count", "data-show-faces" => "false", "data-action" => "recommend", "data-font" => "tahoma"}
+
+    .post-content
+      = @postura.content.html_safe
+
+  .fb-comments{'data-href' => "#{request.url}", 'data-width' => "800"}

@@ -1,25 +1,27 @@
-%h2= @news.title
+.section-post-container
+  %h2= @news.title
 
-.news-content
-  .details
-    .news-topic
-      %span.detail-label Tema(s):
-      - @news.topic.split(',').each do |topic|
-        %span.label.label-info
-          = topic
+  .post-container
+    .post-sidebar
+      .post-date
+        %span.detail-label Fecha:
+        = @news.date.to_date
 
-    .news-date
-      %span.detail-label Fecha:
-      = @news.date.to_date
+      .post-topic
+        %span.detail-label Tema(s):
+        - @news.topic.split(',').each do |topic|
+          %span.label.label-info
+            = topic
+          
+      .share
+        %span Compartir
+        .twitter
+          %a{"href" => "https://twitter.com/share", :class => "twitter-share-button", "data-text" => "#{@news.title[0..90]}", "data-lang" => "es", "data-count" => "none", "data-url" => "#{request.url}"}
+            Twittear
+        .facebook
+          .fb-like{"data-href" => "#{request.url}", "data-send" => "false", "data-layout" => "button_count", "data-show-faces" => "false", "data-action" => "recommend", "data-font" => "tahoma"}
 
-    .share
-      .twitter
-        %a{"href" => "https://twitter.com/share", :class => "twitter-share-button", "data-text" => "#{@news.title[0..90]}", "data-lang" => "es", "data-count" => "none", "data-url" => "#{request.url}"}
-          Twittear
-      .facebook
-        .fb-like{"data-href" => "#{request.url}", "data-send" => "false", "data-layout" => "button_count", "data-show-faces" => "false", "data-action" => "recommend", "data-font" => "tahoma"}
+    .post-content
+      = @news.content.html_safe
 
-
-  = @news.content.html_safe
-      
-.fb-comments{'data-href' => "#{request.url}", 'data-width' => "510"}
+  .fb-comments{'data-href' => "#{request.url}", 'data-width' => "800"}

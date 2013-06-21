@@ -1,0 +1,28 @@
+.section-post-container {
+  @include makeColumn(8);
+  
+  .post-container {
+    @include makeRow;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  
+    .post-sidebar {
+      @include makeColumn(2);
+    
+      span {
+        font-weight: bold;
+      }
+      & > div {
+        margin-bottom: 10px;
+      }
+    }
+  
+    .post-content {
+      @include makeColumn(6);
+    } 
+  }
+  
+  .fb-comments {
+    background-color: #fff;
+  }
+}
