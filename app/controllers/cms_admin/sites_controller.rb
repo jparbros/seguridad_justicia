@@ -1,3 +1,5 @@
+require_dependency ComfortableMexicanSofa::Engine.root.join('app', 'controllers', 'cms_admin', 'sites_controller').to_s
+
 class CmsAdmin::SitesController < CmsAdmin::BaseController
 
   def index

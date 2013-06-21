@@ -6,15 +6,14 @@
           = question_phrase.html_safe
       .span5.input-container
         = form.text_field :phrase, class: :span4
-        = form.submit 'Enviar >>', class: :span1
+        = form.submit 'Enviar >>'
 
   - if flash[:error]
     .alert.alert-error.span7
       = flash[:error]
 
-  .span8
-    #phrases-container
-      #phrases-box
+  #phrases-container
+    #phrases-box
 
 - if @site.settings.default_phase == 'phase_1'
   %script

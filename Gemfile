@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.13'
 
 gem 'pg'
+gem 'bootstrap-sass', github: 'thomas-mcdonald/bootstrap-sass'
 gem 'jquery-rails'
 gem 'comfortable_mexican_sofa','1.8.1'
 gem 'devise'

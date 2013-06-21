@@ -1,8 +1,8 @@
-.row.span4.mailing-list
+.sidebar-element.following-container
   %h2
     Iniciativas
 
   %ul
     - Tracing.document_types.each do |document_kind|
       %li
-        = link_to document_kind.humanize, seguimientos_tipos_path(document_kind)
+        %span= link_to document_kind.humanize, seguimientos_tipos_path(document_kind)

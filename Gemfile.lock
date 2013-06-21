@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/thomas-mcdonald/bootstrap-sass.git
+  revision: f6d96d164c5130a63f21c873b3052a66e3f5ed0e
+  specs:
+    bootstrap-sass (2.3.2.0)
+      sass (~> 3.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -200,6 +207,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bootstrap-sass!
   carrierwave
   coffee-rails (~> 3.2.1)
   comfortable_mexican_sofa (= 1.8.1)

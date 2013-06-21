@@ -1,0 +1,145 @@
+@import 'twitter_bootstrap';
+@import 'sections/home';
+@import 'sections/posturas';
+
+body {
+  background: url('/assets/background.png');
+  margin: 125px 0 0;
+}
+
+a {
+  color: #f869a6;
+
+  &:hover {
+    color: #f869a6;
+  }
+}
+
+header {
+  @extend .navbar-fixed-top;
+  background: url('/assets/menu-pattern.png') repeat;
+  height: 85px;
+  
+  span {
+    color: #F59331;
+    display: inline;
+    float: left;
+    font-size: 21px;
+    font-family: Trebuchet MS;
+    margin: 35px 0 0;
+  }
+
+  .logo {
+    float: left;
+    padding: 25px 20px 12px 20px;
+  }
+
+  .social-networs {
+    @include border-radius(0px);
+    color: #ffffff;
+    float: right;
+    margin: 25px 0 0;
+    font-family: Trebuchet MS;
+  }
+}
+
+.navbar {
+  @extend .navbar-fixed-top;
+  top: 85px;
+  
+  .navbar-inner {
+    background: white;
+    
+    li {
+      a {
+        color: #363636;
+        font-family: Trebuchet MS, San Serif;
+        font-size: 12px;
+        text-transform: uppercase;
+
+        &:hover { background: none; text-decoration: underline;}
+      }
+    }
+    
+    .dropdown-menu {
+      top: 101%;
+    } 
+  }
+}
+
+#main-content {
+  @include makeColumn(9);
+  color: #fff;
+  background: #363636;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  
+  h2 {
+    color: #FFFFFF;
+    font-family: 'Medula One',cursive;
+    font-size: 36px;
+    font-weight: normal;
+    margin: 20px 0 0 0px;
+    padding: 0;
+  }
+}
+
+#side-bar {
+  @include makeColumn(3);
+  margin-left: 0px;
+  width: 300px;
+  
+  .sidebar-element {
+    
+    h2 {
+      background-color: #f8f8f8;
+      margin: 20px 0 10px 0;
+      padding: 5px 0 5px 30px;
+      color: #000000;
+      font-size: 40px;
+      font-family: 'Medula One', cursive;
+      font-weight: normal;
+    }
+    
+    ul {
+      @extend .unstyled;
+      margin: 0;
+
+      li {
+        background: #cccccc;
+        font-family: Trebuchet MS, san serif;
+        font-size: 12px;
+        margin: 5px 0;
+        padding: 5px 0 5px 30px;
+
+        span {
+          color: #A00059;
+          display: block;
+          font-family: 'Oswald', cursive;
+          font-size: 14px;
+        }
+      }
+    }
+    
+    &.mailing-list {
+      background-color: #f8f8f8;
+      padding-bottom: 5px;
+      
+      .mailing-list-form {
+        padding: 0 0 5px 30px;
+        
+        form {
+          margin: 0;
+          display: inline-block;
+          
+          input {
+            &[type=submit] {
+              @extend .btn;
+              @extend .pull-right;
+            }
+          }
+        }
+      }
+    }
+  }
+}

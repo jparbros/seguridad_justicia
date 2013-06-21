@@ -1,30 +1,33 @@
-%p
-  En esta sección, promoviendo el voto informado, podras encontrar las propuestas de los diferentes partidos politicos y alianzas en temas de seguridad y justicias.
+.posturas-container
+  %p
+    En esta sección, promoviendo el voto informado, podras encontrar las propuestas de los diferentes partidos politicos y alianzas en temas de seguridad y justicias.
 
 .sentir-ciudadano.phase-header
   %h2
     Seguridad
 
-%ul.row
-  - @topics_seguridad.each do |topic|
-    %li.topics.span3
-      = link_to topic.name, "##{topic.name.parameterize}", 'data-toggle' => :modal
+.posturas-container
+  %ul.posturas
+    - @topics_seguridad.each do |topic|
+      %li.topics.span3
+        = link_to topic.name, "##{topic.name.parameterize}", 'data-toggle' => :modal
 
 .seleccion.phase-header
   %h2
     Justicia
 
-%ul.row
-  - @topics_justicia.each do |topic|
-    %li.topics.span3
-      = link_to topic.name, "##{topic.name.parameterize}", 'data-toggle' => :modal
+.posturas-container
+  %ul.posturas
+    - @topics_justicia.each do |topic|
+      %li.topics.span3
+        = link_to topic.name, "##{topic.name.parameterize}", 'data-toggle' => :modal
 
 
 - @topics.each do |topic|
-  .modal{id: "#{topic.name.parameterize}"}
+  .modal.modal-postura.hide.fade{id: "#{topic.name.parameterize}"}
     .modal-header
-      %button.close{'data-dismiss' => :modal}
-        ×
+      %button.close{'data-dismiss' => :modal, type: 'button', 'aria-hidden' => "true"}
+        &times;
       %h3
         = topic.name
     .row.modal-body

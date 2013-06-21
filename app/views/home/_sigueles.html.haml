@@ -1,25 +1,25 @@
-.span8{class: "#{(@site.settings.default_phase == 'phase_4')? 'show' : 'hide'}"}
+.sigueles-container{class: "#{(@site.settings.default_phase == 'phase_4')? 'show' : 'hide'}"}
   - if @diputados_federales.present?
     %h2
       Diputados Federales
-    %ul#representatives-list.row
+    %ul.representatives-list
       =render partial: 'representante', collection: @diputados_federales
 
   - if @senadores.present?
     %h2
       Senadores
-    %ul#representatives-list.row
+    %ul.representatives-list
       =render partial: 'representante', collection: @senadores
 
   - if @alcaldes.present?
     %h2
       Presidentes Municipales
-    %ul#representatives-list.row
+    %ul.representatives-list
       =render partial: 'representante', collection: @alcaldes
       
   - if @diputados_locales.present?
     %h2
       Diputados Locales
-    %ul#representatives-list.row
+    %ul.representatives-list
       =render partial: 'representante', collection: @diputados_locales
       
