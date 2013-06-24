@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130613072522) do
+ActiveRecord::Schema.define(:version => 20130624214347) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -78,7 +78,7 @@ ActiveRecord::Schema.define(:version => 20130613072522) do
     t.string   "excerpt",      :limit => 1024
     t.string   "author"
     t.integer  "year",                                           :null => false
-    t.integer  "month",        :limit => 2,                      :null => false
+    t.integer  "month",                                          :null => false
     t.boolean  "is_published",                 :default => true, :null => false
     t.datetime "published_at",                                   :null => false
     t.datetime "created_at",                                     :null => false
@@ -335,7 +335,7 @@ ActiveRecord::Schema.define(:version => 20130613072522) do
   add_index "positions", ["topic_id"], :name => "index_positions_on_topic_id"
 
   create_table "questions", :force => true do |t|
-    t.string   "question"
+    t.text     "question"
     t.integer  "site_id"
     t.datetime "created_at",                 :null => false
     t.datetime "updated_at",                 :null => false
