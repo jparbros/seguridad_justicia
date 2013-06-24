@@ -2,16 +2,12 @@ class HomeController < ApplicationController
   def show
     @banners = Banner.by_site(@site.id).active
     @diputados_federales = Representative.by_site(@site.id).where(position: 'diputado_federal')
-    @diputados_federales = @diputados_federales.by_election(Election.active) if Election.active
     
     @senadores = Representative.by_site(@site.id).where(position: 'senador')
-    @senadores = @senadores.by_election(Election.active) if Election.active
     
     @alcaldes = Representative.by_site(@site.id).where(position: 'presidente_municipal')
-    @alcaldes = @alcaldes.by_election(Election.active) if Election.active
     
     @diputados_locales = Representative.by_site(@site.id).where(position: 'diputado_local')
-    @diputados_locales = @diputados_locales.by_election(Election.active) if Election.active
     
     @seguimientos = Tracing.by_site(@site.id).most_recent
 

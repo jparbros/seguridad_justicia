@@ -4,5 +4,7 @@ class Cms::Site < ActiveRecord::Base
   include RailsSettings::Extend
   
   has_many :elections
+  
+  cattr_accessor :site
 
 end

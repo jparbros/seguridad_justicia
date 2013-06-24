@@ -12,8 +12,13 @@ class PreguntasController < ApplicationController
 
   def index
     @events = Event.to_home(@site.id)
+    
     @questions = Question.most_voted(@site.id)
-    @questions = @questions.by_election(Election.active) if Election.active
+    if params[:eleccion]
+      @questions = @questions.by_election(params[:eleccion]) 
+    elsif Election.active
+      @questions = @questions.by_election(Election.active)
+    end
   end
 
 end

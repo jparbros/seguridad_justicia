@@ -9,7 +9,11 @@ class Election < ActiveRecord::Base
   default_scope order('created_at DESC')
   
   def self.active
-    where(active: true).first
+    where(active: true, site_id: ::Cms::Site.site.id).first
+  end
+  
+  def self.deactive
+    where(active: false).order('name ASC')
   end
 
   def self.by_site(site_id)

@@ -37,6 +37,16 @@
       Atenci&oacute;n
     Las preguntas deben de tener un m&aacute;ximo de 250 caracteres
 
+  - if Election.by_site(@site.id).active
+    .span8
+      Historial de pasadas elecciones:
+      <br />
+      %ul.old-questions
+        - Election.by_site(@site.id).deactive.each do |election|
+          %li= link_to election.name, preguntas_path(eleccion: election.id)
+        
+  
+  
   - if flash[:error]
     .row
       .alert.alert-error.span7

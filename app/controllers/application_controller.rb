@@ -9,6 +9,7 @@ class ApplicationController < ActionController::Base
         else
           Cms::Site.find_site(request.host.downcase, request.fullpath) || Cms::Site.first
         end
+    Cms::Site.site = @site
   end
 
   def redirect_admin_domain
