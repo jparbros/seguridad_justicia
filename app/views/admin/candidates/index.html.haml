@@ -14,5 +14,5 @@
           = link_to 'Eliminar', admin_candidate_path(candidate), method: :delete, confirm: '¿Esta seguro de eliminar el candidato?', class: ['btn', 'btn-small', 'btn-danger']
           
         .item-content
-          .item-title
-            = candidate.name
+          .item-title= candidate.name
+          .label= candidate.election.name if candidate.election
