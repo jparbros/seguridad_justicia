@@ -3,37 +3,25 @@
 
 - if @site.settings.phase_1
   .sentir-ciudadano.old.phase-header{'data-phase' => 'phase-one'}
-    %h2
-      %span
-        1
-      Opina
+    %h2 1 Opina
 
   = render partial: 'phrases'
 
 - if @site.settings.phase_2
   .seleccion.phase-header{'data-phase' => 'phase-two'}
-    %h2
-      %span
-        2
-      Preg&uacute;ntales
+    %h2 2 Preg&uacute;ntales
 
   = render partial: 'questions'
 
 - if @site.settings.phase_3
   .destacadas.old.phase-header{'data-phase' => 'phase-three'}
-    %h2
-      %span
-        3
-      Compara, eval&uacute;a y decide
+    %h2 3 Compara, eval&uacute;a y decide
 
   = render partial: 'evalua'
 
 - if @site.settings.phase_4
   .seguimiento.phase-header
-    %h2
-      %span
-        4
-      Sígueles...
+    %h2 4 Sígueles...
 
   = render partial: 'sigueles'
 

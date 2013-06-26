@@ -29,14 +29,13 @@
   h2 {
     color: #ffffff;
     font-size: 40px;
-    font-family: 'Medula One', cursive;
+    font-family: 'Merriweather Sans', sans-serif;
     font-weight: 200;
     margin-top: 0 !important;
     padding: 8px 0 0 0 !important;
 
     span {
       font-size: 40px;
-      font-family: 'Anton', sans-serif;
     }
   }
 }
@@ -62,7 +61,6 @@
     span {
       color: #fff;
       float: left;
-      font-family: 'Oswald', sans-serif;
       font-size: 48px;
       line-height: 90%;
       margin: 0 0 0 10px;
@@ -124,7 +122,6 @@ ul {
     li {
       background: url('/assets/bullet.png') no-repeat 0 3px;
       color: #ffffff;
-      font-family: Trebuchet MS, serif;
       font-size: 14px;
       padding: 0 0 10px 20px;
       margin: 0;
@@ -143,7 +140,6 @@ ul {
 .questions {
   span {
     float: left;
-    font-family: 'Oswald',sans-serif;
     font-size: 20px;
     line-height: 90%;
     margin: 67px 0 0 20px;
@@ -167,7 +163,6 @@ ul {
 
       li {
         @include makeColumn(4);
-        border-top: 1px solid #333;
         border-bottom: 1px solid #999;
 
         span {
@@ -240,7 +235,6 @@ ul {
     color: #494949;
     border: 0;
     background-color: #ffd7e9;
-    font-family: Trebuchet MS;
     font-size: 14px;
     height: 48px;
   }
@@ -250,7 +244,6 @@ ul {
     background-color: #A1005C;
     border: 0;
     float: right;
-    font-family: 'Homenaje', sans-serif;
     font-size: 18px;
     height: 50px;
     margin: 2px -12px 2px 0;
