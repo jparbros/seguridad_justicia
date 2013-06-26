@@ -24,6 +24,7 @@
 //= require home
 //= require eventos
 //= require events_posts
+//= require google_maps
 //= require coords/baja_california
 //= require coords/chihuahua
 //= require coords/nuevo_leon

@@ -1,16 +1,27 @@
-%h2
-  = @evento.title
+.section-post-container
+  %h2
+    = @evento.title
 
-%p
-  Lugar:
-  %br/
-  = @evento.venue
+  .event-details
+    .event-information
+      %h3 D&oacute;nde y cu&aacute;ndo
+      %h5
+        %i.icon-map-marker.icon-white
+        = @evento.venue
 
-%p
-  Fecha y Hora:
-  %br/
-  = @evento.date
+      %h5
+        %i.icon-calendar.icon-white
+        = I18n.localize(@evento.date, :format => :long)
 
-.event_description
-  = @evento.description.html_safe
+    #box-map
 
+  .event_description
+    = @evento.description.html_safe
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+google_maps = GoogleMaps.initialize(#{@evento.options_for_maps.html_safe})
+google_maps.render();
+});
+</script>

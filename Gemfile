@@ -14,6 +14,7 @@ gem 'mini_magick'
 gem 'detect_browser_os'
 gem "rails-settings-cached", "0.2.4"
 gem 'newrelic_rpm'
+gem 'rails-i18n'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

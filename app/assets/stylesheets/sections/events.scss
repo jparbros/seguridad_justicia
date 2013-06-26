@@ -1,0 +1,12 @@
+.event-details {
+  @include makeRow;
+  
+  .event-information {
+    @include makeColumn(4);
+  }
+  
+  #box-map {
+    @include makeColumn(4);
+    height: 300px;
+  }
+}

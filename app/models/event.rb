@@ -1,5 +1,7 @@
 class Event < ActiveRecord::Base
   attr_accessible :date, :description, :title, :venue, :site_id
+  
+  include GoogleMaps
 
   def self.by_site(site_id)
     where(site_id: site_id)
