@@ -254,6 +254,17 @@ ul {
       color: #F869A6;
     }
   }
+  
+  &.old-questions {
+    display: inline-block;
+    list-style: none;
+    margin-left: 0;
+    
+    li {
+      float: left;
+      margin-right: 10px;
+    }
+  }
 }
 
 
@@ -430,7 +441,6 @@ ul#representatives-list {
     width: 280px;
 
     span {
-      display: block;
       font-size: 12px;
       margin: 10px 0;
     }
@@ -451,6 +461,12 @@ ul#representatives-list {
     display: block;
     font-size: 12px !important;
     line-height: 1;
+  }
+}
+
+.sigueles-info {
+  span {
+    display: inline-block;
   }
 }
 
@@ -662,4 +678,14 @@ ul.representantes-list {
   #informacion {
     p { margin-bottom: 10px;}
   }
+}
+
+.news-content {
+  .noticia {
+    margin-bottom: 20px;
+  }
+}
+
+.label.label-info a {
+  color: #fff;
 }

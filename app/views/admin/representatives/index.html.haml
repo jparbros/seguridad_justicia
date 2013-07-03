@@ -14,3 +14,4 @@
           = link_to 'Eliminar', admin_representative_path(representative), method: :delete, confirm: '¿Esta seguro de eliminar el representante?', class: ['btn', 'btn-small', 'btn-danger']
         .item-content
           .item-title= representative.name
+          .label= representative.election.name if representative.election

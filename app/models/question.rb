@@ -17,7 +17,7 @@ class Question < ActiveRecord::Base
   # Validates
   #
   validate :allowed_words, :uniqueness_by_site, on: :create
-  validates :question, length: { maximum: 250 , :too_long => " solo se permiten %{count} caracteres." }
+  validates :question, length: { maximum: 500 , :too_long => " solo se permiten %{count} caracteres." }
 
   #
   # Delegates

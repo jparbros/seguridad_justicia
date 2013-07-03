@@ -29,8 +29,8 @@ class Representative < ActiveRecord::Base
     where(site_id: site_id)
   end
   
-  def self.by_election(election_id)
-    where(election_id: election_id)
+  def self.by_election
+    Election.active ? where(election_id: Election.active) : self
   end
   
   def twitter_username

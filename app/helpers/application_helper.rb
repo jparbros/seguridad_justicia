@@ -39,4 +39,11 @@ module ApplicationHelper
       'UA-31401146-3'
    end
   end
+  
+  def content_teaser(content)
+    truncated_content = truncate(strip_tags(content), {
+      :length => 200,
+      :preserve_html_tags => false
+    }).html_safe
+  end
 end

@@ -36,3 +36,11 @@
 
     .alert.disclaimer
       Los videos son acomodados en orden alfabético.
+
+    - if Election.by_site(@site.id).active
+    .span8
+      Historial de pasadas elecciones:
+      <br />
+      %ul.old-questions
+        - Election.by_site(@site.id).deactive.each do |election|
+          %li= link_to election.name, evalua_index_path(eleccion: election.id)   
