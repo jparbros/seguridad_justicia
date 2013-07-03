@@ -1,2 +1,12 @@
-%h1 Noticias#index
-%p Find me in app/views/noticias/index.html.haml
+%h2 Noticias
+
+.news-content
+  - @noticias.each do |noticia|
+    .noticia
+      %h4= noticia.title
+      .categories
+        - noticia.news_category_list.each do |category|
+          .label.label-info= link_to category, noticias_categorias_path(category)
+      %p
+        = content_teaser(noticia.content)
+        = link_to 'Leer mas...', noticia_path(noticia)

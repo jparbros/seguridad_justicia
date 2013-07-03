@@ -13,6 +13,8 @@ gem 'mini_magick'
 gem 'detect_browser_os'
 gem "rails-settings-cached", "0.2.4"
 gem 'newrelic_rpm'
+gem 'acts-as-taggable-on'
+gem 'kaminari'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
