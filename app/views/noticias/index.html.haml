@@ -1,12 +1,24 @@
-%h2 Noticias
+.section-post-container
+  %h2 Noticias
 
-.news-content
-  - @noticias.each do |noticia|
-    .noticia
-      %h4= noticia.title
-      .categories
-        - noticia.news_category_list.each do |category|
-          .label.label-info= link_to category, noticias_categorias_path(category)
-      %p
-        = content_teaser(noticia.content)
-        = link_to 'Leer mas...', noticia_path(noticia)
+  .list-news-container
+    .list-news-content
+      - @noticias.each do |noticia|
+        .noticia
+          %h4= noticia.title
+          .categories
+            - noticia.news_category_list.each do |category|
+              .label.label-info= link_to category.titleize, noticias_categorias_path(category)
+          %p
+            = content_teaser(noticia.content)
+            = link_to 'Leer mas...', noticia_path(noticia)
+      = paginate @noticias
+    .list-news-sidebar
+      %h5 Categorias
+      %ul.news-categories
+        - @categories.each do |category|
+          %li= link_to "#{category.name.titleize} (#{News.count_by_tag_and_site(category.name, @site.id)})", noticias_categorias_path(category.name) if News.exist_in_tag_and_site(category.name, @site.id)
+      %h5 Archivo
+      %ul.archive-lists
+        - News.news_grouped_by_month_and_site(@site.id).each do |mes|
+          %li= link_to "#{I18n.localize(mes.first, format: "%Y %B").titleize} (#{mes.last.size})", noticias_archivo_path(I18n.localize(mes.first, format: "%Y-%m").parameterize)

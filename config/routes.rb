@@ -53,7 +53,8 @@ SeguridadJusticia::Application.routes.draw do
   match '/seguimientos/temas/:tema' => 'seguimientos#index', as: :seguimientos_temas
   match '/seguimientos/tipo/:tipo' => 'seguimientos#index', as: :seguimientos_tipos
   
-  match '/noticias/categorias/:categoria' => 'noticias_categorias#index', as: :noticias_categorias
+  match '/noticias/categorias/:categoria' => 'noticias#index', as: :noticias_categorias
+  match '/noticias/archivo/:fecha' => 'noticias#index', as: :noticias_archivo
   
   resources :frases
   namespace :events do

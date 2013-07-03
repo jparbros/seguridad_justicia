@@ -27,6 +27,7 @@ end
 group :development do
   gem 'heroku'
   gem 'taps'
+  gem 'ruby-debug19'
 end
 
 group :production do

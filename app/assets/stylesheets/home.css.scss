@@ -256,6 +256,8 @@ ul {
   }
   
   &.old-questions {
+    @extend .unstyled;
+    @extend .inline;
     display: inline-block;
     list-style: none;
     margin-left: 0;

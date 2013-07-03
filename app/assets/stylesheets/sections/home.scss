@@ -170,6 +170,11 @@ ul {
         }
       }
     }
+    
+    ul.old-questions {
+      @extend .unstyled;
+      @extend .inline;
+    }
   }
 }
 
