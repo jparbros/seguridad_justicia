@@ -5,10 +5,12 @@
     .list-news-content
       - @noticias.each do |noticia|
         .noticia
-          %h4= noticia.title
-          .categories
+          %h4
+            = noticia.title
             - noticia.news_category_list.each do |category|
               .label.label-info= link_to category.titleize, noticias_categorias_path(category)
+          .categories
+            
           %p
             = content_teaser(noticia.content)
             = link_to 'Leer mas...', noticia_path(noticia)
