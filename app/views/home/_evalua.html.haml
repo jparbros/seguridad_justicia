@@ -26,7 +26,6 @@
                 - answer = candidate.answers.where(question_id: question.id).first
                 .video-container.span4
                   %span
-                    = image_tag candidate.political_party.logo.url(:thumb) if candidate.political_party
                     = candidate.name
                   <iframe src="#{answer.url_for_youtube}" frameborder="0" allowfullscreen></iframe>
                   - unless cookies["scg_respuesta_pregunta_#{answer.question.id}"]
