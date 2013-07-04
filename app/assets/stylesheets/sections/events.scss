@@ -22,3 +22,23 @@
     @include makeColumn(2);
   }
 }
+
+ul.events-categories, ul.archive-lists {
+ @extend .unstyled;
+
+ li {
+   background: url('/assets/bullet.png') no-repeat 0 3px;
+   color: #ffffff;
+   font-size: 14px;
+   padding: 0 0 0 18px;
+   margin: 0;
+
+   &:hover {
+     background: url('/assets/bullet-hover.png') no-repeat 0 3px;
+   }
+   
+   a {
+     color: #ffffff;
+   }
+ }
+}
