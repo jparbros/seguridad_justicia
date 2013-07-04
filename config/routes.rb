@@ -56,6 +56,9 @@ SeguridadJusticia::Application.routes.draw do
   match '/noticias/categorias/:categoria' => 'noticias#index', as: :noticias_categorias
   match '/noticias/archivo/:fecha' => 'noticias#index', as: :noticias_archivo
   
+  match '/events/categorias/:categoria' => 'eventos#index', as: :eventos_categorias
+  match '/events/archivo/:fecha' => 'eventos#index', as: :eventos_archivo
+  
   resources :frases
   namespace :events do
     resources :posts, only: [:show, :index]

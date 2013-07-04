@@ -1,9 +1,11 @@
 class Events::Post < ActiveRecord::Base
   self.table_name = 'events_posts'
   
-  attr_accessible :body, :draft, :published_at, :title
+  attr_accessible :body, :draft, :published_at, :title, :event_category_list
   
   belongs_to :site, class_name: 'Cms::Site'
+  
+  acts_as_taggable_on :event_categories
   
   def self.by_site(site_id)
     where(site_id: site_id)

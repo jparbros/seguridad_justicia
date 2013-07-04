@@ -4,6 +4,11 @@
     = form.text_field :title
 
 .control-group
+  .control-label Categorias
+  .controls
+    = form.text_field :event_category_list
+
+.control-group
   .control-label Contenido:
   .controls
     = form.text_area :body, 'data-rich-text' => "true"

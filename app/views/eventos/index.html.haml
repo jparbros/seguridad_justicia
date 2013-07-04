@@ -1,16 +1,45 @@
-- @events.each do |evento|
-  %h2
-    = evento.title
+.section-post-container
+  %h2 Eventos
+  
+  .list-events-container
+    .list-events-content
+      - @events.each do |evento|
+        %h4
+          = evento.title
+          - evento.event_category_list.each do |category|
+            .label.label-info= link_to category.titleize, eventos_categorias_path(category)
 
-  %p
-    Lugar:
-    %br/
-    = evento.venue
+        - if evento.respond_to? :venue
+          %p
+            Lugar:
+            %br/
+            = evento.venue
 
-  %p
-    Fecha y Hora:
-    %br/
-    = evento.date
+        - if evento.respond_to? :date
+          %p
+            Fecha y Hora:
+            %br/
+            = evento.date
 
-  .event_description
-    = evento.description.html_safe
+        .event_description
+          - if evento.respond_to? :description
+            = content_teaser(evento.try(:description)) 
+            = link_to 'Leer mas...', event_path(evento)
+          
+          - if evento.respond_to? :body
+            = content_teaser(evento.try(:body)) 
+            = link_to 'Leer mas...', events_post_path(evento)
+        
+        %hr
+
+    .list-events-sidebar
+      %h5 Categorias
+      %ul.events-categories
+        - @categories.each do |category|
+          %li= link_to "#{category.name.titleize} (#{Eventos.count_by_tag_and_site(category.name, @site.id)})", eventos_categorias_path(category.name) if Eventos.exist_in_tag_and_site(category.name, @site.id)
+
+      %h5 Archivo
+      %ul.archive-lists
+        - Eventos.all_grouped_by_month(@site.id).each do |mes|
+          %li= link_to "#{I18n.localize(mes.first, format: "%Y %B").titleize} (#{mes.last.size})", eventos_archivo_path(I18n.localize(mes.first, format: "%Y-%m").parameterize)
+      

@@ -17,8 +17,6 @@
 //= require jquery.jcarousel.min
 //= require jqcloud.min
 //= require jquery.tweet
-//= require jquery.ui.min
-//= require bootstrap.min
 //= require polygonzo
 //= require mapa
 //= require home

@@ -10,3 +10,15 @@
     height: 300px;
   }
 }
+
+.list-events-container {
+  @include makeRow;
+
+  .list-events-content {
+    @include makeColumn(6);
+  }
+
+  .list-events-sidebar {
+    @include makeColumn(2);
+  }
+}
