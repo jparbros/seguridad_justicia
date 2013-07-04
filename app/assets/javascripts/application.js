@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require underscore-min
+//= require bootstrap
 //= require backbone-min
 //= require jquery.jcarousel.min
 //= require jqcloud.min
