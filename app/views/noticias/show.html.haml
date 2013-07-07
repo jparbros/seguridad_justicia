@@ -4,9 +4,10 @@
   .details
     .news-topic
       %span.detail-label Tema(s):
-      - @news.topic.split(',').each do |topic|
-        %span.label.label-info
-          = topic
+      -if @news.topic
+        - @news.topic.split(',').each do |topic|
+          %span.label.label-info
+            = topic
 
     .news-date
       %span.detail-label Fecha:
