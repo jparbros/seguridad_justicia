@@ -1,5 +1,14 @@
 #phase-two{class: "#{(@site.settings.default_phase == 'phase_2')? 'show' : 'hide'}"}
   #phase-two-container
+    - if Election.by_site(@site.id).active
+      .span8
+        %ul.nav.nav-tabs
+          %li.active
+            %a= Election.by_site(@site.id).active.name
+
+          - Election.by_site(@site.id).deactive.each do |election|
+            %li= link_to election.name, preguntas_path(eleccion: election.id)
+    
     .span8
       %p
         En esta sección puedes proponer y votar por las tres preguntas que quisieras que se le hicieran a las y los candidatos y candidatas en tu Estado durante las mesas de diálogo sobre Seguridad con Justicia.
@@ -37,13 +46,7 @@
         Atenci&oacute;n
       Las preguntas deben de tener un m&aacute;ximo de 250 caracteres
 
-    - if Election.by_site(@site.id).active
-      .span8
-        Historial de pasadas elecciones:
-        <br />
-        %ul.old-questions
-          - Election.by_site(@site.id).deactive.each do |election|
-            %li= link_to election.name, preguntas_path(eleccion: election.id)
+    
 
     - if flash[:error]
       .row

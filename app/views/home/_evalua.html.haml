@@ -1,5 +1,15 @@
 #phase-three{class: "#{(@site.settings.default_phase == 'phase_3')? 'show' : 'hide'}"}
   #phase-three-container
+
+    - if Election.by_site(@site.id).active
+      .span8
+        %ul.nav.nav-tabs
+          %li.active
+            %a= Election.by_site(@site.id).active.name
+
+          - Election.by_site(@site.id).deactive.each do |election|
+            %li= link_to election.name, evalua_index_path(eleccion: election.id)
+    
     .span8
       %p
         Conoce las respuestas que las y los candidatos dieron a tus preguntas sobre seguridad con justicia y vota por la mejor respuesta.
@@ -35,11 +45,3 @@
 
     .alert.disclaimer
       Los videos son acomodados en orden alfabético.
-
-    - if Election.by_site(@site.id).active
-      .span8
-        Historial de pasadas elecciones:
-        %br
-        %ul.old-questions
-          - Election.by_site(@site.id).deactive.each do |election|
-            %li= link_to election.name, evalua_index_path(eleccion: election.id)   
