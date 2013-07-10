@@ -195,7 +195,7 @@ ul {
   &:after { content: url("/assets/seguimiento-after.png"); }
 }
 
-.sigueles-container {
+#phase-four {
   @include makeColumn(9);
   
   ul.representatives-list {
@@ -204,7 +204,6 @@ ul {
 
     li {
       @include makeColumn(4);
-      border-top: 1px solid #333;
       border-bottom: 1px solid #999;
       height: 80px;
       margin-bottom: 10px;
@@ -220,6 +219,14 @@ ul {
           font-size: 12px !important;
           line-height: 1;
         }
+        
+        img {
+          margin-top: 10px;
+        }
+      }
+      
+      .sigueles-info {
+        display: inline;
       }
 
       span {
