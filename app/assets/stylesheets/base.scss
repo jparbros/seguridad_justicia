@@ -91,6 +91,12 @@ footer {
       a {
         text-shadow: none;
       }
+      
+      &.dropdown.open {
+        & > a.dropdown-toggle {
+          background-color: #a25b9d;
+        }
+      }
     }
   }
 }
