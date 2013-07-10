@@ -7,7 +7,7 @@ $ ->
     phaseToShow = $(this).data('phase')
     divtoShow = $('#' + phaseToShow)
     show = divtoShow.is(':hidden')
-    $('#phase-one, #phase-two, #phase-three').hide(500)
+    $('#phase-one, #phase-two, #phase-three, #phase-four').hide(500)
     divtoShow.fadeIn().css("display","inline-block") if(show)
   
   initCallback = (carousel) ->

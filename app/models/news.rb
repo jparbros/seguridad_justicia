@@ -1,7 +1,7 @@
 class News < ActiveRecord::Base
   attr_accessible :content, :date, :site_id, :title, :news_category_list
   
-  acts_as_taggable_on :news_categories
+  # acts_as_taggable_on :news_categories
   
   paginates_per 20
 
