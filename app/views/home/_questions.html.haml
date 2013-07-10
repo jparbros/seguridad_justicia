@@ -20,7 +20,7 @@
         - @recent_questions.each do |question|
           %li.span7
             = question.question
-            - if @site.settings["#{Election.by_site(@site.id).active.name.parameterize}.votes"]
+            - if Election.by_site(@site.id).active && @site.settings["#{Election.by_site(@site.id).active.name.parameterize}.votes"]
               |
               = "#{question.votes_count || 0} votos"
               - if cookies["scg_pregunta_#{question.id}"] || cookies['scj_votes'].to_i >= 3
