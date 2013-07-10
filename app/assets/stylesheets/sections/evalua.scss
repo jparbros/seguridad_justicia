@@ -1,0 +1,16 @@
+ul#question_list {
+  @include makeRow;
+  list-style: none;
+  font-size: 12px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+
+  li {
+    @include makeColumn(4);
+    border-bottom: 1px solid #999;
+
+    span {
+      display: block;
+    }
+  }
+}
