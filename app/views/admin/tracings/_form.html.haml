@@ -15,6 +15,11 @@
     = form.text_field :document_kind_text
 
 .control-group
+  .control-label Fecha de publicaci&oacute;n
+  .controls
+    = form.text_field :published_at
+
+.control-group
   .control-label Contenido
   .controls
     = form.text_area :content, 'data-rich-text' => "true"

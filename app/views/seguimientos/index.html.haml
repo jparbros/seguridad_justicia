@@ -1,12 +1,14 @@
-%h2
-  = params[:tipo].humanize
+.section-post-container
+  %h2
+    = (params[:tipo] || @topic.name).humanize
+
 - @seguimientos.each do |seguimiento|
       
   .postura      
     .postura-created-at.tooltip.bottom.in
       .tooltip-arrow
       .tooltip-inner
-        = seguimiento.created_at.to_date.to_s :short
+        = seguimiento.published_date.to_date.to_s :short
     .postura-content
       %h4
         = seguimiento.title

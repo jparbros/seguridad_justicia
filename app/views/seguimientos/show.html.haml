@@ -1,28 +1,27 @@
-%h2= @seguimiento.title
+.section-post-container
+  %h2= @seguimiento.title
 
-.news-content
-  .details
-    .news-topic
-      %span.detail-label Tema(s):
-      - @seguimiento.topics.each do |topic|
-        %span.label.label-info
-          = link_to topic.name, seguimientos_temas_path(topic.name)
+  .post-container
+    .post-sidebar
+      .post-date
+        %span.detail-label Fecha:
+        = @seguimiento.published_date.to_date
 
-    .news-date
-      %span.detail-label Fecha:
-      = @seguimiento.created_at.to_date
+      .post-topic
+        %span.detail-label Tema(s):
+        - @seguimiento.topics.each do |topic|
+          %span.label.label-info
+            = link_to topic.name, seguimientos_temas_path(topic.id)
           
-    .back-buton
-      = link_to 'Ver los seguimientos', seguimientos_path
+      .share
+        %span Compartir
+        .twitter
+          %a{"href" => "https://twitter.com/share", :class => "twitter-share-button", "data-text" => "#{@seguimiento.title[0..90]}", "data-lang" => "es", "data-count" => "none", "data-url" => "#{request.url}"}
+            Twittear
+        .facebook
+          .fb-like{"data-href" => "#{request.url}", "data-send" => "false", "data-layout" => "button_count", "data-show-faces" => "false", "data-action" => "recommend", "data-font" => "tahoma"}
 
-    .share
-      .twitter
-        %a{"href" => "https://twitter.com/share", :class => "twitter-share-button", "data-text" => "#{@seguimiento.title[0..90]}", "data-lang" => "es", "data-count" => "none", "data-url" => "#{request.url}"}
-          Twittear
-      .facebook
-        .fb-like{"data-href" => "#{request.url}", "data-send" => "false", "data-layout" => "button_count", "data-show-faces" => "false", "data-action" => "recommend", "data-font" => "tahoma"}
+    .post-content
+      = @seguimiento.content.html_safe
 
-
-  = @seguimiento.content.html_safe
-    
-.fb-comments{'data-href' => "#{request.url}", 'data-width' => "510"}
+  .fb-comments{'data-href' => "#{request.url}", 'data-width' => "800"}

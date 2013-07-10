@@ -52,4 +52,8 @@ class Document < ActiveRecord::Base
   def first_paragraph
     @content_parsed.css('p').first.to_s
   end
+  
+  def published_date
+    published_at || created_at
+  end
 end
