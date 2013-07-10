@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
     @site ||= if params[:site_id]
           Cms::Site.find_by_id(params[:site_id])
         else
-          Cms::Site.find_site(request.host.downcase, request.fullpath) || Cms::Site.first
+          Cms::Site.find_site(request.host.downcase, request.fullpath) || Cms::Site.last
         end
     Cms::Site.site = @site
   end
