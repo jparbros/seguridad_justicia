@@ -2,7 +2,7 @@
   %h2 Representantes de la secci&oacute;n: #{params[:id]}
 
   - @representatives.each do |representative_position|
-    %h2= Representative::POSITIONS[representative_position.first].humanize.titleize
+    %h2= Representative::POSITIONS[representative_position.first].humanize.titleize if representative_position.first.present?
     
     %ul.representatives-list
       =render partial: 'home/representante', collection: representative_position.last

@@ -1,7 +1,7 @@
 #phase-four.span8{class: "#{(@site.settings.default_phase == 'phase_4')? 'show' : 'hide'}"}
 
   - @representatives.each do |representative_position|
-    %h2= Representative::POSITIONS[representative_position.first].humanize.titleize
+    %h2= Representative::POSITIONS[representative_position.first].humanize.titleize if representative_position.first.present?
     
     %ul.representatives-list
       =render partial: 'representante', collection: representative_position.last
