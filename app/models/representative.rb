@@ -53,7 +53,7 @@ class Representative < ActiveRecord::Base
   end
   
   def sections
-    self.section.join(',')
+    section.join(',') if section.present?
   end
   
   def position_parsed
