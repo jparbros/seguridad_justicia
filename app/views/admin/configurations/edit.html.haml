@@ -50,6 +50,13 @@
     .controls
       = check_box_tag 'setting[show_banners]', true, @site.settings.show_banners
 
+  - @site.elections.each do |election|
+    .control-group
+      %label.control-label 
+        = election.name
+        \- votacion de la fase 2
+      .controls
+        = check_box_tag "setting[#{election.name.parameterize}.votes]", true, @site.settings["#{election.name.parameterize}.votes"]
   
   .form-actions
     = submit_tag 'Actualizar', class: ['btn', 'btn-primary']

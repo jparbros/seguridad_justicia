@@ -11,12 +11,13 @@
         - @recent_questions.each do |question|
           %li.span7
             = question.question
-            |
-            = "#{question.votes_count || 0} votos"
-            - if cookies["scg_pregunta_#{question.id}"] || cookies['scj_votes'].to_i >= 3
-              = image_tag('/assets/vote.png', class: 'label')
-            - else
-              = link_to image_tag('/assets/vote.png', class: 'label label-success'), pregunta_votes_path(pregunta_id: question.id), method: :post
+            - if @site.settings["#{Election.by_site(@site.id).active.name.parameterize}.votes"]
+              |
+              = "#{question.votes_count || 0} votos"
+              - if cookies["scg_pregunta_#{question.id}"] || cookies['scj_votes'].to_i >= 3
+                = image_tag('/assets/vote.png', class: 'label')
+              - else
+                = link_to image_tag('/assets/vote.png', class: 'label label-success'), pregunta_votes_path(pregunta_id: question.id), method: :post
 
       .span8
         = link_to 'Ver todas las preguntas >>', preguntas_path
@@ -36,22 +37,15 @@
         Atenci&oacute;n
       Las preguntas deben de tener un m&aacute;ximo de 250 caracteres
 
-  .alert.span7.disclaimer
-    %strong
-      Atenci&oacute;n
-    Las preguntas deben de tener un m&aacute;ximo de 250 caracteres
+    - if Election.by_site(@site.id).active
+      .span8
+        Historial de pasadas elecciones:
+        <br />
+        %ul.old-questions
+          - Election.by_site(@site.id).deactive.each do |election|
+            %li= link_to election.name, preguntas_path(eleccion: election.id)
 
-  - if Election.by_site(@site.id).active
-    .span8
-      Historial de pasadas elecciones:
-      <br />
-      %ul.old-questions
-        - Election.by_site(@site.id).deactive.each do |election|
-          %li= link_to election.name, preguntas_path(eleccion: election.id)
-        
-  
-  
-  - if flash[:error]
-    .row
-      .alert.alert-error.span7
-        = flash[:error]
+    - if flash[:error]
+      .row
+        .alert.alert-error.span7
+          = flash[:error]

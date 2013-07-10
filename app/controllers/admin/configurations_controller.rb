@@ -23,5 +23,8 @@ class Admin::ConfigurationsController < Admin::BaseController
     params[:setting][:show_search] = params[:setting][:show_search].present?
     params[:setting][:show_map] = params[:setting][:show_map].present?
     params[:setting][:show_banners] = params[:setting][:show_banners].present?
+    @site.elections.each do |election|
+      params[:setting]["#{election.name.parameterize}.votes"] = params[:setting]["#{election.name.parameterize}.votes"].present?
+    end
   end
 end
