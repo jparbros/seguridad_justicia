@@ -1,25 +1,7 @@
 #phase-four.span8{class: "#{(@site.settings.default_phase == 'phase_4')? 'show' : 'hide'}"}
-  - if @diputados_federales.present?
-    %h2
-      Diputados Federales
-    %ul.representatives-list
-      =render partial: 'representante', collection: @diputados_federales
 
-  - if @senadores.present?
-    %h2
-      Senadores
+  - @representatives.each do |representative_position|
+    %h2= Representative::POSITIONS[representative_position.first].humanize.titleize
+    
     %ul.representatives-list
-      =render partial: 'representante', collection: @senadores
-
-  - if @alcaldes.present?
-    %h2
-      Presidentes Municipales
-    %ul.representatives-list
-      =render partial: 'representante', collection: @alcaldes
-      
-  - if @diputados_locales.present?
-    %h2
-      Diputados Locales
-    %ul.representatives-list
-      =render partial: 'representante', collection: @diputados_locales
-      
+      =render partial: 'representante', collection: representative_position.last

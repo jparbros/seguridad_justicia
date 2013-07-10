@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130704153452) do
+ActiveRecord::Schema.define(:version => 20130710134652) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -364,7 +364,7 @@ ActiveRecord::Schema.define(:version => 20130704153452) do
     t.string   "substitute"
     t.string   "facebook"
     t.string   "gender"
-    t.integer  "section"
+    t.string   "section"
     t.string   "representation_type"
     t.string   "office"
     t.string   "curul_link"

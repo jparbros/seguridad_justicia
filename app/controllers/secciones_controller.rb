@@ -1,7 +1,7 @@
 class SeccionesController < ApplicationController
   
   def show
-    @representatives = Representative.by_site(@site.id).where(section: params[:id])
+    @representatives =  Representative.by_site(@site.id).where("representatives.section LIKE ? ", "%#{params[:id]}%").group_by {|representative| representative.position}
   end
   
   def busqueda

@@ -1,0 +1,44 @@
+#secciones-container {
+  ul.representatives-list {
+    @include makeRow();
+    list-style: none;
+
+    li {
+      @include makeColumn(4);
+      border-bottom: 1px solid #999;
+      height: 80px;
+      margin-bottom: 10px;
+
+      .sigueles-title {
+        float: left;
+        text-align: center;
+        margin-right: 10px;
+        width: 36px;
+
+        span {
+          display: inline-block;
+          font-size: 12px !important;
+          line-height: 1;
+        }
+      
+        img {
+          margin-top: 10px;
+        }
+      }
+    
+      .sigueles-info {
+        display: inline;
+      }
+
+      span {
+        display: block;
+        font-size: 12px;
+        margin: 10px 0;
+      }
+
+      &:hover {
+        background: url('/assets/arrow-right.png') no-repeat right;
+      }
+    }
+  }
+}

@@ -5,7 +5,7 @@ class Representative < ActiveRecord::Base
   #
   attr_accessible :avatar, :district, :email, :name, :phone, :position, :political_party_id, :comissions, 
     :biography, :site_id, :twitter, :circumscription, :birthday, :substitute, :gender, :section, :representation_type, 
-    :facebook, :office, :curul_link, :election_id
+    :facebook, :office, :curul_link, :election_id, :sections
 
   #
   # Associations
@@ -22,8 +22,19 @@ class Representative < ActiveRecord::Base
   mount_uploader :avatar, AvatarUploader
   
   #
+  # Serializers
+  #
+  serialize :section
+  
+  #
   # Constants
   #
+  POSITIONS = {
+    'diputado_local' => 'diputados locales',
+    'diputado_federal' => 'diputados federales',
+    'senador' => 'senadores',
+    'presidente_municipal' => 'presidentes municipales'
+  }
   
   def self.by_site(site_id)
     where(site_id: site_id)
@@ -35,6 +46,14 @@ class Representative < ActiveRecord::Base
   
   def twitter_username
     twitter.strip.gsub('@','')
+  end
+  
+  def sections=(sections_ids)
+    self.section = sections_ids.split(',')
+  end
+  
+  def sections
+    self.section
   end
   
   def position_parsed
