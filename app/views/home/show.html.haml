@@ -29,8 +29,6 @@
   .seguimiento.phase-header{'data-phase' => 'phase-four'}
     %h2 4 Sígueles...
 
-  = render partial: 'sigueles'
-
 - if @site.settings.show_search
   .span8
     %h2 Buscar representantes por secci&oacute;n
@@ -48,6 +46,8 @@
       %small
         Selecciona el distrito que quieras ver.
   #map
+
+  = render partial: 'sigueles'
 
   :javascript
     window.mapas.initialize({state: '#{@site.label.downcase.gsub(' ', '_').gsub('ó','o')}'});
