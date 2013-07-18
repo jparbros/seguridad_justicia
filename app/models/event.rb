@@ -1,5 +1,5 @@
 class Event < ActiveRecord::Base
-  attr_accessible :date, :description, :title, :venue, :site_id, :event_category_list
+  attr_accessible :date, :description, :title, :venue, :site_id, :event_category_list, :address
   
   acts_as_taggable_on :event_categories
   

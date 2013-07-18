@@ -5,7 +5,7 @@ module GoogleMaps
   end
 
   def parsed_address
-    venue.gsub(/(S|s)alon .*,/,'').gsub('#','').gsub(/código postal/,'').gsub('sin número','').gsub('c.p.','').gsub('Domicilio conocido','').gsub('código póstal','').lstrip.strip
+    address.gsub(/(S|s)alon .*,/,'').gsub('#','').gsub(/código postal/,'').gsub('sin número','').gsub('c.p.','').gsub('Domicilio conocido','').gsub('código póstal','').lstrip.strip
   end
 
   def options_for_maps

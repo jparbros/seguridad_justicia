@@ -37,7 +37,6 @@
                 .video-container.span4
                   %span
                     = candidate.name
-                  = answer.url_for_youtube
                   %a.youtube-link{href: "#{answer.url_for_youtube}"}
                     Video
                   - unless cookies["scg_respuesta_pregunta_#{answer.question.id}"]
