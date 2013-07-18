@@ -30,3 +30,15 @@
 //= require sections/baja_california
 //= require sections/chihuahua
 //= require sections/nuevo_leon
+
+$(function() {
+  $('a.youtube-link').each(function() {
+      var yt_url   = this.href,
+          yt_id    = yt_url.split('/')[4],
+          yt_title = $(this).text();
+      $(this).replaceWith('<div class="youtube-box"><img class="youtube-box-image" src="http://img.youtube.com/vi/' + yt_id + '/0.jpg"><span class="youtube-title">' + yt_title + '</span><span class="youtube-bar"><span class="yt-bar-left"></span><span class="yt-bar-right"></span></span><span class="youtube-play"></span></div>');
+      $('div.youtube-box').click(function() {
+          $(this).replaceWith('<iframe class="youtube-frame" src="' + yt_url + '?autoplay=1"></iframe>');
+      });
+  });
+});

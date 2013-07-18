@@ -28,7 +28,8 @@
                 %span
                   = image_tag candidate.political_party.logo.url(:thumb) if candidate.political_party && candidate.political_party.logo.present?
                   = candidate.name
-                <iframe src="#{answer.url_for_youtube}" frameborder="0" allowfullscreen></iframe>
+                %a.youtube-link{href: "#{answer.url_for_youtube}"}
+                  Video
                 - unless cookies["scg_respuesta_pregunta_#{answer.question.id}"]
                   = link_to image_tag('/assets/vote.png', class: 'label label-success'), respuesta_votes_path(answer), method: :post
                 - else
