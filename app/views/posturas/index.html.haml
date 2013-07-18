@@ -38,7 +38,7 @@
             %h3
               = political_party.name
             %ul
-              = image_tag political_party.logo.url
+              = image_tag political_party.logo.url if political_party.logo.present?
               - Position.by_topic_and_political_party(topic.id, political_party.id).each do |position|
                 %li
                   %p
