@@ -1,5 +1,6 @@
-%h1
-  Editar Representante
+.page-header
+  %h1
+    Editar Representante
 
 = form_for(@representative, url: admin_representative_path(@representative), html: {class: 'formatted form-horizontal'}, method: :put) do |form|
   = render partial: 'form', object: form

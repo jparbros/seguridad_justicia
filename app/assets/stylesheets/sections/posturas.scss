@@ -1,8 +1,9 @@
 .modal {
   &.modal-postura {
     display: none;
-    left: 33%;
-    width: 1200px;
+    width: 100px;
+    margin-left: -500px;
+    
     
     h3 {
       color: #000 !important;
@@ -17,7 +18,6 @@
       margin: 0;
       padding: 0 10px 0 0;
       list-style: none;
-      border-right: 1px solid #ccc;
 
       img {
         float: left;
@@ -59,4 +59,15 @@ ul.posturas {
   .phase-header:after {
     margin: -60px -16px 0 0;
   } 
+}
+
+li.postura {
+  border-bottom: 1px solid #ccc;
+  display: inline-block;
+  padding: 15px 0;
+  width: 100%;
+  
+  &:last-child {
+    border-bottom: 0;
+  }
 }

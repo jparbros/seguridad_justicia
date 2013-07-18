@@ -30,17 +30,19 @@
         &times;
       %h3
         = topic.name
-    .row.modal-body
-      - @political_parties.each do |political_party|
-        .span3
-          %h3
-            = political_party.name
-          %ul
-            = image_tag political_party.logo.url
-            - Position.by_topic_and_political_party(topic.id, political_party.id).each do |position|
-              %li
-                %p
-                  = position.content
+    .modal-body
+      %ul
+        - @political_parties.each do |political_party|
+        
+          %li.postura
+            %h3
+              = political_party.name
+            %ul
+              = image_tag political_party.logo.url
+              - Position.by_topic_and_political_party(topic.id, political_party.id).each do |position|
+                %li
+                  %p
+                    = position.content
 
     .modal-footer
       = link_to 'Cerrar','#', class: :btn

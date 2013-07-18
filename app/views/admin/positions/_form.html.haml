@@ -1,25 +1,22 @@
-.form_element.text_field_element
-  .label
-    %label
-      Partido Politico y/o Alianza
-  .value
+.control-group
+  .control-label Partido Politico y/o Alianza
+  .controls
     = form.select :political_party_id, PoliticalParty.by_site(@site.id).collect {|p| [ p.name, p.id ]}, include_blank: true
 
-.form_element.select_element
-  .label
-    %label
-      Tema
-  .value
+.control-group
+  .control-label Tema
+  .controls
     = form.select :topic_id, Topic.by_site(@site.id).collect {|p| [ p.name, p.id ]}, include_blank: true
 
-.form_element.select_element
-  .label
-    %label
-      Postura
-  .value
+.control-group
+  .control-label Elecci&oacute;n
+  .controls
+    = form.select :election_id, @site.elections.collect {|p| [ p.name, p.id ] }, include_blank: true
+
+.control-group
+  .control-label Postura
+  .controls
     = form.text_area :content
 
-.form_element.submit_element
-  .label
-  .value
-    = form.submit (@position.new_record? ? 'Crear' : 'Editar')
+.form-actions
+  = form.submit (@position.new_record? ? 'Crear' : 'Editar')

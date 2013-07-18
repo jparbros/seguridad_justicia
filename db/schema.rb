@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130718131125) do
+ActiveRecord::Schema.define(:version => 20130718141835) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -337,6 +337,7 @@ ActiveRecord::Schema.define(:version => 20130718131125) do
     t.text     "content"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
+    t.integer  "election_id"
   end
 
   add_index "positions", ["political_party_id"], :name => "index_positions_on_political_party_id"
