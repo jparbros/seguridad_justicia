@@ -1,0 +1,16 @@
+.page-header
+  = link_to 'Crear Distrito', new_admin_district_path, class: 'btn pull-right'
+  %h2
+    Distritos
+
+%ul{class: ['list', 'sortable', 'ui-sortable']}
+  - @districts.each do |district|
+    %li{id: 'district_#{district.id}'}
+      .item
+        .icon
+        .btn-group
+          = link_to 'Editar', edit_admin_district_path(district), class: ['btn', 'btn-small']
+          = link_to 'Eliminar', admin_district_path(district), method: :delete, confirm: '¿Esta seguro de eliminar el distrito?', class: ['btn', 'btn-small', 'btn-danger']
+        .item-content
+          .item-title
+            = district.district_number

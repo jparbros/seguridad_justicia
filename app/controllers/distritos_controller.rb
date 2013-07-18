@@ -1,6 +1,9 @@
 class DistritosController < ApplicationController
   def show
-    @representatives = Representative.by_site(@site.id).where(district: params[:id])
+    @representatives = Representative
+    District.find(params[:id]).sections.each do |section|
+      @representatives =  Representative.by_site(@site.id).where("representatives.section LIKE ? ", "%#{params[:id]}%").group_by {|representative| representative.position}
+    end
   end
   
   def busqueda

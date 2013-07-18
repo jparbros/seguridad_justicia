@@ -1,0 +1,6 @@
+.page-header
+  %h2
+    Editar Distrito
+
+= form_for(@district, url: admin_district_path(@district), html: {class: 'formatted form-horizontal'}, method: :put) do |form|
+  = render partial: 'form', object: form

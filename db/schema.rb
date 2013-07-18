@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130710134652) do
+ActiveRecord::Schema.define(:version => 20130718131125) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -242,6 +242,14 @@ ActiveRecord::Schema.define(:version => 20130710134652) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "districts", :force => true do |t|
+    t.integer  "district_number"
+    t.text     "sections"
+    t.integer  "site_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
   create_table "document_topics", :force => true do |t|
     t.string   "name"
     t.integer  "site_id"
@@ -364,7 +372,7 @@ ActiveRecord::Schema.define(:version => 20130710134652) do
     t.string   "substitute"
     t.string   "facebook"
     t.string   "gender"
-    t.string   "section"
+    t.text     "section"
     t.string   "representation_type"
     t.string   "office"
     t.string   "curul_link"

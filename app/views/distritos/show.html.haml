@@ -1,15 +1,8 @@
 .span6
   %h2 Representantes del distrito: #{params[:id]}
 
-%ul.representantes-list
-  - @representatives.each do |representative|
-    %li.span4
-      %div.sigueles-title
-        = image_tag representative.political_party.logo.thumb if representative.political_party
-        %span
-          = representative.political_party.initials if representative.political_party
-      = representative.name.titleize
-      (#{representative.position.humanize})
-      %span
-        = link_to 'Ver Perfil', representante_path(representative)
+  - @representatives.each do |representative_position|
+    %h2= Representative::POSITIONS[representative_position.first].humanize.titleize if Representative::POSITIONS[representative_position.first].present?
     
+    %ul.representatives-list
+      =render partial: 'home/representante', collection: representative_position.last

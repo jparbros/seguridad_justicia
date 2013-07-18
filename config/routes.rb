@@ -1,9 +1,5 @@
 SeguridadJusticia::Application.routes.draw do
 
-  get "elections/index"
-
-  get "elections/new"
-
   ComfortableMexicanSofa::Routing.admin   :path => '/admin/cms'
   
   devise_for :admins, :controllers => { :sessions => "admin/sessions" }
@@ -13,6 +9,7 @@ SeguridadJusticia::Application.routes.draw do
     resources :banners
     resources :admins
     resources :debates
+    resources :districts
     resources :events, only: [:index, :new, :edit, :create, :update, :destroy]
 
     namespace :events do

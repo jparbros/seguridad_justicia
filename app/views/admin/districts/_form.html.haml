@@ -1,0 +1,12 @@
+.control-group
+  .control-label Numero de distrito
+  .controls
+    = form.text_field :district_number
+
+.control-group
+  .control-label Secciones
+  .controls
+    = form.text_area :section_ids
+
+.form-actions
+  = form.submit (@district.new_record? ? 'Crear' : 'Editar'), class: ['btn', 'btn-primary']
