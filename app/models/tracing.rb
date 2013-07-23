@@ -7,7 +7,7 @@ class Tracing < Document
   #
   # Scopes
   #
-  scope :most_recent, order('published_at desc').limit(5)
+  scope :most_recent, order('published_at desc, created_at desc')
   
   def self.document_types
     self.select('DISTINCT(document_kind)').map(&:document_kind).select {|document_kind| document_kind.present?}
