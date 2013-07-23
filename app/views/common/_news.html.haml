@@ -1,6 +1,6 @@
 .sidebar-element.news-container
   %h2
-    Noticias
+    =link_to 'Noticias', '/noticias'
 
   %ul
     - News.to_sidebar(@site.id).each do |news|
