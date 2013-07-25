@@ -9,9 +9,9 @@
 
       .post-topic
         %span.detail-label Tema(s):
-        - @news.topic.split(',').each do |topic|
+        - @news.news_category_list.split(',').each do |topic|
           %span.label.label-info
-            = topic
+            = topic.titleize
           
       .share
         %span Compartir
