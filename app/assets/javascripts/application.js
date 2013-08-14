@@ -30,6 +30,10 @@
 //= require sections/baja_california
 //= require sections/chihuahua
 //= require sections/nuevo_leon
+//= require comfortable_mexican_sofa/lib/es
+//= require comfortable_mexican_sofa/lib/redactor
+//= require redactor
+
 
 $(function() {
   $('a.youtube-link').each(function() {
@@ -42,3 +46,4 @@ $(function() {
       });
   });
 });
+

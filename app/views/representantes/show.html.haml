@@ -28,7 +28,7 @@
             
   .profile-container
     .profile-avatar
-      = image_tag @representante.avatar.blank? ? '/assets/user.png' : @representante.avatar
+      = image_tag @representante.avatar.blank? ? '/assets/user.png' : @representante.avatar.small
     
         
       .share

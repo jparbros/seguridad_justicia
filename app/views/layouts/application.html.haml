@@ -9,6 +9,12 @@
     %link{href: 'http://fonts.googleapis.com/css?family=Merriweather+Sans|Open+Sans', rel: 'stylesheet', type: 'text/css'}
     = csrf_meta_tags
     %meta{name: :viewport, content: "width=device-width, initial-scale=1.0"}
+    - if current_admin && controller_name == 'cms_content'
+      %meta{name: :site_id, content: "#{@site.id}"}
+      %meta{name: :is_admin, content: "#{current_admin.present?}"}
+      - if @cms_page.present?
+        %meta{name: :page_id, content: "#{@cms_page.id}"}
+        %meta{name: :identifier, content: "#{@cms_page.blocks_attributes.first[:identifier]}"}
   %body{class: detect_browser_os, id: controller_name}
     %header
       .container
@@ -50,6 +56,10 @@
     .container
       .row
         #main-content
+          - if current_admin && controller_name == 'cms_content'
+            .span8
+              = link_to 'Editar', '', class: 'edit-in-place-button btn'
+              = link_to 'Actualizar', '', class: 'save-in-place-button btn hide'
           = yield
         = render partial: 'common/right_column'
 
