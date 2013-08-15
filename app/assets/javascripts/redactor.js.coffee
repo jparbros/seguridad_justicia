@@ -7,7 +7,7 @@ $(document).ready ->
   
   $('.save-in-place-button').click (event) ->
     event.preventDefault()
-    html = $('#redactor-edit-content').redactor('get')
+    html = $('#redactor-edit-content').getCode();
     identifier = $('meta[name=identifier]').attr('content')
     site_id = $('meta[name=site_id]').attr('content')
     page_id = $('meta[name=page_id]').attr('content')
@@ -20,4 +20,4 @@ $(document).ready ->
             identifier: identifier
           ]
     $(this).hide()
-    $('#redactor-edit-content').redactor('destroy')
+    $('#redactor-edit-content').destroyEditor();
