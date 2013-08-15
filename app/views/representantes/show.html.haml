@@ -127,8 +127,8 @@
           Cuenta de twitter no disponible
         - else
           .twitter-content
-            %a.twitter-timeline{'href' => "https://twitter.com/#{@representante.twitter}", 'data-widget-id' => "349632396825616384", 'data-chrome' => "nofooter transparent noheader",  'height' => "300", 'data-tweet-limit' => "3", 'lang' => "es", 'data-screen-name' => "#{@representante.twitter}"}
-              Tweets by #{@representante.twitter}
+            %a.twitter-timeline{'href' => "https://twitter.com/#{@representante.twitter_username}", 'data-widget-id' => "349632396825616384", 'data-chrome' => "nofooter transparent noheader",  'height' => "300", 'data-tweet-limit' => "15", 'lang' => "es", 'data-screen-name' => "#{@representante.twitter_username}"}
+              Tweets by #{@representante.twitter_username}
           
       #performance.tab-pane
         %h2 Desempeño Legislativo
