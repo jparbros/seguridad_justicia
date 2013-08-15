@@ -125,6 +125,10 @@
         %h2 Twitter
         - if @representante.twitter.blank?
           Cuenta de twitter no disponible
+        - else
+          .twitter-content
+            %a.twitter-timeline{'href' => "https://twitter.com/#{@representante.twitter}", 'data-widget-id' => "349632396825616384", 'data-chrome' => "nofooter transparent noheader",  'height' => "300", 'data-tweet-limit' => "3", 'lang' => "es", 'data-screen-name' => "#{@representante.twitter}"}
+              Tweets by #{@representante.twitter}
           
       #performance.tab-pane
         %h2 Desempeño Legislativo
@@ -149,11 +153,3 @@
   e.preventDefault();
   $(this).tab('show');
   });
-- if @representante.twitter.present?
-  %script
-    $("#twitter").tweet({
-    username: "#{@representante.twitter_username}",
-    count: 20,
-    loading_text: "cargando tweets...",
-    template: "{text}"
-    });
