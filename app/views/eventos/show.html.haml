@@ -13,7 +13,8 @@
         %i.icon-calendar.icon-white
         = I18n.localize(@evento.date, :format => :long)
 
-    #box-map
+    - if @evento.address.present?
+      #box-map
 
   .event_description
     = @evento.description.html_safe
