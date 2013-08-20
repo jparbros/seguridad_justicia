@@ -7,8 +7,8 @@
       %span
         1
       Opina
-
-  = render partial: 'phrases'
+  - cache "site-#{@site.id}-home-phrases" do
+    = render partial: 'phrases'
 
 - if @site.settings.phase_2
   .seleccion.phase-header{'data-phase' => 'phase-two'}
@@ -17,13 +17,15 @@
         2
       Preg&uacute;ntales
 
-  = render partial: 'questions'
+  - cache "site-#{@site.id}-home-questions" do
+    = render partial: 'questions'
 
 - if @site.settings.phase_3
   .destacadas.old.phase-header{'data-phase' => 'phase-three'}
     %h2 3 Compara, eval&uacute;a y decide
-
-  = render partial: 'evalua'
+  
+  - cache "site-#{@site.id}-home-evalua" do
+    = render partial: 'evalua'
 
 - if @site.settings.phase_4
   .seguimiento.phase-header{'data-phase' => 'phase-four'}
@@ -48,7 +50,8 @@
   .span8
     #map
 
-  = render partial: 'sigueles'
+  - cache "site-#{@site.id}-home-sigueles" do
+    = render partial: 'sigueles'
 
   :javascript
     window.mapas.initialize({state: '#{@site.label.downcase.gsub(' ', '_').gsub('ó','o')}'});
