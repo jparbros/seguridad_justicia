@@ -2,6 +2,3 @@
 
 require ::File.expand_path('../config/environment',  __FILE__)
 run SeguridadJusticia::Application
-
-
-use Rack::RubyProf, :path => '/temp/profile'
