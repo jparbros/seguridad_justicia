@@ -117,7 +117,6 @@ GEM
     kaminari (0.14.1)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
-    kgio (2.8.0)
     launchy (2.3.0)
       addressable (~> 2.3)
     linecache19 (0.5.12)
@@ -144,6 +143,8 @@ GEM
       mime-types
     pg (0.15.1)
     polyglot (0.3.3)
+    puma (2.5.1)
+      rack (>= 1.1, < 2.0)
     rack (1.4.5)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -170,7 +171,6 @@ GEM
       rake (>= 0.8.7)
       rdoc (~> 3.4)
       thor (>= 0.14.6, < 2.0)
-    raindrops (0.11.0)
     rake (10.1.0)
     rdoc (3.12.2)
       json (~> 1.4)
@@ -217,10 +217,6 @@ GEM
     uglifier (2.1.1)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
-    unicorn (4.6.3)
-      kgio (~> 2.6)
-      rack
-      raindrops (~> 0.7)
     warden (1.2.1)
       rack (>= 1.0)
 
@@ -243,6 +239,7 @@ DEPENDENCIES
   mini_magick
   newrelic_rpm
   pg
+  puma
   rails (= 3.2.13)
   rails-i18n
   rails-settings-cached (= 0.2.4)
@@ -250,4 +247,3 @@ DEPENDENCIES
   sass-rails (~> 3.2.3)
   taps
   uglifier (>= 1.0.3)
-  unicorn
