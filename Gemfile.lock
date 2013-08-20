@@ -69,6 +69,7 @@ GEM
       rails (>= 3.1.0)
       redcarpet (>= 2.2.0)
       sass-rails (>= 3.1.0)
+    dalli (2.6.4)
     detect_browser_os (0.2.0)
     devise (2.2.4)
       bcrypt-ruby (~> 3.0)
@@ -229,6 +230,7 @@ DEPENDENCIES
   carrierwave
   coffee-rails (~> 3.2.1)
   comfortable_mexican_sofa (= 1.8.1)
+  dalli
   detect_browser_os
   devise
   fog (= 1.3.1)
