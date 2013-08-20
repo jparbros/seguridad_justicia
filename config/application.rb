@@ -67,6 +67,6 @@ module SeguridadJusticia
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
     
-    config.middleware.use Rack::RubyProf, :path => '/temp/profile'
+    config.middleware.use Rack::RubyProf
   end
 end
