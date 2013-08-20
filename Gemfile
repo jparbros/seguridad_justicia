@@ -17,6 +17,7 @@ gem 'newrelic_rpm'
 gem 'rails-i18n'
 gem 'acts-as-taggable-on'
 gem 'kaminari'
+gem 'ruby-prof'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

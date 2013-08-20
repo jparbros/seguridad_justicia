@@ -187,6 +187,7 @@ GEM
       linecache19 (>= 0.5.11)
       ruby-debug-base19 (>= 0.11.19)
     ruby-hmac (0.4.0)
+    ruby-prof (0.13.0)
     ruby_core_source (0.1.5)
       archive-tar-minitar (>= 0.5.2)
     rubyzip (0.9.9)
@@ -246,6 +247,7 @@ DEPENDENCIES
   rails-i18n
   rails-settings-cached (= 0.2.4)
   ruby-debug19
+  ruby-prof
   sass-rails (~> 3.2.3)
   taps
   uglifier (>= 1.0.3)
