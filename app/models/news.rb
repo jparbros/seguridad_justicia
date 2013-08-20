@@ -29,4 +29,8 @@ class News < ActiveRecord::Base
     month = Time.parse("#{date}-01")
     self.where(created_at: [month.beginning_of_month..month.end_of_month])
   end
+  
+  def published_date
+    (date || created_at).to_date
+  end
 end
