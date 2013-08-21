@@ -8,7 +8,7 @@
         1
       Opina
   = raw Cache.caching "site-#{@site.id}-home-phrases" do
-    = render partial: 'phrases'
+    - render partial: 'phrases'
 
 - if @site.settings.phase_2
   .seleccion.phase-header{'data-phase' => 'phase-two'}
@@ -18,14 +18,14 @@
       Preg&uacute;ntales
 
   = raw Cache.caching "site-#{@site.id}-home-questions" do
-    = render partial: 'questions'
+    - render partial: 'questions'
 
 - if @site.settings.phase_3
   .destacadas.old.phase-header{'data-phase' => 'phase-three'}
     %h2 3 Compara, eval&uacute;a y decide
   
   = raw Cache.caching "site-#{@site.id}-home-evalua" do
-    = render partial: 'evalua'
+    - render partial: 'evalua'
 
 - if @site.settings.phase_4
   .seguimiento.phase-header{'data-phase' => 'phase-four'}
@@ -51,7 +51,7 @@
     #map
 
   = raw Cache.caching "site-#{@site.id}-home-sigueles" do
-    = render partial: 'sigueles'
+    - render partial: 'sigueles'
 
   :javascript
     window.mapas.initialize({state: '#{@site.label.downcase.gsub(' ', '_').gsub('ó','o')}'});
