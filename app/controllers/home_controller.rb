@@ -6,10 +6,10 @@ class HomeController < ApplicationController
 
     @seguimientos = Tracing.by_site(@site.id).most_recent
 
-    @recent_questions = Cache.caching("site-#{@site.id}-home-controller-questions") {Question.to_home(@site.id)}
+    @recent_questions = Question.to_home(@site.id)
     @recent_questions = @recent_questions.by_election(Election.active) if Election.active
     
-    @best_questions = Cache.caching("site-#{@site.id}-home-controller-best-questions") {Question.with_anwser_by_site(@site.id).limit(3)}
+    @best_questions = Question.with_anwser_by_site(@site.id).limit(3)
     @best_questions = @best_questions.by_election(Election.active) if Election.active
   end
 end
