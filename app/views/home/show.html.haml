@@ -7,7 +7,7 @@
       %span
         1
       Opina
-  - cache "site-#{@site.id}-home-phrases" do
+  - Cache.caching "site-#{@site.id}-home-phrases" do
     = render partial: 'phrases'
 
 - if @site.settings.phase_2
@@ -17,14 +17,14 @@
         2
       Preg&uacute;ntales
 
-  - cache "site-#{@site.id}-home-questions" do
+  - Cache.caching "site-#{@site.id}-home-questions" do
     = render partial: 'questions'
 
 - if @site.settings.phase_3
   .destacadas.old.phase-header{'data-phase' => 'phase-three'}
     %h2 3 Compara, eval&uacute;a y decide
   
-  - cache "site-#{@site.id}-home-evalua" do
+  - Cache.caching "site-#{@site.id}-home-evalua" do
     = render partial: 'evalua'
 
 - if @site.settings.phase_4
@@ -50,7 +50,7 @@
   .span8
     #map
 
-  - cache "site-#{@site.id}-home-sigueles" do
+  - Cache.caching "site-#{@site.id}-home-sigueles" do
     = render partial: 'sigueles'
 
   :javascript
