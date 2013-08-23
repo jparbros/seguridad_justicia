@@ -34,4 +34,6 @@ SeguridadJusticia::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+  
+  config.cache_store = :dalli_store, 'localhost:11211', {username: ENV['MEMCACHIER_USERNAME'], password: ENV['MEMCACHIER_PASSWORD']}
 end

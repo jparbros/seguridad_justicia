@@ -1,22 +1,23 @@
-#phase-one{class: "#{(@site.settings.default_phase == 'phase_1')? 'show' : 'hide'}"}
-  = form_for Phrase.new, url: frases_path do |form|
-    .seria-seguro
-      .span3
-        %span
-          = question_phrase.html_safe
-      .span5.input-container
-        = form.text_field :phrase, class: :span4
-        = form.submit 'Enviar >>'
+- cache "site-#{@site.id}-home-phrases" do
+  #phase-one{class: "#{(@site.settings.default_phase == 'phase_1')? 'show' : 'hide'}"}
+    = form_for Phrase.new, url: frases_path do |form|
+      .seria-seguro
+        .span3
+          %span
+            = question_phrase.html_safe
+        .span5.input-container
+          = form.text_field :phrase, class: :span4
+          = form.submit 'Enviar >>'
 
-  - if flash[:error]
-    .alert.alert-error.span7
-      = flash[:error]
+    - if flash[:error]
+      .alert.alert-error.span7
+        = flash[:error]
 
-  #phrases-container
-    #phrases-box
+    #phrases-container
+      #phrases-box
 
-- if @site.settings.default_phase == 'phase_1'
-  %script
-    $.get('/frases.json', function(data) {
-    $("#phrases-box").jQCloud(data)
-    });
+  - if @site.settings.default_phase == 'phase_1'
+    %script
+      $.get('/frases.json', function(data) {
+      $("#phrases-box").jQCloud(data)
+      });

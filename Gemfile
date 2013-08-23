@@ -17,6 +17,7 @@ gem 'newrelic_rpm'
 gem 'rails-i18n'
 gem 'acts-as-taggable-on'
 gem 'kaminari'
+gem 'dalli'
 gem 'ruby-prof'
 
 group :assets do
@@ -33,5 +34,9 @@ end
 
 group :production do
   gem 'unicorn'
-  gem 'dalli'
+end
+
+
+group :profile do
+  gem 'ruby-prof'
 end

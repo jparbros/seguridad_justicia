@@ -1,48 +1,49 @@
-#phase-three{class: "#{(@site.settings.default_phase == 'phase_3')? 'show' : 'hide'}"}
-  #phase-three-container
+- cache "site-#{@site.id}-home-evalua" do
+  #phase-three{class: "#{(@site.settings.default_phase == 'phase_3')? 'show' : 'hide'}"}
+    #phase-three-container
 
-    - if Election.by_site(@site.id).active
-      .span8
-        %ul.nav.nav-tabs
-          %li.active
-            %a= Election.by_site(@site.id).active.name
+      - if Election.by_site(@site.id).active
+        .span8
+          %ul.nav.nav-tabs
+            %li.active
+              %a= Election.by_site(@site.id).active.name
 
-          - Election.by_site(@site.id).deactive.each do |election|
-            %li= link_to election.name, evalua_index_path(eleccion: election.id)
+            - Election.by_site(@site.id).deactive.each do |election|
+              %li= link_to election.name, evalua_index_path(eleccion: election.id)
     
-    .span8
-      %p
-        Conoce las respuestas que las y los candidatos dieron a tus preguntas sobre seguridad con justicia y vota por la mejor respuesta.
+      .span8
+        %p
+          Conoce las respuestas que las y los candidatos dieron a tus preguntas sobre seguridad con justicia y vota por la mejor respuesta.
 
-      %ul#question_list
-        - @best_questions.each do |question|
-          - if question.candidates.count > 0
-            %li
-              = question.question
-              %span
-                = link_to 'Ver Respuesta', '', 'data-question-id' => question.id, class: 'question_link'
+        %ul#question_list
+          - @best_questions.each do |question|
+            - if question.candidates.count > 0
+              %li
+                = question.question
+                %span
+                  = link_to 'Ver Respuesta', '', 'data-question-id' => question.id, class: 'question_link'
 
-      %p
-        = link_to 'Ver todas las preguntas', evalua_index_path
+        %p
+          = link_to 'Ver todas las preguntas', evalua_index_path
 
-      .awnsers
-        - @best_questions.each do |question|
-          - if question.candidates.count > 0
-            .row.hide{id: "question-#{question.id}"}
-              .span8
-                %h4
-                  = question.question
-              - question.candidates.each do |candidate|
-                - answer = candidate.answers.where(question_id: question.id).first
-                .video-container.span4
-                  %span
-                    = candidate.name
-                  %a.youtube-link{href: "#{answer.url_for_youtube}"}
-                    Video
-                  - unless cookies["scg_respuesta_pregunta_#{answer.question.id}"]
-                    = link_to image_tag('/assets/vote.png', class: 'label label-success'), respuesta_votes_path(answer), method: :post
-                  - else
-                    #{answer.votes.count} votos
+        .awnsers
+          - @best_questions.each do |question|
+            - if question.candidates.count > 0
+              .row.hide{id: "question-#{question.id}"}
+                .span8
+                  %h4
+                    = question.question
+                - question.candidates.each do |candidate|
+                  - answer = candidate.answers.where(question_id: question.id).first
+                  .video-container.span4
+                    %span
+                      = candidate.name
+                    %a.youtube-link{href: "#{answer.url_for_youtube}"}
+                      Video
+                    - unless cookies["scg_respuesta_pregunta_#{answer.question.id}"]
+                      = link_to image_tag('/assets/vote.png', class: 'label label-success'), respuesta_votes_path(answer), method: :post
+                    - else
+                      #{answer.votes.count} votos
 
-    .alert.disclaimer
-      Los videos son acomodados en orden alfabético.
+      .alert.disclaimer
+        Los videos son acomodados en orden alfabético.

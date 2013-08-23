@@ -1,54 +1,55 @@
-#phase-two{class: "#{(@site.settings.default_phase == 'phase_2')? 'show' : 'hide'}"}
-  #phase-two-container
-    - if Election.by_site(@site.id).active
-      .span8
-        %ul.nav.nav-tabs
-          %li.active
-            %a= Election.by_site(@site.id).active.name
+- cache("site-#{@site.id}-home-questions") do
+  #phase-two{class: "#{(@site.settings.default_phase == 'phase_2')? 'show' : 'hide'}"}
+    #phase-two-container
+      - if Election.by_site(@site.id).active
+        .span8
+          %ul.nav.nav-tabs
+            %li.active
+              %a= Election.by_site(@site.id).active.name
 
-          - Election.by_site(@site.id).deactive.each do |election|
-            %li= link_to election.name, preguntas_path(eleccion: election.id)
+            - Election.by_site(@site.id).deactive.each do |election|
+              %li= link_to election.name, preguntas_path(eleccion: election.id)
     
-    .span8
-      %p
-        En esta sección puedes proponer y votar por las tres preguntas que quisieras que se le hicieran a las y los candidatos y candidatas en tu Estado durante las mesas de diálogo sobre Seguridad con Justicia.
-
-      %h4
-        Vota por tu pregunta favorita
-
-      %ul.questions-list
-        - @recent_questions.each do |question|
-          %li.span7
-            = question.question
-            - if Election.by_site(@site.id).active && @site.settings["#{Election.by_site(@site.id).active.name.parameterize}.votes"]
-              |
-              = "#{question.votes_count || 0} votos"
-              - if cookies["scg_pregunta_#{question.id}"] || cookies['scj_votes'].to_i >= 3
-                = image_tag('/assets/vote.png', class: 'label')
-              - else
-                = link_to image_tag('/assets/vote.png', class: 'label label-success'), pregunta_votes_path(pregunta_id: question.id), method: :post
-
       .span8
-        = link_to 'Ver todas las preguntas >>', preguntas_path
+        %p
+          En esta sección puedes proponer y votar por las tres preguntas que quisieras que se le hicieran a las y los candidatos y candidatas en tu Estado durante las mesas de diálogo sobre Seguridad con Justicia.
 
-    = form_for Question.new, url: preguntas_path do |form|
-      .questions
-        .span3
-          %span
-            Realiza una pregunta
-        .span5.input-container
-          = form.text_field :question, class: :span4, placeholder: 'Escribe tu pregunta'
-          = form.submit 'Enviar >>'
+        %h4
+          Vota por tu pregunta favorita
+
+        %ul.questions-list
+          - @recent_questions.each do |question|
+            %li.span7
+              = question.question
+              - if Election.by_site(@site.id).active && @site.settings["#{Election.by_site(@site.id).active.name.parameterize}.votes"]
+                |
+                = "#{question.votes_count || 0} votos"
+                - if cookies["scg_pregunta_#{question.id}"] || cookies['scj_votes'].to_i >= 3
+                  = image_tag('/assets/vote.png', class: 'label')
+                - else
+                  = link_to image_tag('/assets/vote.png', class: 'label label-success'), pregunta_votes_path(pregunta_id: question.id), method: :post
+
+        .span8
+          = link_to 'Ver todas las preguntas >>', preguntas_path
+
+      = form_for Question.new, url: preguntas_path do |form|
+        .questions
+          .span3
+            %span
+              Realiza una pregunta
+          .span5.input-container
+            = form.text_field :question, class: :span4, placeholder: 'Escribe tu pregunta'
+            = form.submit 'Enviar >>'
 
 
-    .alert.disclaimer
-      %strong
-        Atenci&oacute;n
-      Las preguntas deben de tener un m&aacute;ximo de 250 caracteres
+      .alert.disclaimer
+        %strong
+          Atenci&oacute;n
+        Las preguntas deben de tener un m&aacute;ximo de 250 caracteres
 
     
 
-    - if flash[:error]
-      .row
-        .alert.alert-error.span7
-          = flash[:error]
+      - if flash[:error]
+        .row
+          .alert.alert-error.span7
+            = flash[:error]
