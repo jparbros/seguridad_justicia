@@ -5,6 +5,8 @@ class Phrase < ActiveRecord::Base
   validate :allowed_words
 
   belongs_to :site, class_name: 'Cms::Site'
+  
+  after_save :clear_cache
 
   def allowed_words
     not_allowed_words = Blacklist.all.collect {|word| word.word}
@@ -21,5 +23,11 @@ class Phrase < ActiveRecord::Base
   def self.by_site_to_cloud(site_id)
     phrases = where(site_id: site_id).group(:phrase).select('SUM(1) as weight, phrase').order('weight DESC').limit(30)
     phrases.collect {|phrase| {text: phrase.phrase, weight:  phrase.weight}}.to_json
+  end
+  
+  private
+  
+  def clear_cache
+    Rails.cache.clear
   end
 end

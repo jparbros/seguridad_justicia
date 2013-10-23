@@ -7,6 +7,8 @@ class Banner < ActiveRecord::Base
 
   validates :site_id, presence: true
 
+  after_save :clear_cache
+
   def self.active
     where(active: true)
   end
@@ -19,5 +21,10 @@ class Banner < ActiveRecord::Base
     if link.present?
       link.match('http://') ? link : 'http://' + link
     end
+  end
+  
+  private
+  def clear_cache
+    Rails.cache.clear
   end
 end

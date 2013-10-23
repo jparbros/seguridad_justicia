@@ -22,6 +22,8 @@ class Question < ActiveRecord::Base
   #
   # Delegates
   #
+  
+  after_save :clear_cache
 
   def self.by_election(election_id)
     where(election_id: election_id)
@@ -57,5 +59,11 @@ class Question < ActiveRecord::Base
 
   def self.with_anwser_by_site(site_id)
     includes(:answers).where('answers.id IS NOT NULL').where(site_id: site_id)
+  end
+
+  private
+  
+  def clear_cache
+    Rails.cache.clear
   end
 end

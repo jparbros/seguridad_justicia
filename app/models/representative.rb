@@ -36,6 +36,8 @@ class Representative < ActiveRecord::Base
     'presidente_municipal' => 'presidentes municipales'
   }
   
+  after_save :clear_cache
+  
   def self.by_site(site_id)
     where(site_id: site_id)
   end
@@ -77,5 +79,11 @@ class Representative < ActiveRecord::Base
     divided_commission = comissions.split(',')
     divided_commission = comissions.split(';') if divided_commission.size <= 1
     divided_commission
+  end
+  
+  private
+  
+  def clear_cache
+    Rails.cache.clear
   end
 end

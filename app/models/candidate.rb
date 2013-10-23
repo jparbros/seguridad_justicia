@@ -8,8 +8,16 @@ class Candidate < ActiveRecord::Base
   belongs_to :election
 
   default_scope order('political_parties.name ASC').includes(:political_party)
+  
+  after_save :clear_cache
 
   def self.by_site(site_id)
     where(site_id: site_id)
+  end
+  
+  private
+  
+  def clear_cache
+    Rails.cache.clear
   end
 end

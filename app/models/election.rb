@@ -8,6 +8,8 @@ class Election < ActiveRecord::Base
   
   default_scope order('created_at DESC')
   
+  after_save :clear_cache
+  
   def self.active
     where(active: true, site_id: ::Cms::Site.site.id).first
   end
@@ -26,5 +28,11 @@ class Election < ActiveRecord::Base
   
   def activate
     update_attribute :active, true
+  end
+
+  private
+  
+  def clear_cache
+    Rails.cache.clear
   end
 end
