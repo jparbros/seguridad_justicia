@@ -10,6 +10,7 @@ class Admin::ConfigurationsController < Admin::BaseController
     params[:setting].each do |setting|
       @site.settings[setting.first] = setting.last
     end
+    Rails.cache.clear
     redirect_to edit_admin_configurations_path, notice: 'Se han actualizado las configuraciones.'
   end
   
