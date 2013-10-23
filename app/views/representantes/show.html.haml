@@ -22,9 +22,10 @@
       %li
         %a.twitter{'data-toggle' =>"tab", :href => '#twitter'}
           Twitter
-    %li
-      %a.performance{'data-toggle' =>"tab", :href => '#performance'}
-        Desempeño
+    - if @posturas.present?
+      %li
+        %a.performance{'data-toggle' =>"tab", :href => '#performance'}
+          Desempeño
             
   .profile-container
     .profile-avatar
@@ -129,23 +130,24 @@
           .twitter-content
             %a.twitter-timeline{'href' => "https://twitter.com/#{@representante.twitter_username}", 'data-widget-id' => "349632396825616384", 'data-chrome' => "nofooter transparent noheader",  'height' => "300", 'data-tweet-limit' => "15", 'lang' => "es", 'data-screen-name' => "#{@representante.twitter_username}"}
               Tweets by #{@representante.twitter_username}
-          
-      #performance.tab-pane
-        %h2 Desempeño
-
-        - @posturas.each do |postura|
-
-          .postura      
-            .postura-created-at.tooltip.bottom.in
-              .tooltip-inner
-                = postura.created_at.to_date.to_s :short
-            .postura-content
-              %h4
-                = postura.title
       
-              = postura.first_paragraph.html_safe
+      - if @posturas.present?
+        #performance.tab-pane
+          %h2 Desempeño
+
+          - @posturas.each do |postura|
+
+            .postura      
+              .postura-created-at.tooltip.bottom.in
+                .tooltip-inner
+                  = postura.created_at.to_date.to_s :short
+              .postura-content
+                %h4
+                  = postura.title
+      
+                = postura.first_paragraph.html_safe
           
-              = link_to 'Leer mas...', representante_postura_path(postura.representative, postura)
+                = link_to 'Leer mas...', representante_postura_path(postura.representative, postura)
 
 
 %script
