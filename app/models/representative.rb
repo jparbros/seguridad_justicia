@@ -15,6 +15,11 @@ class Representative < ActiveRecord::Base
   belongs_to :site, class_name: 'Cms::Site'
   belongs_to :political_party
   belongs_to :election
+  
+  #
+  # Scopes
+  #
+  scope :ready, where('political_party_id IS NOT NULL')
 
   #
   # Uploaders

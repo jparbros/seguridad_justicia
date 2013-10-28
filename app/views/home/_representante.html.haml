@@ -1,5 +1,8 @@
 %li
   %div.sigueles-title
+    - puts "==============================================="
+    - puts "Representative: #{representante.id}"
+    - puts "PP Logo: #{representante.political_party.logo.thumb if representante.political_party}"
     = image_tag representante.political_party.logo.thumb if representante.political_party
     %span
       = representante.political_party.initials if representante.political_party
