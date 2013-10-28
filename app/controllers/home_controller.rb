@@ -2,7 +2,7 @@ class HomeController < ApplicationController
   def show
     @banners = Banner.by_site(@site.id).active
     
-    @representatives = Rails.cache.fetch("site-#{@site.id}-home-controller-representatives") {Representative.by_site(@site.id).group_by {|representative| representative.position}}
+    @representatives = Rails.cache.fetch("site-#{@site.id}-home-controller-representatives") {Representative.ready_to_home.by_site(@site.id).group_by {|representative| representative.position}}
 
     @seguimientos = Tracing.by_site(@site.id).most_recent
 

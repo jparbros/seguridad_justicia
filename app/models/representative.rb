@@ -19,7 +19,7 @@ class Representative < ActiveRecord::Base
   #
   # Scopes
   #
-  scope :ready, where('political_party_id IS NOT NULL')
+  scope :ready_to_home, where('political_party_id IS NOT NULL')
 
   #
   # Uploaders
